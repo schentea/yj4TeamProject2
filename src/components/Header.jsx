@@ -1,10 +1,10 @@
 export default function Header() {
     return (
-        <div className="w-full h-screen bg-cover relative bg-center flex justify-center items-center bg-[url('https://pixabay.com/get/gf39b171dcbfc47b8b79834f850b9c821369ded5b7e297c5c8f05c9ec0b4a0a257ac176513de2bfc6b31394a50015155b.jpg')]">
+        <div className="w-full h-screen bg-cover relative bg-center flex justify-center items-center bg-[url('https://pixabay.com/get/g99e2749571e75b6320c34147d775d74ad3bd6d8f64900ed82cfd180405f95adea2859bcb7c028692817a8c3b8cb883fa.jpg')]">
             {/* 나브 */}
             <nav
                 id="container"
-                className="w-full h-10 max-w-[1400px] absolute top-0  bg-gray-400 flex justify-between items-center"
+                className="w-full h-10 max-w-[1600px] absolute top-0  bg-gray-400 flex justify-between items-center"
             >
                 {/* 로고 */}
                 <div>로고</div>
