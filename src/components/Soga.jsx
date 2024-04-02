@@ -60,23 +60,25 @@ export default function Soga() {
                                 </div>
                             </li>
                             {/* 네번쨰 이미지 */}
-                            {/* 통괄 */}
-                            <div className="xl:w-1/2 w-[252px] h-[406px] rounded-xl overflow-hidden">
-                                {/* 이미지 */}
-                                <div className="w-full h-3/4">
-                                    <img
-                                        className="w-full h-full object-cover rounded-xl"
-                                        src="https://pixabay.com/get/g99e2749571e75b6320c34147d775d74ad3bd6d8f64900ed82cfd180405f95adea2859bcb7c028692817a8c3b8cb883fa.jpg"
-                                        alt=""
-                                    />
+                            <li className=" xl:overflow-hidden">
+                                {/* 통괄 */}
+                                <div className="xl:w-1/2 w-[252px] h-[406px] rounded-xl overflow-hidden">
+                                    {/* 이미지 */}
+                                    <div className="w-full h-3/4">
+                                        <img
+                                            className="w-full h-full object-cover rounded-xl"
+                                            src="https://pixabay.com/get/g99e2749571e75b6320c34147d775d74ad3bd6d8f64900ed82cfd180405f95adea2859bcb7c028692817a8c3b8cb883fa.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    {/* 소개글 */}
+                                    <div className="text-center font-bold mt-3">기업 소개</div>
                                 </div>
-                                {/* 소개글 */}
-                                <div className="text-center font-bold mt-3">기업 소개</div>
-                            </div>
+                            </li>
                             {/* 다섯번쨰 이미지 */}
                             <li className=" xl:overflow-hidden">
                                 {/* 통괄 */}
-                                <div className="xl:w-1/2 w-[252px] h-[406px] xl:float-right  rounded-xl overflow-hidden">
+                                <div className="xl:w-1/2 w-[252px] h-[406px] xl:float-right rounded-xl overflow-hidden">
                                     {/* 이미지 */}
                                     <div className="w-full h-3/4">
                                         <img
