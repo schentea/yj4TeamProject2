@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AlleleugiSoga from './components/AlleleugiSoga';
 import Soga from './components/Soga';
 import AllimSection from './components/AllimSection';
+
 function App() {
     return (
         <div>
