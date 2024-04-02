@@ -18,7 +18,7 @@ export default function Header() {
     return (
         <>
             {' '}
-            <header className="w-full h-[80px] bg-[#aaa] flex justify-center">
+            <header className="w-full h-[80px] bg-[#bbb] flex justify-center">
                 {/* Logo */}
                 <div className="w-full max-w-[1600px] h-full p-5">
                     <div className="h-full w-full flex justify-between items-center">
