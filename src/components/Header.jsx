@@ -80,7 +80,7 @@ export default function Header() {
                     </div>
                 </div>
             </header>
-            <div className="w-full h-screen bg-cover relative bg-center flex justify-center items-center bg-[url('https://pixabay.com/get/g99e2749571e75b6320c34147d775d74ad3bd6d8f64900ed82cfd180405f95adea2859bcb7c028692817a8c3b8cb883fa.jpg')]">
+            <div className="w-full h-screen bg-cover relative bg-center flex justify-center items-center bg-[url('https://home.koelsa.or.kr/common/imgView.do?attachId=3eae8a519d7ad66c726911168af670413cfbd5f3b867767081f26e71a1f7d71d&fileSn=f9a1967c526603d17ab488b9d2747cda&mode=origin')]">
                 {/* 나브 */}
             </div>
         </>
