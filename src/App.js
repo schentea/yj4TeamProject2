@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AlleleugiSoga from './components/AlleleugiSoga';
 import Soga from './components/Soga';
 import AllimSection from './components/AllimSection';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
             {/* 알림톡 신청 페이지 */}
             <AllimSection />
             {/* 푸터 */}
-            <div className="w-full h-32 bg-black">푸터</div>
+            <Footer />
         </div>
     );
 }
