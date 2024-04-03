@@ -1,10 +1,12 @@
-export default function Layout({children}) {
-    return (
-        <div className="w-full flex justify-center">
-            <div>{children}</div>
-        </div>
-    )
-  }
-  
+import Footer from './Footer';
+import Header from './Header';
 
-  
+export default function Layout({ children }) {
+    return (
+        <div>
+            <Header />
+            <div>{children}</div>
+            <Footer />
+        </div>
+    );
+}
