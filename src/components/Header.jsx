@@ -3,7 +3,6 @@ import { IoClose } from 'react-icons/io5';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
-
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -18,24 +17,24 @@ export default function Header() {
     return (
         <>
             {' '}
-            <header className="w-full h-[80px] bg-[#bbb] flex justify-center">
+            <header className="w-full h-[80px] bg-[#F0F7FF] flex justify-center">
                 {/* Logo */}
-                <div className="w-full max-w-[1600px] h-full p-5">
+                <div className="w-full max-w-[1300px] h-full p-5">
                     <div className="h-full w-full flex justify-between items-center">
                         <Link to="/" className=" no-underline">
-                            <div className="flex items-center text-white font-bold text-[30px]">Logo</div>
+                            <div className="flex items-center text-black font-bold text-[30px]">Logo</div>
                         </Link>
                         <div className="w-[50%] h-[200%] items-center justify-center  hidden lg:flex">
                             <ul className="flex gap-5">
-                                <li className="text-white font-semibold">메뉴</li>
-                                <li className="text-white font-semibold">메뉴</li>
-                                <li className="text-white font-semibold">메뉴</li>
-                                <li className="text-white font-semibold">메뉴</li>
+                                <li className="text-black font-semibold">메뉴</li>
+                                <li className="text-black font-semibold">메뉴</li>
+                                <li className="text-black font-semibold">메뉴</li>
+                                <li className="text-black font-semibold">메뉴</li>
                             </ul>
                         </div>
                         <div
                             id="Hidden_div"
-                            className=" space-x-4 h-full items-center text-white font-bold text-[20px] hidden xl:flex "
+                            className=" space-x-4 h-full items-center text-black font-bold text-[20px] hidden xl:flex "
                         >
                             <p>로그인</p>
                             <p>회원가입</p>
@@ -43,7 +42,7 @@ export default function Header() {
                         <button
                             id="main_button"
                             onClick={openButton}
-                            className="text-white text-[30px] cursor-pointer xl:hidden"
+                            className="text-black text-[30px] cursor-pointer xl:hidden"
                         >
                             <GiHamburgerMenu />
                         </button>
@@ -80,8 +79,13 @@ export default function Header() {
                     </div>
                 </div>
             </header>
-            <div className="w-full h-screen bg-cover relative bg-center flex justify-center items-center bg-[url('https://home.koelsa.or.kr/common/imgView.do?attachId=3eae8a519d7ad66c726911168af670413cfbd5f3b867767081f26e71a1f7d71d&fileSn=f9a1967c526603d17ab488b9d2747cda&mode=origin')]">
-                {/* 나브 */}
+            <div className="w-full h-screen bg-cover relative bg-center flex flex-col justify-center items-center bg-[url('https://home.koelsa.or.kr/common/imgView.do?attachId=3eae8a519d7ad66c726911168af670413cfbd5f3b867767081f26e71a1f7d71d&fileSn=f9a1967c526603d17ab488b9d2747cda&mode=origin')]">
+                <div className="text-center absolute top-[30%] ">
+                    <h1 className="text-7xl mb-5">
+                        <span className="font-bold">케어키즈</span>는 <span className="font-bold">알레르기</span>를{' '}
+                    </h1>
+                    <h2 className="text-5xl">가지고있는 아이들과 함께 걸어갑니다.</h2>
+                </div>
             </div>
         </>
     );
