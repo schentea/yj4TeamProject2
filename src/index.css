@@ -3,30 +3,33 @@
 @tailwind utilities;
 
 @layer base {
-    h1 {
-        @apply text-4xl;
-    }
-    h2 {
-        @apply text-3xl;
-    }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+}
+#header {
+  background-image: url("./header.jpg");
 }
 /* 스크롤 바 */
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
 
 /* 수직 스크롤 바 */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 /* 수평 스크롤 바 */
 ::-webkit-scrollbar-track {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* 마우스 호버시 */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
