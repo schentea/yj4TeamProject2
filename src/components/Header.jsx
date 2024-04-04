@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       {" "}
-      <header className="w-full h-[80px] bg-[#F0F7FF] flex justify-center">
+      <header className="w-full h-[80px] absolute z-10  flex justify-center">
         {/* Logo */}
         <div className="w-full max-w-[1300px] h-full p-5">
           <div className="h-full w-full flex justify-between items-center">
@@ -85,12 +85,14 @@ export default function Header() {
         id="header"
         className="w-full h-screen bg-cover relative bg-center flex flex-col justify-center items-center"
       >
-        <div className="text-center absolute top-[30%] ">
-          <h1 className="text-7xl mb-5">
-            <span className="font-bold">케어키즈</span>는{" "}
-            <span className="font-bold">알레르기</span>를{" "}
+        <div className="text-center absolute top-[33%]">
+          <h1 className="text-7xl mb-[30px] flex items-center">
+            <span className="font-bold">케어키즈</span>
+            <span className="text-6xl mr-2">는</span>{" "}
+            <span className="font-bold">알레르기</span>
+            <span className="text-6xl">를</span>{" "}
           </h1>
-          <h2 className="text-5xl">가지고있는 아이들과 함께 걸어갑니다.</h2>
+          <h2 className="text-4xl">가지고있는 아이들과 함께 걸어갑니다.</h2>
         </div>
       </div>
     </>
