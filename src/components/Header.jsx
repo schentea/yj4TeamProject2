@@ -72,16 +72,16 @@ export default function Header() {
                     <IoClose />
                   </motion.div>
                   <Link to="/" className="text-black no-underline">
-                    <p className=" cursor-pointer">메뉴</p>
+                    <p className=" cursor-pointer">우리회사란?</p>
                   </Link>
                   <Link to="/" className="text-black no-underline">
-                    <p className=" cursor-pointer">메뉴</p>
+                    <p className=" cursor-pointer">알레르기 심각성</p>
                   </Link>
                   <Link to="/" className="text-black no-underline">
-                    <p className=" cursor-pointer">메뉴</p>
+                    <p className=" cursor-pointer">사용방법</p>
                   </Link>
                   <Link to="/" className="text-black no-underline">
-                    <p className=" cursor-pointer">고객센터 </p>
+                    <p className=" cursor-pointer">신청하기 </p>
                   </Link>
                 </motion.div>
               )}
