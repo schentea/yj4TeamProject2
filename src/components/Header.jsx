@@ -101,13 +101,13 @@ export default function Header() {
             >
               케어키즈
             </span>
-            <span className="md:text-6xl mr-2">는</span>{" "}
+            <span className="md:text-6xl mr-2 text-[#333C47]">는</span>{" "}
             <span id="span" className="font-bold text-[black]">
               알레르기
             </span>
-            <span className="md:text-6xl">를</span>{" "}
+            <span className="md:text-6xl text-[#333C47]">를</span>{" "}
           </h1>
-          <h2 className="md:text-4xl mt-2">
+          <h2 className="md:text-4xl mt-2 text-[#333C47]">
             가지고있는 아이들과 함께 걸어갑니다.
           </h2>
         </div>

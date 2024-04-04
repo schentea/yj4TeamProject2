@@ -6,7 +6,7 @@ import { PiHandshakeBold } from "react-icons/pi";
 
 export default function CommuniCation() {
   return (
-    <div id="section1" className="w-full h-full flex justify-center p-4">
+    <div id="section1" className="w-full h-full flex justify-center p-8">
       {/* 컨테이너 */}
       <div
         id="container"
@@ -14,10 +14,12 @@ export default function CommuniCation() {
       >
         {/* 커뮤니케이션 타이틀 */}
         <div className="mt-[4%] text-center mb-[6%]">
-          <h2 className="font-bold xl:text-[48px]">
+          <h2 className="font-bold xl:text-[48px] text-[#333C47]">
             원과 가정의 커뮤니케이션을 위한
           </h2>
-          <h2 className="font-bold xl:text-[48px]">최적의 솔류션, 키즈케어!</h2>
+          <h2 className="font-bold xl:text-[48px] text-[#333C47]">
+            최적의 솔류션, 키즈케어!
+          </h2>
         </div>
         {/* 아래 그리드 */}
         <div className="w-full h-full flex flex-col justify-center items-center gap-4">
