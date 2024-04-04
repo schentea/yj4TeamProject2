@@ -30,6 +30,18 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+#news1Div{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+#news2Div{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+#news3Div{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
 #news2{
   background-image: url('./New2.png');
   background-size: cover;
