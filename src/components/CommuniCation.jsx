@@ -13,7 +13,7 @@ export default function CommuniCation() {
         className="w-full h-screen max-w-[1300px] flex flex-col justify-center items-center"
       >
         {/* 커뮤니케이션 타이틀 */}
-        <div className="mt-[8%] text-center mb-[6%]">
+        <div className="mt-[4%] text-center mb-[6%]">
           <h2 className="font-bold xl:text-[48px]">
             원과 가정의 커뮤니케이션을 위한
           </h2>

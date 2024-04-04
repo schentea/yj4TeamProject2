@@ -10,6 +10,9 @@
     @apply text-3xl;
   }
 }
+#span {
+  text-shadow: -1px 0px 1px;
+}
 #header {
   background-image: url("./mainBg.png");
   background-size: cover;

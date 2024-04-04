@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../logo.png";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const openButton = () => {
@@ -17,26 +17,34 @@ export default function Header() {
   return (
     <>
       {" "}
-      <header className="w-full h-[80px] absolute z-10  flex justify-center">
-        {/* Logo */}
-        <div className="w-full max-w-[1300px] h-full p-5">
-          <div className="h-full w-full flex justify-between items-center">
+      <header className="w-full h-[110px] absolute bg-[rgba(255,255,255,0.5)] z-10  flex justify-center">
+        <div className="w-full max-w-[1300px] h-full p-5 flex justify-center items-center">
+          <div className="h-full w-full flex justify-between ">
             <Link to="/" className=" no-underline">
-              <div className="flex items-center text-black font-bold text-[30px]">
-                Logo
+              <div className="w-full h-full flex items-center text-black font-bold text-[30px]">
+                {/* Logo */}
+                <img className="w-20" src={logo} alt="sss" />
               </div>
             </Link>
-            <div className="w-[50%] h-[200%] items-center justify-center  hidden lg:flex">
+            <div className="w-[60%] h-[200%] items-center justify-center  hidden xl:flex">
               <ul className="flex gap-5">
-                <li className="text-black font-semibold">메뉴</li>
-                <li className="text-black font-semibold">메뉴</li>
-                <li className="text-black font-semibold">메뉴</li>
-                <li className="text-black font-semibold">메뉴</li>
+                <li className="text-black font-semibold text-[20px] cursor-pointer">
+                  우리회사란?
+                </li>
+                <li className="text-black font-semibold text-[20px] cursor-pointer">
+                  알레르기 심각성
+                </li>
+                <li className="text-black font-semibold text-[20px] cursor-pointer">
+                  사용방법
+                </li>
+                <li className="text-black font-semibold text-[20px] cursor-pointer">
+                  신청하기
+                </li>
               </ul>
             </div>
             <div
               id="Hidden_div"
-              className=" space-x-4 h-full items-center text-black font-bold text-[20px] hidden xl:flex "
+              className=" space-x-4 h-full items-center text-black font-bold justify-center mt-[7px] text-[20px] hidden xl:flex "
             >
               <p>로그인</p>
               <p>회원가입</p>
@@ -85,14 +93,23 @@ export default function Header() {
         id="header"
         className="w-full h-[135vh] bg-cover relative bg-center flex flex-col justify-center items-center"
       >
-        <div className="text-center absolute top-[23%]">
-          <h1 className="text-7xl mb-[30px] flex items-center">
-            <span className="font-bold">케어키즈</span>
-            <span className="text-6xl mr-2">는</span>{" "}
-            <span className="font-bold">알레르기</span>
-            <span className="text-6xl">를</span>{" "}
+        <div className="text-center absolute top-[25%]">
+          <h1 className="md:text-7xl text-[40px] flex items-center justify-center">
+            <span
+              id="span"
+              className="font-bold text-[black] text-shodw-[-1px 0px 1px]"
+            >
+              케어키즈
+            </span>
+            <span className="md:text-6xl mr-2">는</span>{" "}
+            <span id="span" className="font-bold text-[black]">
+              알레르기
+            </span>
+            <span className="md:text-6xl">를</span>{" "}
           </h1>
-          <h2 className="text-4xl">가지고있는 아이들과 함께 걸어갑니다.</h2>
+          <h2 className="md:text-4xl mt-2">
+            가지고있는 아이들과 함께 걸어갑니다.
+          </h2>
         </div>
       </div>
     </>
