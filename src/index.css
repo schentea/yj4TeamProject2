@@ -11,7 +11,14 @@
   }
 }
 #header {
-  background-image: url("./header3.jpg");
+  background-image: url("./mainBg.png");
+  background-size: cover;
+  background-position: center;
+}
+#section1 {
+  /* background-image: url("./test4.png");
+  background-size: cover;
+  background-position: center; */
 }
 /* 스크롤 바 */
 ::-webkit-scrollbar {

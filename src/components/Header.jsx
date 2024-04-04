@@ -83,9 +83,9 @@ export default function Header() {
       </header>
       <div
         id="header"
-        className="w-full h-screen bg-cover relative bg-center flex flex-col justify-center items-center"
+        className="w-full h-[135vh] bg-cover relative bg-center flex flex-col justify-center items-center"
       >
-        <div className="text-center absolute top-[33%]">
+        <div className="text-center absolute top-[23%]">
           <h1 className="text-7xl mb-[30px] flex items-center">
             <span className="font-bold">케어키즈</span>
             <span className="text-6xl mr-2">는</span>{" "}

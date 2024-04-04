@@ -6,7 +6,7 @@ import { PiHandshakeBold } from "react-icons/pi";
 
 export default function CommuniCation() {
   return (
-    <div className="w-full h-full flex justify-center p-4">
+    <div id="section1" className="w-full h-full flex justify-center p-4">
       {/* 컨테이너 */}
       <div
         id="container"
@@ -22,25 +22,25 @@ export default function CommuniCation() {
         {/* 아래 그리드 */}
         <div className="w-full h-full flex flex-col justify-center items-center gap-4">
           {/* 위쪽 그리드 */}
-          <div className="flex md:flex-row flex-col w-full h-1/2 items-center  gap-4">
+          <div className="flex md:flex-row flex-col w-full h-1/2 items-center gap-4">
             {/* 왼쪽 */}
-            <div className="xl:w-1/2 w-2/3 md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl p-4">
-              <h3 className="xl:text-[34px] md:text-[25px] text-[20px]  font-bold">
+            <div className="xl:w-1/2 w-1/2 md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl md:p-14 p-6">
+              <h3 className="xl:text-[34px] md:text-[25px] text-[20px]  font-semibold">
                 누구나
               </h3>
-              <h3 className="xl:text-[34px] md:text-[25px] text-[20px]  font-bold">
+              <h3 className="xl:text-[34px] md:text-[25px] text-[20px]  font-semibold">
                 무료로 사용가능
               </h3>
               <FaUser className=" absolute bottom-3 right-14 text-6xl text-[#57A9FB]" />
               <FaUser className=" absolute bottom-3 right-1 text-7xl text-[#208DF9]" />
             </div>
             {/* 오른쪽 */}
-            <div className="xl:w-1/2 w-2/3 md:h-full h-[200px] bg-slate-200 rounded-2xl">
-              <div className="w-full md:h-full h-[200px] relative bg-[#FFF8D6] rounded-2xl p-4">
-                <h3 className="xl:text-[34px] md:text-[25px] text-[20px] font-bold">
+            <div className="xl:w-1/2 w-1/2 md:h-full h-[200px] bg-slate-200 rounded-2xl">
+              <div className="w-full md:h-full h-[200px] relative bg-[#FFF8D6] rounded-2xl md:p-14 p-6">
+                <h3 className="xl:text-[34px] md:text-[25px] text-[20px] font-semibold">
                   PC,모바일
                 </h3>
-                <h3 className="xl:text-[34px] md:text-[25px] text-[20px] font-bold">
+                <h3 className="xl:text-[34px] md:text-[25px] text-[20px] font-semibold">
                   어디서든 간편하게
                 </h3>
                 <div className=" absolute bottom-3 right-3 text-6xl flex">
@@ -52,13 +52,13 @@ export default function CommuniCation() {
           </div>
           {/* 아래쪽 그리드 */}
           <div className="flex md:flex-row flex-col w-full h-1/2 items-center  gap-4">
-            <div className="xl:w-1/2 w-2/3 h-full bg-slate-400 rounded-2xl">
+            <div className="xl:w-1/2 w-1/2 h-full bg-slate-400 rounded-2xl">
               {" "}
-              <div className="w-full md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl p-4">
-                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-bold">
+              <div className="w-full md:h-full h-[200px] relative bg-[#FFF8D6] rounded-2xl md:p-14 p-6">
+                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-semibold">
                   케어키즈와 가정을
                 </h3>
-                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-bold">
+                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-semibold">
                   잇는 바른소통
                 </h3>
                 <div className=" absolute bottom-3 right-3 text-6xl flex">
@@ -66,16 +66,16 @@ export default function CommuniCation() {
                 </div>
               </div>
             </div>
-            <div className="xl:w-1/2 w-2/3 h-full bg-slate-300 rounded-2xl">
+            <div className="xl:w-1/2 w-1/2 h-full bg-slate-300 rounded-2xl">
               {" "}
-              <div className="w-full md:h-full h-[200px] relative bg-[#FFF8D6] rounded-2xl p-4">
-                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-bold">
+              <div className="w-full md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl md:p-10 p-6">
+                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-semibold">
                   교육부와 함께하는
                 </h3>
-                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-bold">
+                <h3 className="xl:text-[34px]  md:text-[25px] text-[20px]  font-semibold">
                   안전성있는 서비스를
                 </h3>
-                <h3 className="xl:text-[34px] md:text-[25px] text-[20px]  font-bold">
+                <h3 className="xl:text-[34px] md:text-[25px] text-[20px]  font-semibold">
                   제공합니다
                 </h3>
                 <div className=" absolute bottom-3 right-3 text-6xl flex">
