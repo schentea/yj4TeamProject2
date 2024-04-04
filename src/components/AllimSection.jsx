@@ -8,10 +8,10 @@ export default function AllimSection() {
                 <div className="w-1/2 h-1/2 flex flex-col p-8 gap-3  ">
                     <h5 className="font-semibold">알레르기로 인해 고민이신가요?</h5>
                     <div>
-                        <h3 className="text-4xl font-bold">
+                        <h3 className="md:text-6xl text-3xl font-bold">
                             <span className="text-[#208DF9]">케어키즈</span>로 스마트한
                         </h3>
-                        <h3 className="text-4xl font-bold">급식 관리를 시작해 보세요!</h3>
+                        <h3 className="md:text-6xl text-3xl font-bold">급식 관리를 시작해 보세요!</h3>
                     </div>
                     <p>학부모 소통, 급식 관리까지 효율적으로 관리할 수 있어요. </p>
                     <Button className="w-[50%] h-[10%] " variant="primary">

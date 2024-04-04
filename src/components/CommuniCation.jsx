@@ -6,7 +6,7 @@ import { PiHandshakeBold } from "react-icons/pi";
 
 export default function CommuniCation() {
   return (
-    <div id="section1" className="w-full h-full flex justify-center p-8">
+    <div id="section1" className="w-full h-full flex justify-center p-8 mb-12">
       {/* 컨테이너 */}
       <div
         id="container"

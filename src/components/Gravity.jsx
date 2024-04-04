@@ -14,9 +14,9 @@ export default function Gravity() {
           {/* 왼쪽 그리드 */}
           <div className="md:w-2/3 w-1/2 h-1/3 md:h-full flex">
             <div className="w-[100%] md:h-[67%] h-[100%]  flex justify-center items-center ">
-              <div className="w-[90%] h-[95%] bg-blue-200 rounded-2xl overflow-hidden">
+              <div  className="w-[90%] h-[95%]  rounded-2xl overflow-hidden">
                 {/* 위쪽 이미지 */}
-                <div className="w-full h-2/3 bg-red-200"></div>
+                <div id="news1" className="w-full h-2/3 "></div>
                 {/* 아래 텍스트 */}
                 <div className="w-full h-1/3 bg-blue-300"></div>
               </div>
@@ -25,17 +25,17 @@ export default function Gravity() {
           {/* 오른쪽 그리드 */}
           <div className="md:w-1/3 w-1/2 h-2/3 md:h-full flex flex-col ">
             <div className="w-full md:h-1/3 h-full  flex justify-center items-center">
-              <div className="w-[90%] h-[90%] bg-red-200 rounded-2xl overflow-hidden">
+              <div className="w-[90%] h-[90%]  rounded-2xl overflow-hidden">
                 {/* 위쪽 이미지 */}
-                <div className="w-full h-2/3 bg-red-200"></div>
+                <div id="news2" className="w-full h-2/3 "></div>
                 {/* 아래 텍스트 */}
-                <div className="w-full h-1/3 bg-blue-300"></div>
+                <div  className="w-full h-1/3 bg-blue-300"></div>
               </div>
             </div>
             <div className="w-full md:h-1/3 h-full flex justify-center items-center">
-              <div className="w-[90%] h-[90%] bg-red-200 rounded-2xl overflow-hidden">
+              <div className="w-[90%] h-[90%]  rounded-2xl overflow-hidden">
                 {/* 위쪽 이미지 */}
-                <div className="w-full h-2/3 bg-red-200"></div>
+                <div id="news3" className="w-full h-2/3 "></div>
                 {/* 아래 텍스트 */}
                 <div className="w-full h-1/3 bg-blue-300"></div>
               </div>

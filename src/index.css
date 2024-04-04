@@ -23,6 +23,25 @@
   background-size: cover;
   background-position: center; */
 }
+
+#news1{
+  background-image: url('./New1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#news2{
+  background-image: url('./New2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#news3{
+  background-image: url('./New3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 /* 스크롤 바 */
 ::-webkit-scrollbar {
   width: 12px;

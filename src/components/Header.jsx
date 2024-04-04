@@ -91,7 +91,7 @@ export default function Header() {
       </header>
       <div
         id="header"
-        className="w-full h-[135vh] bg-cover relative bg-center flex flex-col justify-center items-center"
+        className="w-full h-[145vh] bg-cover relative bg-center flex flex-col justify-center items-center"
       >
         <div className="text-center absolute top-[25%]">
           <h1 className="md:text-7xl text-[40px] flex items-center justify-center">

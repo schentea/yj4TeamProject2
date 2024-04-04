@@ -32,7 +32,7 @@ export default function Merit() {
                 식단표에 알레르기 성분이 검출되면
               </h3>
               <h3 className=" xl:text-3xl md:text-xl text-[20px] font-semibold">
-                식단표를 붉은색으로 표시해 보기가 쉬워요!
+                식단표를 <span className=" text-red-500">붉은색</span>으로 표시해 보기가 쉬워요!
               </h3>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function Merit() {
                 알레르기가 포함된 식품이 나오면
               </h3>
               <h3 className=" xl:text-3xl md:text-xl text-[20px] font-semibold">
-                바로전날 알림톡을 전송해드려요!
+                바로전날 <span className=" text-yellow-500">알림톡</span>을 전송해드려요!
               </h3>
             </div>
           </div>
