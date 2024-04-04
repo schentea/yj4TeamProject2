@@ -15,9 +15,9 @@ export default function CommuniCation() {
                     <h2>최적의 솔류션, 키즈케어!</h2>
                 </div>
                 {/* 아래 그리드 */}
-                <div className="w-full h-full  flex flex-col justify-center items-center gap-4">
+                <div className="w-full h-full flex flex-col justify-center items-center gap-4">
                     {/* 위쪽 그리드 */}
-                    <div className="flex w-full h-1/2  gap-4">
+                    <div className="flex md:flex-row flex-col w-full h-1/2 items-center  gap-4">
                         <div className="w-1/2 h-full relative bg-slate-500 rounded-2xl p-3">
                             <h3>누구나</h3>
                             <h3>무료로 사용가능</h3>
@@ -35,7 +35,7 @@ export default function CommuniCation() {
                         </div>
                     </div>
                     {/* 아래쪽 그리드 */}
-                    <div className="flex w-full h-1/2  gap-4">
+                    <div className="flex md:flex-row flex-col w-full h-1/2 items-center  gap-4">
                         <div className="w-1/2 h-full bg-slate-400 rounded-2xl">
                             {' '}
                             <div className="w-full h-full relative bg-slate-500 rounded-2xl p-3">

@@ -10,7 +10,7 @@ export default function MethodUse() {
                 {/* 방법 과정 */}
                 <div className="w-full h-full">
                     {/* 첫번째 방법 */}
-                    <div className=" w-full h-1/2 flex justify-center">
+                    <div className=" w-full h-1/2 flex md:flex-row flex-col items-center justify-center">
                         {/* 왼쪽 그림 */}
                         <div className="w-1/3 h-full  flex justify-center items-center">
                             <div className="w-[90%] h-[90%] bg-slate-500 rounded-xl"></div>
@@ -22,7 +22,7 @@ export default function MethodUse() {
                         </div>
                     </div>
                     {/* 두번째 방법 */}
-                    <div className=" w-full h-1/2 flex justify-center">
+                    <div className=" w-full h-1/2 flex md:flex-row flex-col items-center justify-center">
                         {/* 왼쪽 그림 */}
                         <div className="w-1/3 h-full  flex justify-center items-center">
                             <div className="w-[90%] h-[90%] bg-slate-500 rounded-xl"></div>
