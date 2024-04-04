@@ -17,7 +17,7 @@ export default function Merit() {
             </div>
           </div>
           {/* 위쪽 이미지 */}
-          <div className="w-full xl:h-[60vh] h-[40vh]  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4">
+          <div className="w-full xl:h-[60vh] h-[45vh]  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4">
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
@@ -37,7 +37,7 @@ export default function Merit() {
             </div>
           </div>
           {/* 아래쪽 이미지 */}
-          <div className="w-full xl:h-[60vh] h-[40vh] mt-4  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4">
+          <div className="w-full xl:h-[60vh] h-[45vh] mt-4  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4">
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
