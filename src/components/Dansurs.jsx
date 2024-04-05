@@ -36,10 +36,7 @@ export default function Dansurs() {
                                         <h3 className="text-lg font-semibold group-hover:underline">
                                             아이에게 알레르기가 있다면?
                                         </h3>
-                                        <p className="text-[14px] text-gray-500">
-                                            {' '}
-                                            반려견 산책 시 주의해야 할 식물들에 대해 알아보는 시간을 가져보겠습니다.
-                                        </p>
+                                        <p className="text-[14px] text-gray-500"></p>
                                     </div>
                                 </Link>
                             </div>
