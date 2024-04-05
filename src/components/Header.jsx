@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.png';
+import logo from '../img/logo.png';
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const openButton = () => {

@@ -21,18 +21,18 @@ body {
 
 #merit {
     position: relative;
-    background-image: url('./meritBg5.png');
+    background-image: url('./img/meritBg5.png');
     background-size: cover;
     background-position: center;
 }
 #dansurs {
-    background-image: url('./dunjur6.png');
+    background-image: url('./img/dunjur6.png');
 }
 #span {
     text-shadow: -1px 0px 1px;
 }
 #header {
-    background-image: url('./mainBg.png');
+    background-image: url('./img/mainBg.png');
     background-size: cover;
     background-position: center;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 #news1 {
-    background-image: url('./New1.png');
+    background-image: url('./img/New1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,13 +61,13 @@ body {
     transition: 0.3s;
 }
 #news2 {
-    background-image: url('./New2.png');
+    background-image: url('./img/New2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 #news3 {
-    background-image: url('./New3.png');
+    background-image: url('./img/New3.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

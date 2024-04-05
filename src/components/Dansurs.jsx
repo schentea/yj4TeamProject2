@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import New1 from '../New1.png';
-import New2 from '../New2.png';
-import New3 from '../New3.png';
-import nail1 from '../sunmnail1.jpg';
-import nail2 from '../sunmnail2.jpg';
-import nail4 from '../sunmnail4.jpg';
+import New1 from '../img/New1.png';
+import New2 from '../img/New2.png';
+import New3 from '../img/New3.png';
+import nail1 from '../img/sunmnail1.jpg';
+import nail2 from '../img/sunmnail2.jpg';
+import nail4 from '../img/sunmnail4.jpg';
 
 export default function Dansurs() {
     return (

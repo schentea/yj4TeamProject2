@@ -1,5 +1,5 @@
-import cen1 from '../cen1.jpg';
-import cen2 from '../cen2.jpg';
+import cen1 from '../img/cen1.jpg';
+import cen2 from '../img/cen2.jpg';
 
 export default function MethodUse() {
     return (
