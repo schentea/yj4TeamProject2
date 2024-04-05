@@ -8,7 +8,7 @@ import nail4 from '../sunmnail4.jpg';
 
 export default function Dansurs() {
     return (
-        <div id="" className="w-full h-[120vh]  flex flex-col items-center mb-16 bg-[#EFF4F9]">
+        <div id="dansurs" className="w-full h-[120vh]  flex flex-col items-center mb-16 ">
             {/* 컨테이너 */}
             <div id="container" className="w-full max-w-[1300px] h-full">
                 {/* 알레르기 심각성 메인 타이틀 */}

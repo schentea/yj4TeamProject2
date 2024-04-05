@@ -24,7 +24,9 @@ body {
     background-size: cover;
     background-position: center;
 }
-
+#dansurs {
+    background-image: url('./dunjur6.png');
+}
 #span {
     text-shadow: -1px 0px 1px;
 }

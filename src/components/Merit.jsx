@@ -1,6 +1,6 @@
 export default function Merit() {
     return (
-        <div id="merit" className="w-full h-auto flex justify-center bg-cover bg-center pb-16">
+        <div id="merit" className="w-full h-auto flex justify-center bg-cover bg-center pb-64">
             {/* 컨테이너 */}
             <div id="container" className="w-full h-full max-w-[1300px] p-4">
                 {/* 통괄 */}
