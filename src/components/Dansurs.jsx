@@ -72,7 +72,7 @@ export default function Dansurs() {
                         <div className="w-full  xl:h-[45%] h-1/2 flex flex-col justify-center items-center ">
                             {/* 제일 큰 틀 */}
                             <div className="w-[80%] relative border-t-4 border-black h-full ">
-                                <p className=" absolute -top-8 font-bold">안전</p>
+                                <p className=" absolute -top-8 font-bold">뉴스</p>
                                 {/* 이미지 */}
                                 <div className="w-full h-2/5 bg-blue-400">
                                     <img src={New1} alt="img" className="w-full h-full object-cover object-center " />
@@ -130,7 +130,7 @@ export default function Dansurs() {
                         <div className="w-full  h-1/2 flex flex-col justify-center items-center ">
                             {/* 제일 큰 틀 */}
                             <div className="w-[80%] relative border-t-4 border-black h-full ">
-                                <p className=" absolute -top-8 font-bold">안전</p>
+                                <p className=" absolute -top-8 font-bold">뉴스</p>
                                 {/* 이미지 */}
                                 <div className="w-full h-2/5 ">
                                     <img src={New3} alt="img" className="w-full h-full object-cover object-center " />
@@ -168,7 +168,7 @@ export default function Dansurs() {
                                     className="text-black"
                                 >
                                     <div className=" absolute bottom-0 cursor-pointer duration-300 hover:h-4/6 w-full h-3/5 bg-white p-2 group">
-                                        <p className="text-[14px] font-semibold text-[#D39C4F]">생활안전</p>
+                                        <p className="text-[14px] font-semibold text-[#D39C4F]">알레르기 방지</p>
                                         <h3 className="text-lg font-semibold group-hover:underline">
                                             설마 나도? 혹시 모를 ‘식품알레르기’, 이렇게 대비!
                                         </h3>
