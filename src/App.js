@@ -16,11 +16,9 @@ function App() {
                 {/* 우리 회사의 이점 소개 */}
                 <Merit />
                 {/* 알레르기의 심각성 */}
-                {/* <Gravity /> */}
                 <Dansurs />
                 {/* 사용방법 */}
                 <MethodUse />
-
                 {/* 알림톡 신청 페이지 */}
                 <AllimSection />
             </Layout>
