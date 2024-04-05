@@ -115,7 +115,7 @@ export default function Dansurs() {
                                         </h3>
                                         <p className="text-[14px] text-gray-500">
                                             유치원에서 나눠준 샌드위치를 먹은 이후 과민성 쇼크 증상을 보인 뒤 목숨을
-                                            잃었습니다··
+                                            잃었습니다
                                         </p>
                                     </div>
                                 </Link>
