@@ -18,6 +18,13 @@ body {
         @apply text-3xl;
     }
 }
+#merit {
+    position: relative;
+    background-image: url('./meritBg5.png');
+    background-size: cover;
+    background-position: center;
+}
+
 #span {
     text-shadow: -1px 0px 1px;
 }
