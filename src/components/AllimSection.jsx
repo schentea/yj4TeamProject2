@@ -3,7 +3,7 @@ export default function AllimSection() {
     return (
         <div className="w-full h-screen relative flex justify-center bg-[#E6F3FE] items-center pt-16">
             {/* 공간 총괄 */}
-            <div id="container" className="w-full h-full max-w-[1300px] flex justify-center items-center">
+            <div id="container" className="w-full h-full max-w-[1300px] flex justify-center items-center z-1">
                 {/* 왼쪽 공간 */}
                 <div className="w-1/2 h-1/2 flex flex-col p-8 gap-3  ">
                     <h5 className="font-semibold">알레르기로 인해 고민이신가요?</h5>
