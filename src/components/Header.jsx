@@ -30,31 +30,31 @@ export default function Header() {
               <ul className="flex gap-5">
                 <a
                   href="#section1"
-                  className="text-blac relative no-underline text-[20px] font-semibold underline-hover"
+                  className="text-blac relative no-underline text-[20px] font-semibold underline-hover hover:text-[21px] duration-300"
                 >
                   <p className="cursor-pointer text-black">커뮤니케이션</p>
                 </a>
                 <a
                   href="#merit"
-                  className="text-black relative underline-hover no-underline text-[20px] font-semibold"
+                  className="text-black relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
                 >
                   <p className=" cursor-pointer">케즈키어 장점</p>
                 </a>
                 <a
                   href="#dansurs"
-                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold"
+                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
                 >
                   <p className=" cursor-pointer">심각성</p>
                 </a>
                 <a
                   href="#methode"
-                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold"
+                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
                 >
                   <p className=" cursor-pointer">사용방법</p>
                 </a>
                 <a
                   href="#section2"
-                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold"
+                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
                 >
                   <p className=" cursor-pointer">신청하기 </p>
                 </a>
