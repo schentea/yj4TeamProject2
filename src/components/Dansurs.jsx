@@ -42,7 +42,7 @@ export default function Dansurs() {
                   to="https://www.youtube.com/watch?v=9RORKZSqwjs"
                   className="text-black "
                 >
-                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 ">
+                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 rounded-b-xl ">
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       알레르기 방지
                     </p>
@@ -75,7 +75,7 @@ export default function Dansurs() {
                   to="https://www.youtube.com/watch?v=wKPcG1TiS98"
                   className="text-black"
                 >
-                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 ">
+                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 rounded-b-xl ">
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
@@ -111,7 +111,7 @@ export default function Dansurs() {
                   to="https://imnews.imbc.com/replay/2019/nwdesk/article/5128145_28802.html"
                   className="text-black"
                 >
-                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 ">
+                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 rounded-b-xl ">
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
@@ -144,7 +144,7 @@ export default function Dansurs() {
                   to="https://imnews.imbc.com/replay/2017/nwtoday/article/4454969_31369.html"
                   className="text-black"
                 >
-                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 ">
+                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 rounded-b-xl ">
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
@@ -178,9 +178,9 @@ export default function Dansurs() {
                 {/* 아래 내용 */}
                 <Link
                   to="https://imnews.imbc.com/replay/2019/nwdesk/article/5128144_28802.html"
-                  className="text-black"
+                  className="text-black rounded-b-md"
                 >
-                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 ">
+                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 rounded-b-xl   ">
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
@@ -213,7 +213,7 @@ export default function Dansurs() {
                   to="https://www.k-health.com/news/articleView.html?idxno=69985"
                   className="text-black"
                 >
-                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 ">
+                  <div className=" absolute bottom-0 cursor-pointer duration-300 group-hover:h-4/6 w-full h-3/5 bg-white p-2 rounded-b-xl ">
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       알레르기 방지
                     </p>
