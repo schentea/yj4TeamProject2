@@ -2,10 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AllimSection from './components/AllimSection';
 import Layout from './components/Layout';
 import Merit from './components/Merit';
-
 import CommuniCation from './components/CommuniCation';
 import MethodUse from './components/MethodUse';
 import Dansurs from './components/Dansurs';
+import TopButton from './components/TopButton';
 
 function App() {
     return (
@@ -21,6 +21,8 @@ function App() {
                 <MethodUse />
                 {/* 알림톡 신청 페이지 */}
                 <AllimSection />
+                {/* 탑버튼 */}
+                {/* <TopButton /> */}
             </Layout>
         </div>
     );

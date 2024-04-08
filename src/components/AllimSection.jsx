@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button';
+import '../Button.scss';
 export default function AllimSection() {
     return (
         <div id="section2" className="w-full h-screen relative flex justify-center bg-[#E6F3FE] items-center pt-16">
@@ -14,9 +14,7 @@ export default function AllimSection() {
                         <h3 className="md:text-6xl text-3xl font-bold">급식 관리를 시작해 보세요!</h3>
                     </div>
                     <p>학부모 소통, 급식 관리까지 효율적으로 관리할 수 있어요. </p>
-                    <Button className="w-[50%] h-[10%] " variant="primary">
-                        신청하기
-                    </Button>
+                    <button class="btn btn-primary btn-jelly">신청하기</button>
                 </div>
                 {/* 오른쪽 공간 */}
                 <div className="w-1/2 h-1/2">
