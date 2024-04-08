@@ -28,10 +28,21 @@ export default function Header() {
                         </Link>
                         <div className="w-[60%] h-[200%] items-center justify-center  hidden xl:flex">
                             <ul className="flex gap-5">
-                                <li className="text-black font-semibold text-[20px] cursor-pointer">우리회사란?</li>
-                                <li className="text-black font-semibold text-[20px] cursor-pointer">알레르기 심각성</li>
-                                <li className="text-black font-semibold text-[20px] cursor-pointer">사용방법</li>
-                                <li className="text-black font-semibold text-[20px] cursor-pointer">신청하기</li>
+                                <a href="#section1" className="text-black no-underline text-[20px] font-semibold">
+                                    <p className=" cursor-pointer">커뮤니케이션</p>
+                                </a>
+                                <a href="#merit" className="text-black no-underline text-[20px] font-semibold">
+                                    <p className=" cursor-pointer">케즈키어 장점</p>
+                                </a>
+                                <a href="#methode" className="text-black no-underline text-[20px] font-semibold">
+                                    <p className=" cursor-pointer">심각성</p>
+                                </a>
+                                <a href="#methode" className="text-black no-underline text-[20px] font-semibold">
+                                    <p className=" cursor-pointer">사용방법</p>
+                                </a>
+                                <a href="#section2" className="text-black no-underline text-[20px] font-semibold">
+                                    <p className=" cursor-pointer">신청하기 </p>
+                                </a>
                             </ul>
                         </div>
                         <div
@@ -64,25 +75,25 @@ export default function Header() {
                                         <IoClose />
                                     </motion.div>
                                     <div className="flex mb-8 mt-8">
-                                        <Link to="/" className="text-black no-underline">
+                                        <Link to="#" className="text-black no-underline">
                                             <p className=" cursor-pointer mr-4">로그인</p>
                                         </Link>{' '}
                                         <Link to="/" className="text-black no-underline">
                                             <p className=" cursor-pointer"> 회원가입</p>
                                         </Link>
                                     </div>
-                                    <Link to="/" className="text-black no-underline">
-                                        <p className=" cursor-pointer">우리회사란?</p>
-                                    </Link>
-                                    <Link to="/" className="text-black no-underline">
-                                        <p className=" cursor-pointer">알레르기 심각성</p>
-                                    </Link>
-                                    <Link to="/" className="text-black no-underline">
+                                    <a href="#section1" className="text-black no-underline">
+                                        <p className=" cursor-pointer">커뮤니케이션</p>
+                                    </a>
+                                    <a href="#merit" className="text-black no-underline">
+                                        <p className=" cursor-pointer">우리 회사의 이점</p>
+                                    </a>
+                                    <a href="#methode" className="text-black no-underline">
                                         <p className=" cursor-pointer">사용방법</p>
-                                    </Link>
-                                    <Link to="/" className="text-black no-underline">
+                                    </a>
+                                    <a href="#section2" className="text-black no-underline">
                                         <p className=" cursor-pointer">신청하기 </p>
-                                    </Link>
+                                    </a>
                                 </motion.div>
                             )}
                         </AnimatePresence>

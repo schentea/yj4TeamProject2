@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 export default function AllimSection() {
     return (
-        <div className="w-full h-screen relative flex justify-center bg-[#E6F3FE] items-center pt-16">
+        <div id="section2" className="w-full h-screen relative flex justify-center bg-[#E6F3FE] items-center pt-16">
             {/* 공간 총괄 */}
             <div id="container" className="w-full h-full max-w-[1300px] flex justify-center items-center z-1">
                 {/* 왼쪽 공간 */}

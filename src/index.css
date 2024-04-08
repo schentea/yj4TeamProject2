@@ -36,11 +36,6 @@ body {
     background-size: cover;
     background-position: center;
 }
-#section1 {
-    /* background-image: url("./test4.png");
-  background-size: cover;
-  background-position: center; */
-}
 
 #news1 {
     background-image: url('./img/New1.png');
@@ -70,6 +65,10 @@ body {
     background-image: url('./img/New3.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+}
+#methode {
+    background-size: cover;
     background-position: center;
 }
 /* 스크롤 바 */
