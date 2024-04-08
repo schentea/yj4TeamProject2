@@ -88,6 +88,9 @@ export default function Header() {
                                     <a href="#merit" className="text-black no-underline">
                                         <p className=" cursor-pointer">우리 회사의 이점</p>
                                     </a>
+                                    <a href="#methode" className="text-black no-underline text-[20px] font-semibold">
+                                        <p className=" cursor-pointer">심각성</p>
+                                    </a>
                                     <a href="#methode" className="text-black no-underline">
                                         <p className=" cursor-pointer">사용방법</p>
                                     </a>
