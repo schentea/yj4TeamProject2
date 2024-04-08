@@ -30,31 +30,31 @@ export default function Header() {
               <ul className="flex gap-5">
                 <a
                   href="#section1"
-                  className="text-blac relative no-underline text-[20px] font-semibold underline-hover hover:text-[21px] duration-300"
+                  className="text-blac relative no-underline text-[20px] font-semibold underline-hover  duration-300"
                 >
                   <p className="cursor-pointer text-black">커뮤니케이션</p>
                 </a>
                 <a
                   href="#merit"
-                  className="text-black relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
+                  className="text-black relative underline-hover no-underline text-[20px] font-semibold  duration-300"
                 >
                   <p className=" cursor-pointer">케즈키어 장점</p>
                 </a>
                 <a
                   href="#dansurs"
-                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
+                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold  duration-300"
                 >
                   <p className=" cursor-pointer">심각성</p>
                 </a>
                 <a
                   href="#methode"
-                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
+                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold  duration-300"
                 >
                   <p className=" cursor-pointer">사용방법</p>
                 </a>
                 <a
                   href="#section2"
-                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold hover:text-[21px] duration-300"
+                  className="text-black  relative underline-hover no-underline text-[20px] font-semibold  duration-300"
                 >
                   <p className=" cursor-pointer">신청하기 </p>
                 </a>
@@ -128,7 +128,7 @@ export default function Header() {
         className="w-full h-[145vh] bg-cover relative bg-center flex flex-col justify-center items-center"
       >
         <div className="text-center absolute top-[25%]">
-          <h1 className="md:text-7xl text-[40px] flex items-center justify-center">
+          <h1 className="fade-in md:text-7xl text-[40px] flex items-center justify-center">
             <span
               id="span"
               className="font-bold text-[black] text-shodw-[-1px 0px 1px]"
@@ -141,7 +141,7 @@ export default function Header() {
             </span>
             <span className="md:text-6xl text-[#333C47]">를</span>{" "}
           </h1>
-          <h2 className="md:text-4xl mt-2 text-[#333C47]">
+          <h2 className="fade-in md:text-4xl mt-4 text-[#333C47]">
             가지고있는 아이들과 함께 걸어갑니다.
           </h2>
         </div>
