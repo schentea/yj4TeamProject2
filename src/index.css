@@ -19,20 +19,18 @@ body {
   }
 }
 /* 초기에 숨겨진 상태로 설정합니다. */
-/* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
   opacity: 0;
   transform: translateY(
     -100px
   ); /* 위에서 아래로 천천히 내려오는 효과를 줍니다. */
-  transition: opacity 3s ease, transform 2s ease;
 }
 
 /* 페이드 인 효과를 주는 애니메이션을 정의합니다. */
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-50px); /* 초기 위치를 설정합니다. */
+    transform: translateY(-100px); /* 초기 위치를 설정합니다. */
   }
   100% {
     opacity: 1;
@@ -43,6 +41,15 @@ body {
 /* 페이드 인 애니메이션을 적용합니다. */
 .fade-in {
   animation: fadeIn 2s ease forwards;
+}
+
+/* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
+.fade-in:nth-child(1) {
+  animation-delay: 0.5s; /* h1 애니메이션이 시작되는 시간을 지연시킵니다. */
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 1.5s; /* h2 애니메이션이 시작되는 시간을 지연시킵니다. */
 }
 .underline-hover::before {
   content: "";
