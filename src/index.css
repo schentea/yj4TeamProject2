@@ -119,9 +119,11 @@ body {
 
 .fade-Title {
   animation: fadeTitle 1.5s ease forwards;
+  opacity: 0;
 }
 .fade-Title2 {
   animation: fadeTitle2 1.5s ease forwards;
+  opacity: 0;
 }
 .fade-Title2 {
   animation-delay: 0.5s;

@@ -7,17 +7,14 @@ export default function Merit() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("merit");
+      const section = document.getElementById("top_img");
 
-      const bottom = document.getElementById("bottom_img");
       if (section) {
         const { top } = section.getBoundingClientRect();
-        const { top2 } = bottom.getBoundingClientRect();
+
         const windowHeight = window.innerHeight;
         // 섹션이 화면에 나타나면 isVisible 값을 true로 설정
         setIsVisible(top < windowHeight);
-
-        setIsbottomVisible(top2 < windowHeight);
       }
     };
 
