@@ -45,18 +45,18 @@ body {
   opacity: 0;
 }
 .fade-in {
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 1s ease forwards;
 }
 .fade-intwo {
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
 .fade-inthree {
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
 .fade-infour {
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
 
