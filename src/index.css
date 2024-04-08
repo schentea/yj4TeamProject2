@@ -19,6 +19,7 @@ body {
   }
 }
 /* 초기에 숨겨진 상태로 설정합니다. */
+/* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
   opacity: 0;
   transform: translateY(
@@ -39,16 +40,57 @@ body {
 }
 
 /* 페이드 인 애니메이션을 적용합니다. */
+.fade-inheader {
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
 .fade-in {
   animation: fadeIn 2s ease forwards;
+}
+.fade-intwo {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+.fade-inthree {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+.fade-infour {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+/* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
+.fade-inheader:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.fade-inheader:nth-child(2) {
+  animation-delay: 1.5s;
+}
+.fade-in {
+  animation-delay: 0.2s; /* 첫 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+}
+.fade-intwo {
+  animation-delay: 0.8s; /* 두 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+}
+.fade-inthree {
+  animation-delay: 1s; /* 세 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+}
+.fade-infour {
+  animation-delay: 1.5s; /* 네 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 
 /* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
 .fade-in:nth-child(1) {
   animation-delay: 0.5s; /* h1 애니메이션이 시작되는 시간을 지연시킵니다. */
 }
-
 .fade-in:nth-child(2) {
+  animation-delay: 0.8s; /* h2 애니메이션이 시작되는 시간을 지연시킵니다. */
+}
+.fade-inthree {
+  animation-delay: 1.2s; /* h2 애니메이션이 시작되는 시간을 지연시킵니다. */
+}
+.fade-infour {
   animation-delay: 1.5s; /* h2 애니메이션이 시작되는 시간을 지연시킵니다. */
 }
 .underline-hover::before {
