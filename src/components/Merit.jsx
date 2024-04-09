@@ -78,9 +78,9 @@ export default function Merit() {
         <div className="w-full h-full flex flex-col justify-center items-center">
           {/* 위쪽 타이틀 */}
           <div className="md:w-4/5 w-full max-w-[1000px] xl:h-full flex flex-col xl:items-start items-center justify-center gap-4">
-            <div className="mt-[4%] mb-[6%] w-full ">
+            <div className="mt-[4%] mb-[12%] w-full ">
               <h2
-                className={`font-bold text-center xl:text-[48px] text-[25px] text-[#333C47] `}
+                className={`font-bold text-center xl:text-[48px] text-[25px]  text-[#333C47] `}
               >
                 우리 기업은 알림톡 서비스를
               </h2>

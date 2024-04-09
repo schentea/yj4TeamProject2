@@ -56,7 +56,7 @@ export default function MethodUse() {
       >
         {/* 사용방법 타이틀 */}
         <div className="mt-[4%] text-center mb-[6%]">
-          <h2 className="font-bold xl:text-[48px] text-[#333C47]">
+          <h2 className="font-bold xl:text-[48px] text-[35px] pb-[8%] pt-[8%] text-[#333C47]">
             케어키즈를 사용해보세요!
           </h2>
         </div>
