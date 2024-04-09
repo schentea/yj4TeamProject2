@@ -39,6 +39,7 @@ export default function Dansurs() {
                 </div>
                 {/* 아래 내용 */}
                 <Link
+                  target="_blank"
                   to="https://www.youtube.com/watch?v=9RORKZSqwjs"
                   className="text-black "
                 >
@@ -72,6 +73,7 @@ export default function Dansurs() {
                 </div>
                 {/* 아래 내용 */}
                 <Link
+                  target="_blank"
                   to="https://www.youtube.com/watch?v=wKPcG1TiS98"
                   className="text-black"
                 >
@@ -108,6 +110,7 @@ export default function Dansurs() {
                 </div>
                 {/* 아래 내용 */}
                 <Link
+                  target="_blank"
                   to="https://imnews.imbc.com/replay/2019/nwdesk/article/5128145_28802.html"
                   className="text-black"
                 >
@@ -141,6 +144,7 @@ export default function Dansurs() {
                 </div>
                 {/* 아래 내용 */}
                 <Link
+                  target="_blank"
                   to="https://imnews.imbc.com/replay/2017/nwtoday/article/4454969_31369.html"
                   className="text-black"
                 >
@@ -177,6 +181,7 @@ export default function Dansurs() {
                 </div>
                 {/* 아래 내용 */}
                 <Link
+                  target="_blank"
                   to="https://imnews.imbc.com/replay/2019/nwdesk/article/5128144_28802.html"
                   className="text-black rounded-b-md"
                 >
@@ -210,6 +215,7 @@ export default function Dansurs() {
                 </div>
                 {/* 아래 내용 */}
                 <Link
+                  target="_blank"
                   to="https://www.k-health.com/news/articleView.html?idxno=69985"
                   className="text-black"
                 >
