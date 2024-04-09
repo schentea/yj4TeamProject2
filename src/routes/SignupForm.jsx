@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import ModalComponent from "./SignupModal";
 import Kakao from "../img/kakaoLogo.png";
 import Google from "../img/googleLogo.svg";
+import Push from "../img/push.jpg";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { apiPostUserRegister } from "../Api";
 import AllergyModalComponent from "./SignupAllergy";
+import { Link } from "react-router-dom";
 
 export default function SignupForm() {
   const [isRegionModalOpen, setIsRegionModalOpen] = useState(false);
@@ -84,7 +86,7 @@ export default function SignupForm() {
       <div
         className="w-full max-w-5xl h-[850px] flex rounded-lg overflow-hidden "
         style={{
-          background: "rgba(186, 226, 239, 0.5)",
+          background: "#7FC9EF",
           boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
@@ -96,22 +98,19 @@ export default function SignupForm() {
         <div className="w-1/2 relative h-full hidden md:block">
           {/* 배경 이미지 */}
           <img
-            className="w-full h-full object-cover"
-            src="https://cdn.pixabay.com/photo/2023/05/30/22/17/ai-generated-8030105_1280.jpg"
+            className="w-full h-full object-cover object-center"
+            src={Push}
             alt="FormImg"
           />
           {/* 배경을 어둡게 처리 */}
           <div className="absolute inset-0 bg-black opacity-30"></div>
           {/* text  */}
-          <span className="text-white text-2xl font-semibold absolute left-[50%] top-[20%] translate-x-[-50%] shadow-lg">
-            행복한 가정을 위해
-          </span>
-          <span className=" text-white text-2xl font-semibold absolute left-[50%] top-[40%] translate-x-[-50%] shadow-lg">
-            키즈케어가
-          </span>
-          <span className="text-white text-2xl font-semibold absolute left-[50%] top-[60%] translate-x-[-50%]">
-            노력 하겠습니다
-          </span>
+
+          <Link to="/">
+            <span className=" text-white w-full text-left pl-4 text-3xl font-semibold absolute left-[50%] top-[2%] translate-x-[-50%] ">
+              CareKids
+            </span>
+          </Link>
         </div>
         {/* 오른쪽 로그인 박스 */}
         <form
