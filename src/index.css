@@ -108,7 +108,14 @@ body {
 .fade-infour {
   animation-delay: 1.5s;
 }
-
+#h31 {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  #h31 {
+    text-align: left;
+  }
+}
 /* 이점 섹션 효과*/
 @keyframes fadeTitle {
   0% {
