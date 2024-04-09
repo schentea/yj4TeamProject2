@@ -16,7 +16,7 @@ export default function Dansurs() {
       <div id="container" className="w-full max-w-[1300px] h-full">
         {/* 알레르기 심각성 메인 타이틀 */}
         <div className="mt-[4%] text-center mb-[6%]">
-          <h2 className="font-bold xl:text-[48px] text-[#333C47]">
+          <h2 className="font-bold xl:text-[48px] text-[35px] md:p-0 pt-[8%] pb-[8%] text-[#333C47]">
             알레르기의 심각성
           </h2>
         </div>
@@ -46,7 +46,7 @@ export default function Dansurs() {
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       알레르기 방지
                     </p>
-                    <h3 className="text-lg font-semibold group-hover:underline">
+                    <h3 className="md:text-lg text-[15px] font-bold md:font-semibold group-hover:underline">
                       알레르기 없애는 법, 어릴 때부터 관리가 중요하다!
                     </h3>
 
@@ -79,7 +79,7 @@ export default function Dansurs() {
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
-                    <h3 className="text-lg font-semibold group-hover:underline">
+                    <h3 className="md:text-lg text-[15px] font-bold md:font-semibold group-hover:underline">
                       식품 알레르기에 대해 알아야 할 7가지
                     </h3>
                     <p className="text-[14px] text-gray-500">
@@ -92,7 +92,7 @@ export default function Dansurs() {
             </div>
           </div>
           {/* 기사 두번쨰 공간 */}
-          <div className="xl:w-1/3 w-1/2 h-[100%] border-x border-gray-300 flex flex-col items-center gap-4 ">
+          <div className="xl:w-1/3 w-1/2 h-[100%] xl:border-x border-gray-300 flex flex-col items-center gap-4 ">
             {/* 위쪽 기사 */}
             <div className="w-full  xl:h-[45%] h-1/2 flex flex-col justify-center items-center group cursor-pointer ">
               {/* 제일 큰 틀 */}
@@ -115,7 +115,7 @@ export default function Dansurs() {
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
-                    <h3 className="text-lg font-semibold group-hover:underline">
+                    <h3 className="md:text-lg text-[15px] font-bold md:font-semibold group-hover:underline">
                       '아몬드' 먹으면 안 되는 아이·· 포장지 봐선 몰라
                     </h3>
                     <p className="text-[14px] text-gray-500">
@@ -148,7 +148,7 @@ export default function Dansurs() {
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
-                    <h3 className="text-lg font-semibold group-hover:underline">
+                    <h3 className="md:text-lg text-[15px] font-bold md:font-semibold group-hover:underline">
                       '유제품 알레르기' 유치원생, 샌드위치 먹고 사망
                     </h3>
                     <p className="text-[14px] text-gray-500">
@@ -184,7 +184,7 @@ export default function Dansurs() {
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       생활안전
                     </p>
-                    <h3 className="text-lg font-semibold group-hover:underline">
+                    <h3 className="md:text-lg text-[15px] font-bold md:font-semibold group-hover:underline">
                       유난 떤다고요? ·· 잘못 먹으면 "숨도 못 쉬어요"
                     </h3>
                     <p className="text-[14px] text-gray-500">
@@ -217,7 +217,7 @@ export default function Dansurs() {
                     <p className="text-[14px] font-semibold text-[#D39C4F]">
                       알레르기 방지
                     </p>
-                    <h3 className="text-lg font-semibold group-hover:underline">
+                    <h3 className="md:text-lg text-[15px] font-bold md:font-semibold group-hover:underline">
                       설마 나도? 혹시 모를 ‘식품알레르기’, 이렇게 대비!
                     </h3>
                     <p className="text-[14px] text-gray-500">

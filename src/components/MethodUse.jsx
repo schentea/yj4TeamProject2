@@ -71,12 +71,14 @@ export default function MethodUse() {
             {/* 오른쪽 텍스트 */}
             <div className="">
               <div
-                className={`flex flex-col justify-center items-center md:items-start ${
+                className={`flex flex-col md:items-start ${
                   isVisible ? "fade-in" : ""
                 }`}
               >
-                <h3 className=" text-4xl font-bold ">회원가입을 클릭후</h3>
-                <h3 className=" text-4xl font-bold ">
+                <h3 className=" md:text-4xl text-3xl font-bold ">
+                  회원가입을 클릭후
+                </h3>
+                <h3 className=" md:text-4xl text-3xl font-bold ">
                   정보를 입력하고 신청해주세요!
                 </h3>
               </div>
@@ -103,14 +105,16 @@ export default function MethodUse() {
             {/* 오른쪽 텍스트 */}
             <div className="">
               <div
-                className={`flex flex-col justify-center items-center md:items-start ${
+                className={`flex flex-col  md:items-start ${
                   isbottomVisible ? "fade-in" : ""
                 }`}
               >
-                <h3 className=" text-4xl font-bold ">
+                <h3 className=" md:text-4xl text-3xl font-bold ">
                   마이페이지에서 언제든지
                 </h3>
-                <h3 className=" text-4xl font-bold ">정보 수정이 가능합니다</h3>
+                <h3 className=" md:text-4xl text-3xl font-bold ">
+                  정보 수정이 가능합니다
+                </h3>
               </div>
             </div>
             {/* 아래쪽 그림 */}

@@ -14,17 +14,19 @@ export default function AllimSection() {
         <div className="md:w-1/2 w-full h-1/2 flex flex-col p-8 gap-3 items-center md:items-start ">
           <h5 className="font-semibold">알레르기로 인해 고민이신가요?</h5>
           <div>
-            <h3
-              id="h31"
-              className="xl:text-[45px] lg:text-4xl text-2xl font-bold "
-            >
+            <h3 id="h31" className="xl:text-[45px] text-4xl font-bold ">
               <span className="text-[#208DF9] ">케어키즈</span>로 스마트한
             </h3>
-            <h3 className="xl:text-[45px] lg:text-4xl text-2xl font-bold">
+            <h3
+              id="h31"
+              className="xl:text-[45px] lg:text-4xl text-2xl font-bold"
+            >
               급식 관리를 시작해 보세요!
             </h3>
           </div>
-          <p>학부모 소통, 급식 관리까지 효율적으로 관리할 수 있어요. </p>
+          <p className="text-[#666]">
+            학부모 소통, 급식 관리까지 효율적으로 관리할 수 있어요.{" "}
+          </p>
           <button class="btn btn-primary btn-jelly">신청하기</button>
         </div>
         {/* 오른쪽 공간 */}
