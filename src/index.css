@@ -49,7 +49,7 @@ body {
 }
 .imgGood {
   animation: imgWidth 2s ease forwards;
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
   opacity: 0;
 }
 
@@ -174,7 +174,7 @@ body {
   background-position: center;
 }
 #dansurs {
-  background-image: url("./img/dunjur6.png");
+  background-image: linear-gradient(to bottom, #fff 0%, #84cdf3 100%);
 }
 #span {
   text-shadow: -1px 0px 1px;
@@ -216,8 +216,16 @@ body {
   background-position: center;
 }
 #methode {
+  background-image: linear-gradient(
+    to bottom,
+    #84cdf3 0%,
+    #fff 5%,
+    #fff 80%,
+    #fff 100%
+  );
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 /* 스크롤 바 */
 ::-webkit-scrollbar {
