@@ -18,7 +18,20 @@ html {
     @apply text-3xl;
   }
 }
-/* 초기에 숨겨진 상태로 설정합니다. */
+/* 플레이스 홀더 */
+
+.placeholder-up::placeholder {
+  transform: translateY(-0%);
+  transition: transform 0.3s ease;
+  opacity: 1;
+}
+
+.placeholder-up:focus::placeholder {
+  transform: translateY(-90%);
+  opacity: 1;
+  font-size: 12px;
+}
+
 /* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
   opacity: 0;
