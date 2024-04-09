@@ -64,7 +64,9 @@ export default function Header() {
               id="Hidden_div"
               className=" space-x-4 h-full items-center text-black font-bold justify-center mt-[7px] text-[20px] hidden xl:flex "
             >
-              <p>로그인</p>
+              <Link to="/login" className="text-black no-underline">
+                <p>로그인</p>
+              </Link>
               <Link to="/register" className="text-black no-underline">
                 <p>회원가입</p>
               </Link>
@@ -92,9 +94,9 @@ export default function Header() {
                     <IoClose />
                   </motion.div>
                   <div className="flex mb-8 mt-8">
-                    <Link to="#" className="text-black no-underline">
+                    <Link to="/login" className="text-black no-underline">
                       <p className=" cursor-pointer mr-4">로그인</p>
-                    </Link>{" "}
+                    </Link>
                     <Link to="/register" className="text-black no-underline">
                       <p className=" cursor-pointer"> 회원가입</p>
                     </Link>

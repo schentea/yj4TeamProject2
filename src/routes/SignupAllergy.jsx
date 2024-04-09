@@ -1,6 +1,8 @@
 import React from 'react';
 
 const AllergyModalComponent = ({ closeModal, isChecked, handleCheckChange }) => {
+    const selectedRegions = Object.keys(isChecked).filter((allergy) => isChecked[allergy]);
+
     const handleOutsideClick = (e) => {
         if (e.target.classList.contains('fixed')) {
             closeModal();

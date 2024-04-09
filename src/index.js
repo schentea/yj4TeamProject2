@@ -6,6 +6,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import NotFound from "./routes/NotFound";
 import SignupForm from "./routes/SignupForm";
+import LoginForm from "./routes/LoginForm";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <SignupForm />,
+      },
+      {
+        path: "/login",
+        element: <LoginForm />,
       },
     ],
   },
