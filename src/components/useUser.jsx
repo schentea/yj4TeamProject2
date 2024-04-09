@@ -12,6 +12,8 @@ export default function useUser() {
         }
     }, []);
     const { data } = useQuery(['getUser', { token: userData?.token }], apiGetUser);
-    console.log(data);
-    return userData || data;
+
+    console.log('asd', data);
+
+    return data;
 }

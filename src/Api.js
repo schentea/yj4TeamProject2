@@ -46,3 +46,17 @@ export async function apiGetUser(data) {
         console.log(error);
     }
 }
+export async function apiAlimtalk(data) {
+    console.log('api', data);
+    try {
+        return await fetch(`${BASE_URL}/users/allergyAlim`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
