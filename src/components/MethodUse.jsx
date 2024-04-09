@@ -52,7 +52,7 @@ export default function MethodUse() {
       {/* 컨테이너 */}
       <div
         id="container"
-        className="w-full h-full max-w-[1300px] flex flex-col justify-center items-center pb-32"
+        className="w-full h-full max-w-[1300px] pt-16 flex flex-col justify-center items-center pb-32"
       >
         {/* 사용방법 타이틀 */}
         <div className="mt-[4%] text-center mb-[6%]">
