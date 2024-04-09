@@ -114,6 +114,12 @@ export default function SignupForm() {
                     <input
                         className="w-[250px] h-[40px] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                         type="text"
+                        placeholder="아이디"
+                        {...register('userid')}
+                    />
+                    <input
+                        className="w-[250px] h-[40px] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        type="text"
                         placeholder="이름"
                         {...register('username')}
                     />

@@ -19,3 +19,30 @@ export async function apiPostUserRegister(data, selectedRegion, selectedAllergie
         console.log(error);
     }
 }
+
+export async function apiPostUserLogin(data) {
+    console.log(data);
+    try {
+        return await fetch(`${BASE_URL}/users/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            credentials: 'include',
+        }).then((res) => res.json());
+    } catch (error) {
+        console.log(error);
+    }
+}
+export async function apiGetUser(data) {
+    console.log(data);
+    try {
+        return await fetch(`${BASE_URL}/users/login-success?token=${data?.queryKey[1].token}`, {
+            method: 'GET',
+            credentials: 'include',
+        }).then((res) => res.json());
+    } catch (error) {
+        console.log(error);
+    }
+}
