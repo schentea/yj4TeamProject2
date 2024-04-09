@@ -5,6 +5,7 @@ export default function Merit() {
   const [istopVisible, setIstopVisible] = useState(false);
   const [isbottomVisible, setIsbottomVisible] = useState(false);
 
+  //  메인 타이틀
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("top_img");
@@ -26,7 +27,7 @@ export default function Merit() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  //   탑
+  //   위 이미지
   useEffect(() => {
     const handleScroll = () => {
       const tops = document.getElementById("top_img");
@@ -46,7 +47,7 @@ export default function Merit() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  //   바텀
+  //   아래 이미지
   useEffect(() => {
     const handleScroll = () => {
       const tops = document.getElementById("bottom_img");
@@ -124,7 +125,7 @@ export default function Merit() {
           <div
             id="bottom_img"
             className={`w-full xl:h-[60vh] h-[45vh] mt-4  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4 ${
-              isbottomVisible ? "fade-in" : ""
+              isbottomVisible ? "fade-intwo" : ""
             }`}
           >
             {/* 왼쪽 사진 */}
