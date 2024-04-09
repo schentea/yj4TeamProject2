@@ -38,6 +38,20 @@ body {
     transform: translateY(0); /* 최종 위치를 설정합니다. */
   }
 }
+@keyframes imgWidth {
+  0% {
+    width: 0; /* 초기 위치를 설정합니다. */
+  }
+  100% {
+    width: 100%; /* 최종 위치를 설정합니다. */
+    opacity: 1;
+  }
+}
+.imgGood {
+  animation: imgWidth 2s ease forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
 
 /* 페이드 인 애니메이션을 적용합니다. */
 /* 커뮤니티 섹션 및 헤더 큰 타이틀 */
@@ -63,13 +77,13 @@ body {
 
 /* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
 .fade-inheader:nth-child(1) {
-  animation-delay: 0.5s;
+  animation-delay: 0s;
 }
 .fade-inheader:nth-child(2) {
   animation-delay: 1.5s;
 }
 .fade-in {
-  animation-delay: 0.2s; /* 첫 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+  animation-delay: 0s; /* 첫 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 .fade-intwo {
   animation-delay: 0.8s; /* 두 번째 그리드의 애니메이션 지연 시간을 설정합니다. */

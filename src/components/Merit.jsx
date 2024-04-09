@@ -80,16 +80,12 @@ export default function Merit() {
           <div className="md:w-4/5 w-full max-w-[1000px] xl:h-full flex flex-col xl:items-start items-center justify-center gap-4">
             <div className="mt-[4%] mb-[6%] w-full ">
               <h2
-                className={`font-bold xl:text-[48px] text-[25px] text-[#333C47] ${
-                  isVisible ? "fade-Title" : ""
-                }`}
+                className={`font-bold text-center xl:text-[48px] text-[25px] text-[#333C47] `}
               >
                 우리 기업은 알림톡 서비스를
               </h2>
               <h2
-                className={`font-bold xl:text-[48px] text-[25px] mt-4 text-right text-[#333C47] ${
-                  isVisible ? "fade-Title2" : ""
-                }`}
+                className={`font-bold xl:text-[48px] text-[25px] mt-4 text-center text-[#333C47] `}
               >
                 사용하여 알레르기 유발을 방지합니다
               </h2>
