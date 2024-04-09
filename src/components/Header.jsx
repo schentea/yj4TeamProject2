@@ -128,7 +128,7 @@ export default function Header() {
         className="w-full h-[145vh] bg-cover relative bg-center flex flex-col justify-center items-center"
       >
         <div className="text-center absolute top-[25%]">
-          <h1 className="fade-in md:text-7xl text-[40px] flex items-center justify-center">
+          <h1 className="fade-inheader md:text-7xl text-[40px] flex items-center justify-center">
             <span
               id="span"
               className="font-bold text-[black] text-shodw-[-1px 0px 1px]"
@@ -141,7 +141,7 @@ export default function Header() {
             </span>
             <span className="md:text-6xl text-[#333C47]">를</span>{" "}
           </h1>
-          <h2 className="fade-in md:text-4xl mt-4 text-[#333C47]">
+          <h2 className="fade-inheader md:text-4xl mt-4 text-[#333C47]">
             가지고있는 아이들과 함께 걸어갑니다.
           </h2>
         </div>

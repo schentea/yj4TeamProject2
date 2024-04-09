@@ -3,10 +3,35 @@ import { HiDesktopComputer } from "react-icons/hi";
 import { FaMobile } from "react-icons/fa6";
 import { MdMessage } from "react-icons/md";
 import { PiHandshakeBold } from "react-icons/pi";
+import React, { useState, useEffect } from "react";
 
 export default function CommuniCation() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("section1");
+      if (section) {
+        const { top } = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        // 섹션이 화면에 나타나면 isVisible 값을 true로 설정
+        setIsVisible(top < windowHeight);
+      }
+    };
+
+    // 스크롤 이벤트 리스너 등록
+    window.addEventListener("scroll", handleScroll);
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div id="section1" className="w-full h-full flex justify-center p-8 mb-12">
+    <div
+      id="section1"
+      className={`w-full h-full flex justify-center p-8 mb-12 `}
+    >
       {/* 컨테이너 */}
       <div
         id="container"
@@ -24,9 +49,16 @@ export default function CommuniCation() {
         {/* 아래 그리드 */}
         <div className="w-full h-full max-w-[1100px]  flex flex-col justify-center items-center gap-4">
           {/* 위쪽 그리드 */}
-          <div className="flex  md:flex-row flex-col w-full h-1/2 items-center gap-4">
+          <div
+            id="left_grid1"
+            className="flex  md:flex-row flex-col w-full h-1/2 items-center gap-4 "
+          >
             {/* 왼쪽 */}
-            <div className="md:w-1/2 w-full md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl md:p-14 p-6">
+            <div
+              className={`md:w-1/2 w-full md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl md:p-14 p-6 ${
+                isVisible ? "fade-in" : ""
+              }`}
+            >
               <h3 className="xl:text-[30px] md:text-[25px] text-[20px]  font-semibold">
                 누구나
               </h3>
@@ -37,7 +69,11 @@ export default function CommuniCation() {
               <FaUser className=" absolute bottom-3 right-1 text-7xl text-[#208DF9]" />
             </div>
             {/* 오른쪽 */}
-            <div className="md:w-1/2 w-full md:h-full h-[200px] bg-slate-200 rounded-2xl">
+            <div
+              className={`md:w-1/2 w-full md:h-full h-[200px] bg-slate-200 rounded-2xl ${
+                isVisible ? "fade-intwo" : ""
+              }`}
+            >
               <div className="w-full md:h-full h-[200px] relative bg-[#FFF8D6] rounded-2xl md:p-14 p-6">
                 <h3 className="xl:text-[30px] md:text-[25px] text-[20px] font-semibold">
                   PC,모바일
@@ -53,8 +89,15 @@ export default function CommuniCation() {
             </div>
           </div>
           {/* 아래쪽 그리드 */}
-          <div className="flex md:flex-row flex-col w-full h-1/2 items-center  gap-4">
-            <div className="md:w-1/2 w-full h-full bg-slate-400 rounded-2xl">
+          <div
+            id="left_grid2"
+            className={`flex  md:flex-row flex-col w-full h-1/2 items-center gap-4 `}
+          >
+            <div
+              className={`md:w-1/2 w-full h-full bg-slate-400 rounded-2xl ${
+                isVisible ? "fade-inthree" : ""
+              }`}
+            >
               {" "}
               <div className="w-full md:h-full h-[200px] relative bg-[#FFF8D6] rounded-2xl md:p-14 p-6">
                 <h3 className="xl:text-[30px]  md:text-[25px] text-[20px]  font-semibold">
@@ -68,7 +111,11 @@ export default function CommuniCation() {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/2 w-full h-full bg-slate-300 rounded-2xl">
+            <div
+              className={`md:w-1/2 w-full h-full bg-slate-300 rounded-2xl ${
+                isVisible ? "fade-infour" : ""
+              }`}
+            >
               {" "}
               <div className="w-full md:h-full h-[200px] relative bg-[#E6F3FE] rounded-2xl md:p-10 p-6">
                 <h3 className="xl:text-[30px]  md:text-[25px] text-[20px]  font-semibold">

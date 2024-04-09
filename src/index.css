@@ -19,6 +19,7 @@ body {
   }
 }
 /* 초기에 숨겨진 상태로 설정합니다. */
+/* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
   opacity: 0;
   transform: translateY(
@@ -37,20 +38,119 @@ body {
     transform: translateY(0); /* 최종 위치를 설정합니다. */
   }
 }
+@keyframes imgWidth {
+  0% {
+    width: 0; /* 초기 위치를 설정합니다. */
+  }
+  100% {
+    width: 100%; /* 최종 위치를 설정합니다. */
+    opacity: 1;
+  }
+}
+.imgGood {
+  animation: imgWidth 2s ease forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
 
 /* 페이드 인 애니메이션을 적용합니다. */
+/* 커뮤니티 섹션 및 헤더 큰 타이틀 */
+.fade-inheader {
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
 .fade-in {
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 1s ease forwards;
+}
+.fade-intwo {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+.fade-inthree {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+.fade-infour {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+/* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
+.fade-inheader:nth-child(1) {
+  animation-delay: 0s;
+}
+.fade-inheader:nth-child(2) {
+  animation-delay: 1.5s;
+}
+.fade-in {
+  animation-delay: 0s; /* 첫 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+}
+.fade-intwo {
+  animation-delay: 0.8s; /* 두 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+}
+.fade-inthree {
+  animation-delay: 1s; /* 세 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+}
+.fade-infour {
+  animation-delay: 1.5s; /* 네 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 
 /* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
 .fade-in:nth-child(1) {
-  animation-delay: 0.5s; /* h1 애니메이션이 시작되는 시간을 지연시킵니다. */
+  animation-delay: 0.5s;
+}
+.fade-in:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.fade-inthree {
+  animation-delay: 1.2s;
+}
+.fade-infour {
+  animation-delay: 1.5s;
+}
+#h31 {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  #h31 {
+    text-align: left;
+  }
+}
+/* 이점 섹션 효과*/
+@keyframes fadeTitle {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* 초기 위치를 설정합니다. */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 최종 위치를 설정합니다. */
+  }
+}
+@keyframes fadeTitle2 {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* 초기 위치를 설정합니다. */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 최종 위치를 설정합니다. */
+  }
 }
 
-.fade-in:nth-child(2) {
-  animation-delay: 1.5s; /* h2 애니메이션이 시작되는 시간을 지연시킵니다. */
+.fade-Title {
+  animation: fadeTitle 1.5s ease forwards;
+  opacity: 0;
 }
+.fade-Title2 {
+  animation: fadeTitle2 1.5s ease forwards;
+  opacity: 0;
+}
+.fade-Title2 {
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+/* GNB 언더라인 */
 .underline-hover::before {
   content: "";
   position: absolute;
