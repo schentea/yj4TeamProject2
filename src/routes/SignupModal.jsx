@@ -15,7 +15,7 @@ const ModalComponent = ({ closeModal, isChecked, handleRadioChange }) => {
       onClick={handleOutsideClick}
     >
       <div className="w-full max-w-3xl h-[80%] flex flex-col justify-center items-center bg-white p-8 rounded-lg">
-        <h2 className="md:text-5xl text-2xl font-semibold md:mb-16 mb-4">
+        <h2 className="md:text-5xl text-2xl font-semibold mb-16">
           지역을 선택해주세요
         </h2>
         <div className="flex-wrap flex gap-5 justify-center items-center">
