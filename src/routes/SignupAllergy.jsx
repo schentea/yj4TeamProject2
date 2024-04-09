@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ModalComponent = ({ closeModal, isChecked, handleRadioChange }) => {
-    const [selectedRegion, setSelectedRegion] = useState(null);
-
+const AllergyModalComponent = ({ closeModal, isChecked, handleCheckChange }) => {
     const handleOutsideClick = (e) => {
         if (e.target.classList.contains('fixed')) {
             closeModal();
@@ -17,22 +15,22 @@ const ModalComponent = ({ closeModal, isChecked, handleRadioChange }) => {
             <div className="w-full max-w-3xl h-[500px] flex flex-col justify-center items-center bg-white p-8 rounded-lg">
                 <h2 className="text-2xl font-semibold mb-4">지역을 선택해주세요</h2>
                 <div className="flex-wrap flex gap-5 justify-center items-center">
-                    {Object.keys(isChecked).map((city) => (
-                        <div key={city}>
+                    {Object.keys(isChecked).map((allergy) => (
+                        <div key={allergy}>
                             <input
-                                type="radio"
-                                name="region"
-                                id={city}
-                                checked={selectedRegion === city}
-                                onChange={() => handleRadioChange(city)}
+                                type="checkbox"
+                                name={allergy}
+                                id={allergy}
+                                checked={isChecked[allergy]}
+                                onChange={() => handleCheckChange(allergy)}
                                 className="hidden"
                             />
                             <label
                                 className="cursor-pointer shadow-lg bg-blue-300 font-semibold text-white px-4 py-1 rounded-md hover:bg-blue-500 duration-300"
-                                htmlFor={city}
-                                style={{ backgroundColor: isChecked[city] ? 'blue' : '' }}
+                                htmlFor={allergy}
+                                style={{ backgroundColor: isChecked[allergy] ? 'blue' : '' }}
                             >
-                                {city}
+                                {allergy}
                             </label>
                         </div>
                     ))}
@@ -48,4 +46,4 @@ const ModalComponent = ({ closeModal, isChecked, handleRadioChange }) => {
     );
 };
 
-export default ModalComponent;
+export default AllergyModalComponent;
