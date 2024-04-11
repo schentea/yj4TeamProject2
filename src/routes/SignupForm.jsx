@@ -200,6 +200,10 @@ export default function SignupForm() {
             placeholder="전화번호"
             {...register("tel", {
               required: "전화번호는 필수 입력 사항입니다.",
+              pattern: {
+                value: /^\d{11}$/, // 숫자 11자리 패턴
+                message: "전화번호는'-'을 제외한 11자리의 숫자로 입력해주세요."
+              }
             })}
           />
           {errors && <span className="text-red-500 text-sm">{errors?.tel?.message}</span>}
@@ -211,7 +215,12 @@ export default function SignupForm() {
               알레르기 식품을 선택해주세요
             </div>
           </div>
-          <input className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" type="text" placeholder="학교명" {...register("schoolNM")} />
+          <input 
+            className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" 
+            type="text" 
+            placeholder="학교명" 
+            {...register("schoolNM")} 
+          />
           <button
             onClick={() => {
               if (!Object.values(isChecked).includes(true)) {
