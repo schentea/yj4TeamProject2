@@ -11,13 +11,13 @@ export default function AllimSection() {
                 console.error('사용자 데이터가 없습니다.');
                 return;
             }
-
+            const uid = userData.user.userid;
             const name = userData.user.username;
             const tel = userData.user.tel;
-            console.log(name);
+            const subscribe = true;
 
             // 데이터를 API로 보냅니다.
-            const response = await apiAlimtalk({ username: name, tel: tel }); // username을 데이터로 전달합니다.
+            const response = await apiAlimtalk({ uid: uid, username: name, tel: tel, subscribe: subscribe }); // username을 데이터로 전달합니다.
 
             // 응답을 확인하고 필요한 작업을 수행합니다.
             if (response.ok) {
