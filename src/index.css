@@ -35,9 +35,7 @@ html {
 /* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
   opacity: 0;
-  transform: translateY(
-    -100px
-  ); /* 위에서 아래로 천천히 내려오는 효과를 줍니다. */
+  transform: translateY(-100px); /* 위에서 아래로 천천히 내려오는 효과를 줍니다. */
 }
 
 /* 페이드 인 효과를 주는 애니메이션을 정의합니다. */
@@ -229,13 +227,7 @@ html {
   background-position: center;
 }
 #methode {
-  background-image: linear-gradient(
-    to bottom,
-    #84cdf3 0%,
-    #fff 5%,
-    #fff 80%,
-    #fff 100%
-  );
+  background-image: linear-gradient(to bottom, #84cdf3 0%, #fff 5%, #fff 80%, #fff 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -258,4 +250,21 @@ html {
 /* 마우스 호버시 */
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(131, 192, 255, 0.5); /* 호버 시 색상 */
+}
+
+/* 캘린더 */
+.react-calendar {
+  width: 90% !important;
+  margin: 0 auto;
+  border-radius: 0 !important;
+}
+.react-calendar__navigation {
+  margin-top: 20px;
+}
+.react-calendar__month-view {
+  width: 90%;
+  margin: 0 auto;
+}
+.react-calendar__month-view button {
+  height: 90px;
 }
