@@ -117,8 +117,10 @@ const MealCalendar = ({ closeModal }) => {
           {activeTab === "menu" && (
             <div className="border rounded-lg p-4">
               <h2 className="text-center text-lg font-semibold mb-4">메뉴</h2>
-              {mealData && (
+              {mealData ? (
                 <p className="text-center">{formatMealData(mealData)}</p>
+              ) : (
+                <p>해당날짜의 식단표가 없습니다</p>
               )}
             </div>
           )}
@@ -127,16 +129,20 @@ const MealCalendar = ({ closeModal }) => {
               <h2 className="text-center text-lg font-semibold mb-4 text-red-600">
                 알레르기 정보 및 참고
               </h2>
-              {allergy && (
+              {allergy && allergy.length > 0 ? (
                 <p className="text-center">{formatAllergyData(allergy)}</p>
+              ) : (
+                <p>해당날짜의 알레르기 정보가 없습니다</p>
               )}
             </div>
           )}
           {activeTab === "origin" && (
             <div className="border rounded-lg p-4">
               <h2 className="text-center text-lg font-semibold mb-4">원산지</h2>
-              {mealCountry && (
+              {mealCountry ? (
                 <p className="text-center">{formatCountryData(mealCountry)}</p>
+              ) : (
+                <p>해당날짜의 식단표가 없습니다</p>
               )}
             </div>
           )}
