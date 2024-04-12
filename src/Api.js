@@ -142,7 +142,7 @@ export async function apiPostUserRegister(data, selectedRegion, selectedAllergie
   const schoolNM = postData.data.schoolNM;
   const schoolCode = await getSchoolInfo(region, schoolNM);
   data.data.schoolNM += "," + schoolCode;
-  console.log(postData);
+  console.log("학교정보", postData);
   try {
     return await fetch(`${BASE_URL}/users/register`, {
       method: "POST",

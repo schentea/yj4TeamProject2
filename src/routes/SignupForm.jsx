@@ -5,7 +5,7 @@ import Google from "../img/googleLogo.svg";
 import Push from "../img/push.jpg";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { apiPostUserRegister } from "../Api";
+import { apiPostUserRegister, getSchoolInfo } from "../Api";
 import AllergyModalComponent from "./SignupAllergy";
 import { Link } from "react-router-dom";
 
@@ -97,22 +97,25 @@ export default function SignupForm() {
     formState: { errors },
     setError,
   } = useForm();
-  const onValid = (data) => {
-    if (
-      Object.values(isChecked).includes(true) &&
-      Object.values(isAllergyChecked).includes(true)
-    ) {
-      const selectedAllergies = Object.keys(isAllergyChecked).filter(
-        (allergy) => isAllergyChecked[allergy]
-      );
-      mutate({ data, selectedRegion, selectedAllergies });
+  const onValid = async (data) => {
+    try {
+      const schoolInfo = await getSchoolInfo(selectedRegion, data.schoolNM);
+      // console.log(typeof schoolInfo);
+      if (!schoolInfo) {
+        setError("schoolNM", {
+          message: "입력한 학교명을 찾을 수 없습니다.",
+        });
+        return;
+      }
+
+      // API 호출
+      mutate({ data, selectedRegion });
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
-    <div
-      id="form"
-      className="w-full h-screen flex justify-center items-center p-4"
-    >
+    <div id="form" className="w-full h-screen flex justify-center items-center p-4">
       {/* 중앙 정렬 한 박스 */}
       <div
         className="w-full max-w-5xl h-[850px] flex rounded-lg overflow-hidden "
@@ -128,26 +131,17 @@ export default function SignupForm() {
         {/* 왼쪽 이미지 박스 */}
         <div className="w-1/2 relative h-full hidden md:block">
           {/* 배경 이미지 */}
-          <img
-            className="w-full h-full object-cover object-center"
-            src={Push}
-            alt="FormImg"
-          />
+          <img className="w-full h-full object-cover object-center" src={Push} alt="FormImg" />
           {/* 배경을 어둡게 처리 */}
           <div className="absolute inset-0 bg-black opacity-30"></div>
           {/* text  */}
 
           <Link to="/">
-            <span className=" text-white w-full text-left pl-4 text-3xl font-semibold absolute left-[50%] top-[2%] translate-x-[-50%] ">
-              CareKids
-            </span>
+            <span className=" text-white w-full text-left pl-4 text-3xl font-semibold absolute left-[50%] top-[2%] translate-x-[-50%] ">CareKids</span>
           </Link>
         </div>
         {/* 오른쪽 로그인 박스 */}
-        <form
-          className="md:w-1/2 w-full h-full px-10  flex flex-col gap-6 items-center "
-          onSubmit={handleSubmit(onValid)}
-        >
+        <form className="md:w-1/2 w-full h-full px-10  flex flex-col gap-6 items-center " onSubmit={handleSubmit(onValid)}>
           <span className="text-2xl font-semibold py-4 h-4">회원가입</span>
           <div className="w-full h-[50px] relative">
             <input
@@ -162,11 +156,7 @@ export default function SignupForm() {
                 },
               })}
             />
-            {errors && (
-              <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">
-                {errors?.userid?.message}
-              </span>
-            )}
+            {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.userid?.message}</span>}
           </div>
           <div className="w-full h-[50px] relative">
             <input
@@ -181,11 +171,7 @@ export default function SignupForm() {
                 },
               })}
             />
-            {errors && (
-              <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">
-                {errors?.username?.message}
-              </span>
-            )}
+            {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.username?.message}</span>}
           </div>
           <div className="w-full h-[50px] relative">
             <input
@@ -195,17 +181,12 @@ export default function SignupForm() {
               {...register("email", {
                 required: "이메일은 필수 입력사항입니다",
                 pattern: {
-                  value:
-                    /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/,
+                  value: /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/,
                   message: "이메일 형식을 지켜주세요",
                 },
               })}
             />
-            {errors && (
-              <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">
-                {errors?.email?.message}
-              </span>
-            )}
+            {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.email?.message}</span>}
           </div>
           <div className="w-full h-[50px] relative">
             <input
@@ -220,11 +201,7 @@ export default function SignupForm() {
                 },
               })}
             />
-            {errors && (
-              <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">
-                {errors?.password?.message}
-              </span>
-            )}
+            {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.password?.message}</span>}
           </div>
           <div className="w-full h-[50px] relative">
             <input
@@ -234,17 +211,11 @@ export default function SignupForm() {
               {...register("password2", {
                 required: "비밀번호 확인은 필수 입력사항입니다.",
                 validate: (value, form) => {
-                  return (
-                    value === form.password || "비밀번호가 일치하지 않습니다."
-                  );
+                  return value === form.password || "비밀번호가 일치하지 않습니다.";
                 },
               })}
             />
-            {errors && (
-              <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">
-                {errors?.password2?.message}
-              </span>
-            )}
+            {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.password2?.message}</span>}
           </div>
           <div className="w-full h-[50px] relative">
             <input
@@ -255,41 +226,31 @@ export default function SignupForm() {
                 required: "전화번호는 필수 입력 사항입니다.",
                 pattern: {
                   value: /^\d{11}$/, // 숫자 11자리 패턴
-                  message:
-                    "전화번호는'-'을 제외한 11자리의 숫자로 입력해주세요.",
+                  message: "전화번호는'-'을 제외한 11자리의 숫자로 입력해주세요.",
                 },
               })}
             />
-            {errors && (
-              <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">
-                {errors?.tel?.message}
-              </span>
-            )}
+            {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.tel?.message}</span>}
           </div>
           <div className="w-full h-[50px] flex gap-2 ">
-            <div
-              onClick={() => setIsRegionModalOpen(true)}
-              className={`w-1/2 h-full border text-[13px] rounded-lg flex justify-center items-center font-semibold text-center bg-slate-100 cursor-pointer duration-500  hover:bg-slate-300 ${
-                isSelected ? "text-red-500" : "text-black"
-              }`}
-            >
+            <div onClick={() => setIsRegionModalOpen(true)} className={`w-1/2 h-full border text-[13px] rounded-lg flex justify-center items-center font-semibold text-center bg-slate-100 cursor-pointer duration-500  hover:bg-slate-300 ${isSelected ? "text-red-500" : "text-black"}`}>
               {isSelected ? "지역을 선택해주세요" : "지역을 선택해주세요"}
             </div>
-            <div
-              onClick={() => setIsAllergyModalOpen(true)}
-              className={`w-1/2 h-full border text-[13px] rounded-lg flex justify-center items-center font-semibold text-center bg-slate-100 cursor-pointer duration-500 hover:bg-slate-300 ${
-                allergy ? "text-red-500" : "text-black"
-              } `}
-            >
+            <div onClick={() => setIsAllergyModalOpen(true)} className={`w-1/2 h-full border text-[13px] rounded-lg flex justify-center items-center font-semibold text-center bg-slate-100 cursor-pointer duration-500 hover:bg-slate-300 ${allergy ? "text-red-500" : "text-black"} `}>
               알레르기 식품을 선택해주세요
             </div>
           </div>
-          <input
-            className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
-            type="text"
-            placeholder="학교명"
-            {...register("schoolNM")}
-          />
+          <div className="w-full h-[50px] relative">
+            <input
+              className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
+              type="text"
+              placeholder="학교명"
+              {...register("schoolNM", {
+                required: "학교명은 필수 입력 사항입니다.",
+              })}
+            />
+            {errors.schoolNM && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.schoolNM?.message}</span>}
+          </div>
           <button
             onClick={() => {
               if (!Object.values(isChecked).includes(true)) {
@@ -305,38 +266,20 @@ export default function SignupForm() {
           </button>
           <div className="w-full h-[55px] flex justify-center items-center gap-2">
             <div className="w-1/2 h-full bg-[#FEE500] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
-              <img
-                className="w-[50px] h-[100%] cursor-pointer object-contain"
-                src={Kakao}
-              />
+              <img className="w-[50px] h-[100%] cursor-pointer object-contain" src={Kakao} />
               <p className="flex items-center pt-[11px]">카카오 로그인</p>
               <span className="w-[10%]"></span>
             </div>
             <div className="w-1/2 h-full bg-[#F2F2F2] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
-              <img
-                className="w-[50px] h-[100%] cursor-pointer object-contain"
-                src={Google}
-              />
+              <img className="w-[50px] h-[100%] cursor-pointer object-contain" src={Google} />
               <p className="flex items-center pt-[11px]">구글 로그인</p>
               <span className="w-[10%]"></span>
             </div>
           </div>
         </form>
       </div>
-      {isRegionModalOpen && (
-        <ModalComponent
-          closeModal={() => setIsRegionModalOpen(false)}
-          isChecked={isChecked}
-          handleRadioChange={handleRadioChange}
-        />
-      )}
-      {isAllergyModalOpen && (
-        <AllergyModalComponent
-          closeModal={() => setIsAllergyModalOpen(false)}
-          isChecked={isAllergyChecked}
-          handleCheckChange={handleCheckChange}
-        />
-      )}
+      {isRegionModalOpen && <ModalComponent closeModal={() => setIsRegionModalOpen(false)} isChecked={isChecked} handleRadioChange={handleRadioChange} />}
+      {isAllergyModalOpen && <AllergyModalComponent closeModal={() => setIsAllergyModalOpen(false)} isChecked={isAllergyChecked} handleCheckChange={handleCheckChange} />}
     </div>
   );
 }
