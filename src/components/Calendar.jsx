@@ -9,7 +9,11 @@ const MealCalendar = ({ closeModal }) => {
   const [mealData, setMealData] = useState("");
   const [mealCountry, setMealCountry] = useState("");
   const [allergy, setAllergy] = useState([]);
+  const [activeTab, setActiveTab] = useState("menu");
 
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
   const date = moment(value).format("YYYYMMDD");
 
   useEffect(() => {
@@ -61,39 +65,67 @@ const MealCalendar = ({ closeModal }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50" onClick={handleOutsideClick}>
-      <div className="w-full max-w-3xl h-[90%] flex flex-col justify-center items-center bg-white p-8 rounded-lg">
-        <Calendar onChange={onChange} formatDay={(locale, date) => moment(date).format("DD")} value={value} />
-        <div className="max-w-[90%] mx-auto ">
-          <div className="flex justify-between">
-            <div className="w-[45%] p-1 border-2 rounded-lg my-5 ">
+    <div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
+      onClick={handleOutsideClick}
+    >
+      <div className="w-full max-w-3xl overflow-y-scroll h-[95%] flex flex-col justify-center items-center bg-white p-8 rounded-lg shadow-xl">
+        <Calendar
+          onChange={onChange}
+          formatDay={(locale, date) => moment(date).format("DD")}
+          value={value}
+        />
+        <div className="max-w-[90%] mx-auto mt-8">
+          <div className="flex justify-center mb-4">
+            <button
+              className={`mr-4 ${activeTab === "menu" ? "text-blue-600" : ""}`}
+              onClick={() => handleTabClick("menu")}
+            >
+              메뉴
+            </button>
+            <button
+              className={`mr-4 ${
+                activeTab === "allergy" ? "text-blue-600" : ""
+              }`}
+              onClick={() => handleTabClick("allergy")}
+            >
+              알레르기 정보
+            </button>
+            <button
+              className={`mr-4 ${
+                activeTab === "origin" ? "text-blue-600" : ""
+              }`}
+              onClick={() => handleTabClick("origin")}
+            >
+              원산지
+            </button>
+          </div>
+          {activeTab === "menu" && (
+            <div className="border rounded-lg p-4">
+              <h2 className="text-center text-lg font-semibold mb-4">메뉴</h2>
               {mealData && (
-                <p className="text-center">
-                  메뉴
-                  <br />
-                  {formatMealData(mealData)}
-                </p>
+                <p className="text-center">{formatMealData(mealData)}</p>
               )}
             </div>
-            <div className="w-[45%]  p-1 border-2 rounded-lg my-5 ">
+          )}
+          {activeTab === "allergy" && (
+            <div className="border rounded-lg p-4">
+              <h2 className="text-center text-lg font-semibold mb-4 text-red-600">
+                알레르기 정보 및 참고
+              </h2>
               {allergy && (
-                <p className="text-center text-red-600">
-                  알레르기 정보 및 참고
-                  <br />
-                  {formatAllergyData(allergy)}
-                </p>
+                <p className="text-center">{formatAllergyData(allergy)}</p>
               )}
             </div>
-          </div>
-          <div className="w-[100%]] p-1 border-2 rounded-lg mb-10">
-            {mealCountry && (
-              <p className="text-center">
-                원산지
-                <br />
-                {formatCountryData(mealCountry)}
-              </p>
-            )}
-          </div>
+          )}
+          {activeTab === "origin" && (
+            <div className="border rounded-lg p-4">
+              <h2 className="text-center text-lg font-semibold mb-4">원산지</h2>
+              {mealCountry && (
+                <p className="text-center">{formatCountryData(mealCountry)}</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
