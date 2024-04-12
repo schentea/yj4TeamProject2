@@ -69,12 +69,14 @@ const MealCalendar = ({ closeModal }) => {
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
       onClick={handleOutsideClick}
     >
-      <div className="w-full max-w-3xl overflow-y-scroll h-[95%] flex flex-col justify-center items-center bg-white p-8 rounded-lg shadow-xl">
-        <Calendar
-          onChange={onChange}
-          formatDay={(locale, date) => moment(date).format("DD")}
-          value={value}
-        />
+      <div className="w-full max-w-3xl overflow-y-scroll h-[95%] flex flex-col bg-white p-8 rounded-lg shadow-xl">
+        <div className="h-[500px]">
+          <Calendar
+            onChange={onChange}
+            formatDay={(locale, date) => moment(date).format("DD")}
+            value={value}
+          />
+        </div>
         <div className="max-w-[90%] mx-auto mt-8">
           <div className="flex justify-center mb-4">
             <button
