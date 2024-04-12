@@ -58,9 +58,14 @@ export async function getSchoolInfo(selectedRegion, schoolNM) {
     const officeCode = location[selectedRegion];
     console.log(selectedRegion);
 
-    const schoolInfoResponse = await fetch(`${BASE_URL_SCHOOL}?KEY=${API_KEY}&Type=json&pindex=${pIndex}&pSize=${pSize}&ATPT_OFCDC_SC_CODE=${officeCode}`).then((res) => res.json());
+    const schoolInfoResponse = await fetch(
+      `${BASE_URL_SCHOOL}?KEY=${API_KEY}&Type=json&pindex=${pIndex}&pSize=${pSize}&ATPT_OFCDC_SC_CODE=${officeCode}`
+    ).then((res) => res.json());
 
-    const schoolarr = schoolInfoResponse.schoolInfo && schoolInfoResponse.schoolInfo.length > 1 ? schoolInfoResponse.schoolInfo[1]?.row || [] : [];
+    const schoolarr =
+      schoolInfoResponse.schoolInfo && schoolInfoResponse.schoolInfo.length > 1
+        ? schoolInfoResponse.schoolInfo[1]?.row || []
+        : [];
 
     let schoolcode = "";
     schoolarr.forEach((item) => {
@@ -80,16 +85,25 @@ export async function getMealInfo() {
   try {
     const schoolcode = 7011113;
     const officeCode = location["서울"];
-    const mealServiceInfoResponse = await fetch(`${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`).then((res) => res.json());
+    const mealServiceInfoResponse = await fetch(
+      `${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`
+    ).then((res) => res.json());
     console.log(mealServiceInfoResponse);
     //전체 식단
     const allmeal = mealServiceInfoResponse.mealServiceDietInfo[1].row;
 
-    const mealData = mealServiceInfoResponse.mealServiceDietInfo && mealServiceInfoResponse.mealServiceDietInfo[1]?.row && mealServiceInfoResponse.mealServiceDietInfo[1].row[0]?.DDISH_NM ? mealServiceInfoResponse.mealServiceDietInfo[1].row[0].DDISH_NM : "";
+    const mealData =
+      mealServiceInfoResponse.mealServiceDietInfo &&
+      mealServiceInfoResponse.mealServiceDietInfo[1]?.row &&
+      mealServiceInfoResponse.mealServiceDietInfo[1].row[0]?.DDISH_NM
+        ? mealServiceInfoResponse.mealServiceDietInfo[1].row[0].DDISH_NM
+        : "";
 
     const str = mealData.split("(");
     const arr = str.map((item) => item.split(/[).<br/>]/));
-    const arr2 = arr.flatMap((item) => item).filter((item) => !isNaN(item) && item !== "");
+    const arr2 = arr
+      .flatMap((item) => item)
+      .filter((item) => !isNaN(item) && item !== "");
 
     const allergylist = arr2.map((item) => noFood[item]);
     const allergy = [...new Set(allergylist)]; // 중복제거
@@ -108,12 +122,16 @@ export async function getMealForDate(selectedDate) {
   console.log("선택 날짜", selectedDate);
   try {
     const apiData = await getMealInfo();
-    const mealDataForDate = apiData.mealData.find((item) => item.MLSV_YMD === selectedDate);
+    const mealDataForDate = apiData.mealData.find(
+      (item) => item.MLSV_YMD === selectedDate
+    );
     const mealData = mealDataForDate ? mealDataForDate.DDISH_NM : "";
 
     const str = mealData.split("(");
     const arr = str.map((item) => item.split(/[).<br/>]/));
-    const arr2 = arr.flatMap((item) => item).filter((item) => !isNaN(item) && item !== "");
+    const arr2 = arr
+      .flatMap((item) => item)
+      .filter((item) => !isNaN(item) && item !== "");
     const allergylist = arr2.map((item) => noFood[item]);
     const allergy = [...new Set(allergylist)];
 
@@ -128,7 +146,11 @@ export async function getMealForDate(selectedDate) {
   }
 }
 
-export async function apiPostUserRegister(data, selectedRegion, selectedAllergies) {
+export async function apiPostUserRegister(
+  data,
+  selectedRegion,
+  selectedAllergies
+) {
   // 데이터에 선택된 지역 추가
 
   const postData = { ...data };
@@ -171,10 +193,13 @@ export async function apiPostUserLogin(data) {
 export async function apiGetUser(data) {
   console.log(data);
   try {
-    return await fetch(`${BASE_URL}/users/login-success?token=${data?.queryKey[1].token}`, {
-      method: "GET",
-      credentials: "include",
-    }).then((res) => res.json());
+    return await fetch(
+      `${BASE_URL}/users/login-success?token=${data?.queryKey[1].token}`,
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    ).then((res) => res.json());
   } catch (error) {
     console.log(error);
   }

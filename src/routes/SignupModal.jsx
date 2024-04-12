@@ -18,7 +18,7 @@ const ModalComponent = ({ closeModal, isChecked, handleRadioChange }) => {
         <h2 className="md:text-5xl text-2xl font-semibold mb-16">
           지역을 선택해주세요
         </h2>
-        <div className="flex-wrap flex gap-5 justify-center items-center">
+        <div className="flex-wrap flex md:gap-5 gap-4 justify-center items-center">
           {Object.keys(isChecked).map((city) => (
             <div key={city}>
               <input
