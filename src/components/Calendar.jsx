@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { getMealForDate } from "../Api";
+import { IoIosClose } from "react-icons/io";
 
 const MealCalendar = ({ closeModal }) => {
   const [value, onChange] = useState(new Date());
@@ -61,6 +62,8 @@ const MealCalendar = ({ closeModal }) => {
   const handleOutsideClick = (e) => {
     if (e.target.classList.contains("fixed")) {
       closeModal();
+    } else if (e.target.classList.contains("absolute")) {
+      closeModal();
     }
   };
 
@@ -69,7 +72,16 @@ const MealCalendar = ({ closeModal }) => {
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
       onClick={handleOutsideClick}
     >
-      <div className="w-full max-w-3xl overflow-y-scroll h-[95%] flex flex-col bg-white p-8 rounded-lg shadow-xl">
+      <div className="w-full relative max-w-3xl overflow-y-scroll h-[95%] flex flex-col bg-white p-8 rounded-lg shadow-xl">
+        <div className="w-full flex justify-center mb-2 font-bold text-2xl">
+          경산동부초등학교
+        </div>
+
+        <IoIosClose
+          className=" absolute top-4 right-4 text-3xl cursor-pointer"
+          onClick={handleOutsideClick}
+        />
+
         <div className="h-[500px]">
           <Calendar
             onChange={onChange}

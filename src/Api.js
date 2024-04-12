@@ -97,7 +97,7 @@ export async function getMealInfo() {
     const mealServiceInfoResponse = await fetch(
       `${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`
     ).then((res) => res.json());
-
+    console.log(mealServiceInfoResponse);
     //전체 식단
     const allmeal = mealServiceInfoResponse.mealServiceDietInfo[1].row;
 
