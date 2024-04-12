@@ -30,7 +30,7 @@ const ModalComponent = ({ closeModal, isChecked, handleRadioChange }) => {
                 className="hidden"
               />
               <label
-                className="cursor-pointer bg-[#fff] font-semibold text-black  border text-xl md:text-[20px] text-[12.5px] md:px-5 px-4 py-2 rounded-md duration-300"
+                className="cursor-pointer bg-[#fff] font-semibold text-black  border text-xl md:text-[20px] md:px-5 px-4 py-2 rounded-md duration-300"
                 htmlFor={city}
                 style={{
                   backgroundColor: isChecked[city] ? "#7FC9EF" : "",

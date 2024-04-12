@@ -21,10 +21,10 @@ const AllergyModalComponent = ({
       onClick={handleOutsideClick}
     >
       <div className="w-full max-w-3xl h-[80%] flex flex-col justify-center items-center bg-white p-8 rounded-lg">
-        <h2 className="md:text-5xl text-2xl font-semibold md:mb-16 mb-4">
+        <h2 className="md:text-5xl text-2xl font-semibold md:mb-16 mb-16">
           알레르기를 선택해주세요
         </h2>
-        <div className="flex-wrap flex gap-5 justify-center items-center">
+        <div className="flex-wrap flex gap-4 justify-center items-center">
           {Object.keys(isChecked).map((allergy) => (
             <div key={allergy}>
               <input
@@ -36,7 +36,7 @@ const AllergyModalComponent = ({
                 className="hidden"
               />
               <label
-                className="cursor-pointer bg-[#fff] font-semibold text-black border md:text-[20px] text-[14px] md:px-5 px-4 py-2 rounded-md duration-300"
+                className="cursor-pointer bg-[#fff] font-semibold text-black border md:text-[23px] text-[20px] md:px-5 px-4 py-2 rounded-md duration-300"
                 htmlFor={allergy}
                 style={{ backgroundColor: isChecked[allergy] ? "#7FC9EF" : "" }}
               >
