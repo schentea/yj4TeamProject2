@@ -21,11 +21,11 @@ export default function Dansurs() {
           </h2>
         </div>
         {/* 알레르기 심각성 뉴스 그리드 */}
-        <div className="w-full h-[77%]    flex justify-center items-center gap-4">
+        <div className="w-full h-[77%] flex flex-col md:flex-row justify-center items-center md:gap-4 gap-5">
           {/* 기사 첫번째 공간 */}
-          <div className="xl:w-1/3 w-1/2 h-[100%]  flex flex-col justify-center items-center gap-4">
+          <div className="xl:w-1/3 md:w-1/2 w-[70%] h-[100%]  flex flex-col justify-center items-center gap-4">
             {/* 위쪽 기사 */}
-            <div className="w-full  h-1/2 flex flex-col justify-center items-center ">
+            <div className="w-full  md:h-1/2 h-full flex flex-col justify-center items-center ">
               {/* 제일 큰 틀 */}
               <div className="w-[80%] relative border-t-4 border-black h-full group cursor-pointer ">
                 <p className=" absolute -top-8 font-bold">유튜브</p>
@@ -60,7 +60,7 @@ export default function Dansurs() {
               </div>
             </div>
             {/* 아래쪽 기사 */}
-            <div className="w-full  h-1/2 flex flex-col justify-center items-center group cursor-pointer ">
+            <div className="w-full  h-1/2 md:flex flex-col justify-center items-center group cursor-pointer hidden ">
               {/* 제일 큰 틀 */}
               <div className="w-[80%] relative  h-full ">
                 {/* 이미지 */}
@@ -94,9 +94,9 @@ export default function Dansurs() {
             </div>
           </div>
           {/* 기사 두번쨰 공간 */}
-          <div className="xl:w-1/3 w-1/2 h-[100%] xl:border-x border-gray-300 flex flex-col items-center gap-4 ">
+          <div className="xl:w-1/3 md:w-1/2 w-[70%] h-[100%] xl:border-x border-gray-300 flex flex-col items-center gap-4 ">
             {/* 위쪽 기사 */}
-            <div className="w-full  xl:h-[45%] h-1/2 flex flex-col justify-center items-center group cursor-pointer ">
+            <div className="w-full  xl:h-[45%] md:h-1/2 h-full flex flex-col justify-center items-center group cursor-pointer ">
               {/* 제일 큰 틀 */}
               <div className="w-[80%] relative border-t-4 border-black h-full ">
                 <p className=" absolute -top-8 font-bold">뉴스</p>
@@ -131,7 +131,7 @@ export default function Dansurs() {
               </div>
             </div>
             {/* 아래쪽 기사 */}
-            <div className="w-full  h-1/2 flex flex-col justify-center items-center group cursor-pointer">
+            <div className="w-full  h-1/2 md:flex flex-col justify-center items-center group cursor-pointer hidden">
               {/* 제일 큰 틀 */}
               <div className="w-[80%] relative  h-full ">
                 {/* 이미지 */}
@@ -240,4 +240,5 @@ export default function Dansurs() {
       </div>
     </div>
   );
+  c;
 }
