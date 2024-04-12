@@ -58,6 +58,7 @@ export default function SignupForm() {
   const handleRadioChange = (city) => {
     setSelectedRegion(city);
     console.log("지역", city);
+    setIsSelected(false);
     const updatedState = {};
     Object.keys(isChecked).forEach((key) => {
       updatedState[key] = key === city;
@@ -66,6 +67,7 @@ export default function SignupForm() {
   };
   const handleCheckChange = (allergy) => {
     console.log(allergy);
+    setallergy(false);
     setIsAllergyChecked({
       ...isAllergyChecked,
       [allergy]: !isAllergyChecked[allergy],
@@ -271,7 +273,7 @@ export default function SignupForm() {
                 isSelected ? "text-red-500" : "text-black"
               }`}
             >
-              지역을 선택해주세요
+              {isSelected ? "지역을 선택해주세요" : "지역을 선택해주세요"}
             </div>
             <div
               onClick={() => setIsAllergyModalOpen(true)}
