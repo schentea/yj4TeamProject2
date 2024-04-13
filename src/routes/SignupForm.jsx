@@ -8,6 +8,7 @@ import { useMutation } from "react-query";
 import { apiPostUserRegister, getSchoolInfo } from "../Api";
 import AllergyModalComponent from "./SignupAllergy";
 import { Link } from "react-router-dom";
+import { AiOutlineEyeInvisible,AiOutlineEye} from "react-icons/ai";
 
 export default function SignupForm() {
   const [isRegionModalOpen, setIsRegionModalOpen] = useState(false);
@@ -15,6 +16,8 @@ export default function SignupForm() {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
   const [allergy, setallergy] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [password2Visible, setPassword2Visible] = useState(false);
   const [isChecked, setIsChecked] = useState({
     서울: false,
     부산: false,
@@ -72,6 +75,14 @@ export default function SignupForm() {
       ...isAllergyChecked,
       [allergy]: !isAllergyChecked[allergy],
     });
+  };
+
+  //비밀번호 아이콘 토글
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+  const togglePassword2Visibility = () => {
+    setPassword2Visible(!password2Visible);
   };
 
   const { mutate } = useMutation(apiPostUserRegister, {
@@ -191,7 +202,7 @@ export default function SignupForm() {
           <div className="w-full h-[50px] relative">
             <input
               className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               placeholder="비밀번호"
               {...register("password", {
                 required: "비밀번호는 필수 입력 사항입니다.",
@@ -202,11 +213,14 @@ export default function SignupForm() {
               })}
             />
             {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.password?.message}</span>}
+            <div onClick={togglePasswordVisibility} className="absolute top-4 right-4 cursor-pointer">
+              {passwordVisible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            </div>
           </div>
           <div className="w-full h-[50px] relative">
             <input
               className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
-              type="password"
+              type={password2Visible ? "text" : "password"}
               placeholder="비밀번호 확인"
               {...register("password2", {
                 required: "비밀번호 확인은 필수 입력사항입니다.",
@@ -216,6 +230,9 @@ export default function SignupForm() {
               })}
             />
             {errors && <span className=" absolute -bottom-5 left-0 text-red-500 text-sm">{errors?.password2?.message}</span>}
+            <div onClick={togglePassword2Visibility} className="absolute top-4 right-4 cursor-pointer">
+              {password2Visible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            </div>
           </div>
           <div className="w-full h-[50px] relative">
             <input
