@@ -43,7 +43,7 @@ export default function CommuniCation() {
             학교와 가정의 커뮤니케이션을 위한
           </h2>
           <h2 className="font-bold xl:text-[48px] xl:mt-8 text-[#333C47]">
-            최적의 솔류션, 케어키즈!
+            최적의 솔루션, 케어키즈!
           </h2>
         </div>
         {/* 아래 그리드 */}
