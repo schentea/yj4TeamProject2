@@ -122,11 +122,9 @@ export default function CommuniCation() {
                   교육부와 함께하는
                 </h3>
                 <h3 className="xl:text-[30px]  md:text-[25px] text-[20px]  font-semibold">
-                  안전성있는 서비스를
+                  안전성있는 서비스
                 </h3>
-                <h3 className="xl:text-[30px] md:text-[25px] text-[20px]  font-semibold">
-                  제공합니다
-                </h3>
+
                 <div className=" absolute bottom-3 right-3 text-6xl flex">
                   <PiHandshakeBold className="text-[#57A9FB] text-7xl" />
                 </div>
