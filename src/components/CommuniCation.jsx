@@ -153,7 +153,7 @@ export default function CommuniCation() {
                 </h3>
 
                 <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
-                  키즈노트는 카카오 계열사로, 카카오의 보안과
+                  케어키즈는 교육부와 함께하는
                 </span>
                 <br></br>
                 <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
