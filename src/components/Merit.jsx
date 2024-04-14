@@ -138,7 +138,7 @@ export default function Merit() {
                 알레르기가 포함된 식품이 나오면
               </h3>
               <h3 className=" xl:text-3xl md:text-xl text-[20px] font-semibold">
-                바로전날 <span className=" text-yellow-500">알림톡</span>을
+                바로전날 <span className=" text-red-500">알림톡</span>을
                 전송해드려요!
               </h3>
             </div>
