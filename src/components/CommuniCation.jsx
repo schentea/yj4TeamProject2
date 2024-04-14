@@ -65,12 +65,12 @@ export default function CommuniCation() {
               <h3 className="xl:text-[30px] md:text-[25px] text-[20px]  font-semibold">
                 무료로 사용가능
               </h3>
-              <span className=" md:inline-block text-[13px] xl:text-[18px]">
+              <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                 {" "}
                 케어키즈는 선생님,학부모님
               </span>
               <br></br>
-              <span className=" md:inline-block text-[13px] xl:text-[18px]">
+              <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                 {" "}
                 누구나 무료로 사용이 가능합니다.
               </span>
@@ -90,12 +90,12 @@ export default function CommuniCation() {
                 <h3 className="xl:text-[30px] md:text-[25px] text-[20px] font-semibold">
                   어디서든 간편하게
                 </h3>
-                <span className=" md:inline-block text-[13px] xl:text-[18px]">
+                <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                   {" "}
                   기기에 상관없이 언제 어디서든
                 </span>
                 <br></br>
-                <span className=" md:inline-block text-[13px] xl:text-[18px]">
+                <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                   {" "}
                   서비스 이용이 가능합니다.
                 </span>
@@ -124,12 +124,12 @@ export default function CommuniCation() {
                 <h3 className="xl:text-[30px]  md:text-[25px] text-[20px]  font-semibold">
                   잇는 바른소통
                 </h3>
-                <span className=" md:inline-block text-[13px] xl:text-[18px]">
+                <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                   {" "}
                   교육기관에는 편의와 효율을,
                 </span>
                 <br></br>
-                <span className=" md:inline-block text-[13px] xl:text-[18px]">
+                <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                   {" "}
                   가정에는 믿음과 감동을 주는 서비스입니다.
                 </span>
@@ -152,11 +152,11 @@ export default function CommuniCation() {
                   안전성있는 서비스
                 </h3>
 
-                <span className=" md:inline-block text-[13px] xl:text-[18px]">
+                <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                   키즈노트는 카카오 계열사로, 카카오의 보안과
                 </span>
                 <br></br>
-                <span className=" md:inline-block text-[13px] xl:text-[18px]">
+                <span className=" md:inline-block text-[13px] xl:text-[18px] text-gray-500">
                   {" "}
                   안정성을 기반으로 서비스를 제공합니다.
                 </span>
