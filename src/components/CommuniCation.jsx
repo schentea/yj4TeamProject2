@@ -40,7 +40,7 @@ export default function CommuniCation() {
         {/* 커뮤니케이션 타이틀 */}
         <div className="mt-[4%] text-center mb-[6%]">
           <h2 className="font-bold xl:text-[48px] text-[#333C47]">
-            원과 가정의 커뮤니케이션을 위한
+            학교와 가정의 커뮤니케이션을 위한
           </h2>
           <h2 className="font-bold xl:text-[48px] xl:mt-8 text-[#333C47]">
             최적의 솔류션, 케어키즈!
