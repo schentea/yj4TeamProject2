@@ -51,18 +51,8 @@ let noFood = {
   15: "닭고기",
   16: "쇠고기",
   17: "오징어",
-  18: "조개류.굴.홍합.전복",
+  18: "조개류",
   19: "잣",
-};
-
-// 알러지 음식 번호로 변환
-const getAllergyNumber = (allergyName) => {
-  for (const key in noFood) {
-    if (noFood[key] === allergyName) {
-      return key;
-    }
-  }
-  return null;
 };
 
 // 학교 정보를 가져오는 함수
@@ -101,7 +91,7 @@ export async function getMealInfo() {
     const schoolcode = schoolNM;
     const officeCode = location[region];
     const mealServiceInfoResponse = await fetch(`${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`).then((res) => res.json());
-    console.log(mealServiceInfoResponse);
+    // console.log(mealServiceInfoResponse);
     //전체 식단
     const allmeal = mealServiceInfoResponse.mealServiceDietInfo[1].row;
 
@@ -127,19 +117,16 @@ export async function getMealInfo() {
 //선택날짜 식단
 export async function getMealForDate(selectedDate) {
   // console.log("선택 날짜", selectedDate);
-  // const userAllergy = data?.userAllergy;
   try {
     const apiData = await getMealInfo();
     const mealDataForDate = apiData.mealData.find((item) => item.MLSV_YMD === selectedDate);
     // 번호를 포함하는 전체 식단표
-    // const allergyNumber = getAllergyNumber(userAllergy);
     const mealData = mealDataForDate ? mealDataForDate.DDISH_NM : "";
     const str = mealData.split("(");
     const arr = str.map((item) => item.split(/[).<br/>]/));
     const arr2 = arr.flatMap((item) => item).filter((item) => !isNaN(item) && item !== "");
     const allergylist = arr2.map((item) => noFood[item]);
     const allergy = [...new Set(allergylist)];
-    // const containsAllergy = mealData.includes(allergyNumber);
 
     const mealCountry = mealDataForDate ? mealDataForDate.ORPLC_INFO : "";
     return {

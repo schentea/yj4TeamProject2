@@ -35,17 +35,51 @@ const MealCalendar = ({ closeModal }) => {
     fetchData();
   }, [date]);
 
+  // 알러지 음식 번호로 변환
+  const getAllergyNumber = (allergyName) => {
+    for (const key in noFood) {
+      if (noFood[key] === allergyName) {
+        return key.toString();
+      }
+    }
+    return null;
+  };
+  let noFood = {
+    1: "달걀",
+    2: "우유",
+    3: "메밀",
+    4: "땅콩",
+    5: "대두",
+    6: "밀",
+    7: "고등어",
+    8: "게",
+    9: "새우",
+    10: "돼지고기",
+    11: "복숭아",
+    12: "토마토",
+    13: "아황산",
+    14: "호두",
+    15: "닭고기",
+    16: "쇠고기",
+    17: "오징어",
+    18: "조개류.굴.홍합.전복",
+    19: "잣",
+  };
+  const allergyNumber = getAllergyNumber(userAllergy); //알러지 번호
+
   const formatMealData = (data) => {
     if (!data) return "";
 
     const menuItems = data.split("<br/>");
 
     const formattedMenu = menuItems.map((item) => {
-      const menuName = item.split("(")[0].trim();
-      return menuName;
+      const [dishName, ingredients] = item.split("(");
+      const ingredientNumbers = ingredients ? ingredients.replace(")", "").split(".") : [];
+      const containsAllergy = ingredientNumbers.includes(allergyNumber); // 알레르기 번호 포함 여부 확인
+      return <span style={{ color: containsAllergy ? "red" : "black" }}>{dishName.trim()}</span>;
     });
 
-    return formattedMenu.join(", ");
+    return <div>{formattedMenu.reduce((prev, curr) => [prev, ", ", curr])}</div>;
   };
 
   const formatCountryData = (data) => {
@@ -69,7 +103,7 @@ const MealCalendar = ({ closeModal }) => {
         {data.map((allergy, index) => (
           <span key={index}>
             <span style={{ color: userAllergy.includes(allergy) ? "red" : "black" }}>{allergy}</span>
-            {index < data.length - 1 ? "," : ""}
+            {index < data.length - 1 && data[index + 1] ? "," : ""}
           </span>
         ))}
       </div>
