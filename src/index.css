@@ -10,6 +10,11 @@ html {
   font-style: normal;
   scroll-behavior: smooth;
 }
+
+#section2 {
+  background-image: url("./img/small-stationary-tools-surrounded-blank-center.jpg");
+  background-size: cover;
+}
 @layer base {
   h1 {
     @apply text-4xl;
