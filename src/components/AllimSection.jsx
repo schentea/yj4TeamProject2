@@ -78,7 +78,6 @@ export default function AllimSection() {
           </div>
         </div>
       </div>
-      <div className=" absolute w-full h-[330px] bottom-0  bg-[url('https://mk.kakaocdn.net/dn/kidsnote/web/kn-www/_next/static/media/classnote_bottom@2x.59b9b385.png')]"></div>
     </div>
   );
 }
