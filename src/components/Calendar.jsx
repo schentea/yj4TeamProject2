@@ -11,6 +11,13 @@ const MealCalendar = ({ closeModal }) => {
   const [mealCountry, setMealCountry] = useState("");
   const [allergy, setAllergy] = useState([]);
   const [activeTab, setActiveTab] = useState("menu");
+  let data;
+  const Storage = sessionStorage.getItem("userData");
+  if (Storage) {
+    data = JSON.parse(Storage);
+  }
+  const schoolNM = data?.schoolNM.split(",")[0];
+  const userAllergy = data?.userAllergy;
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -57,7 +64,16 @@ const MealCalendar = ({ closeModal }) => {
   const formatAllergyData = (data) => {
     if (!data || data.length === 0) return "";
 
-    return data.join(", ");
+    return (
+      <div>
+        {data.map((allergy, index) => (
+          <span key={index}>
+            <span style={{ color: userAllergy.includes(allergy) ? "red" : "black" }}>{allergy}</span>
+            {index < data.length - 1 ? "," : ""}
+          </span>
+        ))}
+      </div>
+    );
   };
   const handleOutsideClick = (e) => {
     if (e.target.classList.contains("fixed")) {
@@ -68,82 +84,43 @@ const MealCalendar = ({ closeModal }) => {
   };
 
   return (
-    <div
-      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
-      onClick={handleOutsideClick}
-    >
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50" onClick={handleOutsideClick}>
       <div className="w-full relative max-w-3xl overflow-y-scroll h-[95%] flex flex-col bg-white p-8 rounded-lg shadow-xl">
-        <div className="w-full flex justify-center mb-2 font-bold text-2xl">
-          경산동부초등학교
-        </div>
+        <div className="w-full flex justify-center mb-2 font-bold text-2xl">{schoolNM}</div>
 
-        <IoIosClose
-          className=" absolute top-4 right-4 text-3xl cursor-pointer"
-          onClick={handleOutsideClick}
-        />
+        <IoIosClose className=" absolute top-4 right-4 text-3xl cursor-pointer" onClick={handleOutsideClick} />
 
         <div className="h-[500px]">
-          <Calendar
-            onChange={onChange}
-            formatDay={(locale, date) => moment(date).format("DD")}
-            value={value}
-          />
+          <Calendar onChange={onChange} formatDay={(locale, date) => moment(date).format("DD")} value={value} />
         </div>
         <div className="max-w-[90%] mx-auto mt-8">
           <div className="flex justify-center mb-4">
-            <button
-              className={`mr-4 ${activeTab === "menu" ? "text-blue-600" : ""}`}
-              onClick={() => handleTabClick("menu")}
-            >
+            <button className={`mr-4 ${activeTab === "menu" ? "text-blue-600" : ""}`} onClick={() => handleTabClick("menu")}>
               메뉴
             </button>
-            <button
-              className={`mr-4 ${
-                activeTab === "allergy" ? "text-blue-600" : ""
-              }`}
-              onClick={() => handleTabClick("allergy")}
-            >
+            <button className={`mr-4 ${activeTab === "allergy" ? "text-blue-600" : ""}`} onClick={() => handleTabClick("allergy")}>
               알레르기 정보
             </button>
-            <button
-              className={`mr-4 ${
-                activeTab === "origin" ? "text-blue-600" : ""
-              }`}
-              onClick={() => handleTabClick("origin")}
-            >
+            <button className={`mr-4 ${activeTab === "origin" ? "text-blue-600" : ""}`} onClick={() => handleTabClick("origin")}>
               원산지
             </button>
           </div>
           {activeTab === "menu" && (
             <div className="border rounded-lg p-4">
               <h2 className="text-center text-lg font-semibold mb-4">메뉴</h2>
-              {mealData ? (
-                <p className="text-center">{formatMealData(mealData)}</p>
-              ) : (
-                <p>해당날짜의 식단표가 없습니다</p>
-              )}
+              {mealData ? <p className="text-center">{formatMealData(mealData)}</p> : <p>해당날짜의 식단표가 없습니다</p>}
             </div>
           )}
           {activeTab === "allergy" && (
             <div className="border rounded-lg p-4">
-              <h2 className="text-center text-lg font-semibold mb-4 text-red-600">
-                알레르기 정보 및 참고
-              </h2>
-              {allergy && allergy.length > 0 ? (
-                <p className="text-center">{formatAllergyData(allergy)}</p>
-              ) : (
-                <p>해당날짜의 알레르기 정보가 없습니다</p>
-              )}
+              <h2 className="text-center text-lg font-semibold mb-4 text-red-600">알레르기 정보 및 참고</h2>
+              {allergy && allergy.length > 0 ? <p className="text-center">{formatAllergyData(allergy)}</p> : <p>해당날짜의 알레르기 정보가 없습니다</p>}
             </div>
           )}
           {activeTab === "origin" && (
             <div className="border rounded-lg p-4">
               <h2 className="text-center text-lg font-semibold mb-4">원산지</h2>
-              {mealCountry ? (
-                <p className="text-center">{formatCountryData(mealCountry)}</p>
-              ) : (
-                <p>해당날짜의 식단표가 없습니다</p>
-              )}
+              {mealCountry ? <p className="text-center">{formatCountryData(mealCountry)}</p> : <p>해당날짜의 식단표가 없습니다</p>}
             </div>
           )}
         </div>

@@ -1,4 +1,3 @@
-
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL_MEAL = "https://open.neis.go.kr/hub/mealServiceDietInfo";
@@ -8,6 +7,11 @@ const currentDate = new Date();
 const year = currentDate.getFullYear();
 const month = String(currentDate.getMonth() + 1).padStart(2, "0");
 const date = `${year}${month}`;
+let data;
+const Storage = sessionStorage.getItem("userData");
+if (Storage) {
+  data = JSON.parse(Storage);
+}
 
 let location = {
   서울: "B10",
@@ -51,6 +55,16 @@ let noFood = {
   19: "잣",
 };
 
+// 알러지 음식 번호로 변환
+const getAllergyNumber = (allergyName) => {
+  for (const key in noFood) {
+    if (noFood[key] === allergyName) {
+      return key;
+    }
+  }
+  return null;
+};
+
 // 학교 정보를 가져오는 함수
 export async function getSchoolInfo(selectedRegion, schoolNM) {
   try {
@@ -80,9 +94,11 @@ export async function getSchoolInfo(selectedRegion, schoolNM) {
 }
 
 // 식단 정보를 가져오는 함수
-export async function getMealInfo(schoolNM, region) {
+export async function getMealInfo() {
+  const region = data?.region;
+  const schoolNM = data?.schoolNM.split(",")[1];
   try {
-    const schoolcode = schoolNM.split(',')[1];
+    const schoolcode = schoolNM;
     const officeCode = location[region];
     const mealServiceInfoResponse = await fetch(`${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`).then((res) => res.json());
     console.log(mealServiceInfoResponse);
@@ -94,6 +110,7 @@ export async function getMealInfo(schoolNM, region) {
     const str = mealData.split("(");
     const arr = str.map((item) => item.split(/[).<br/>]/));
     const arr2 = arr.flatMap((item) => item).filter((item) => !isNaN(item) && item !== "");
+    // console.log("알러지", arr2);
 
     const allergylist = arr2.map((item) => noFood[item]);
     const allergy = [...new Set(allergylist)]; // 중복제거
@@ -109,17 +126,20 @@ export async function getMealInfo(schoolNM, region) {
 
 //선택날짜 식단
 export async function getMealForDate(selectedDate) {
-  console.log("선택 날짜", selectedDate);
+  // console.log("선택 날짜", selectedDate);
+  // const userAllergy = data?.userAllergy;
   try {
     const apiData = await getMealInfo();
     const mealDataForDate = apiData.mealData.find((item) => item.MLSV_YMD === selectedDate);
+    // 번호를 포함하는 전체 식단표
+    // const allergyNumber = getAllergyNumber(userAllergy);
     const mealData = mealDataForDate ? mealDataForDate.DDISH_NM : "";
-
     const str = mealData.split("(");
     const arr = str.map((item) => item.split(/[).<br/>]/));
     const arr2 = arr.flatMap((item) => item).filter((item) => !isNaN(item) && item !== "");
     const allergylist = arr2.map((item) => noFood[item]);
     const allergy = [...new Set(allergylist)];
+    // const containsAllergy = mealData.includes(allergyNumber);
 
     const mealCountry = mealDataForDate ? mealDataForDate.ORPLC_INFO : "";
     return {
