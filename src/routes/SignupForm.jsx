@@ -15,7 +15,7 @@ export default function SignupForm() {
   const [isAllergyModalOpen, setIsAllergyModalOpen] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
-  const [allergy, setallergy] = useState(false);
+  const [allergy, setAllergy] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password2Visible, setPassword2Visible] = useState(false);
   const [isChecked, setIsChecked] = useState({
@@ -70,7 +70,7 @@ export default function SignupForm() {
   };
   const handleCheckChange = (allergy) => {
     console.log(allergy);
-    setallergy(false);
+    setAllergy(false);
     setIsAllergyChecked({
       ...isAllergyChecked,
       [allergy]: !isAllergyChecked[allergy],
@@ -109,22 +109,33 @@ export default function SignupForm() {
     setError,
   } = useForm();
   const onValid = async (data) => {
+    if (!Object.values(isChecked).includes(true)) {
+      setIsSelected(true);
+      alert('지역을 선택해주세요.');
+      return; // 지역 선택이 필요
+    }
+    if (!Object.values(isAllergyChecked).includes(true)) {
+      setAllergy(true);
+      alert('알레르기 항목을 선택해주세요.');
+      return; // 알레르기 선택이 필요
+    }
+  
     try {
       const schoolInfo = await getSchoolInfo(selectedRegion, data.schoolNM);
-      // console.log(typeof schoolInfo);
       if (!schoolInfo) {
         setError("schoolNM", {
           message: "입력한 학교명을 찾을 수 없습니다.",
         });
         return;
       }
-
+  
       // API 호출
-      mutate({ data, selectedRegion });
+      mutate({ data, selectedRegion, selectedAllergies: Object.keys(isAllergyChecked).filter(key => isAllergyChecked[key]) });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
+  
   return (
     <div id="form" className="w-full h-screen flex justify-center items-center p-4">
       {/* 중앙 정렬 한 박스 */}
@@ -274,7 +285,7 @@ export default function SignupForm() {
                 setIsSelected(true);
               }
               if (!Object.values(isAllergyChecked).includes(true)) {
-                setallergy(true);
+                setAllergy(true);
               }
             }}
             className="w-full h-[50px] border text-[17px] rounded-lg flex justify-center items-center font-bold text-center bg-slate-100 cursor-pointer duration-500 hover:bg-slate-300"

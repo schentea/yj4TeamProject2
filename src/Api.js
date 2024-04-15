@@ -1,3 +1,4 @@
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL_MEAL = "https://open.neis.go.kr/hub/mealServiceDietInfo";
@@ -79,10 +80,10 @@ export async function getSchoolInfo(selectedRegion, schoolNM) {
 }
 
 // 식단 정보를 가져오는 함수
-export async function getMealInfo() {
+export async function getMealInfo(schoolNM, region) {
   try {
-    const schoolcode = 7011113;
-    const officeCode = location["서울"];
+    const schoolcode = schoolNM.split(',')[1];
+    const officeCode = location[region];
     const mealServiceInfoResponse = await fetch(`${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`).then((res) => res.json());
     console.log(mealServiceInfoResponse);
     //전체 식단
