@@ -49,7 +49,7 @@ export default function AllimSection() {
         className="w-full h-full max-w-[1300px] flex justify-center items-center z-1 overflow-hidden md:ml-[15%]"
       >
         {/* 왼쪽 공간 */}
-        <div className="md:w-1/2 w-full h-1/2 flex flex-col p-8 gap-3 items-center justify-center lg:ml-[20%] md:items-start ">
+        <div className="md:w-1/2 w-full h-1/2 flex flex-col p-8 gap-3 items-center justify-center lg:ml-[10%] md:items-start ">
           <h5 className="font-semibold">알레르기로 인해 고민이신가요?</h5>
           <div>
             <h3 id="h31" className="xl:text-[45px] text-4xl font-bold ">
