@@ -46,10 +46,10 @@ export default function AllimSection() {
       {/* 공간 총괄 */}
       <div
         id="container"
-        className="w-full h-full max-w-[1300px] flex justify-center items-center z-1"
+        className="w-full h-full max-w-[1300px] flex justify-center items-center z-1 overflow-hidden"
       >
         {/* 왼쪽 공간 */}
-        <div className="md:w-1/2 w-full h-1/2 flex flex-col p-8 gap-3 items-center justify-center ml-[15%] md:items-start ">
+        <div className="md:w-1/2 w-full h-1/2 flex flex-col p-8 gap-3 items-center justify-center lg:ml-[20%] md:items-start ">
           <h5 className="font-semibold">알레르기로 인해 고민이신가요?</h5>
           <div>
             <h3 id="h31" className="xl:text-[45px] text-4xl font-bold ">
@@ -57,7 +57,7 @@ export default function AllimSection() {
             </h3>
             <h3
               id="h31"
-              className="xl:text-[45px] lg:text-4xl text-2xl font-bold"
+              className="xl:text-[45px] w-[510px] lg:text-4xl text-2xl font-bold"
             >
               급식 관리를 시작해 보세요!
             </h3>
