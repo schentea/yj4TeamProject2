@@ -42,6 +42,7 @@ export default function MyPage() {
     // 선택된 지역을 활용하여 필요한 작업 수행
     console.log("선택된 지역:", selectedRegion);
   };
+
   return (
     <div>
       {/* 마이페이지 나브 */}
@@ -72,23 +73,43 @@ export default function MyPage() {
           {/* 왼족 하단 */}
           <div className="p-4 flex flex-col justify-center items-start gap-4">
             <Link to="/" className="text-black no-underline">
-              <div>홈</div>
+              <div
+                className={
+                  selectedMenu === "home"
+                    ? "text-blue-500 font-semibold cursor-pointer"
+                    : "cursor-pointer"
+                }
+              >
+                홈
+              </div>
             </Link>
             <div
               onClick={() => setSelectedMenu("profile")}
-              className=" cursor-pointer"
+              className={
+                selectedMenu === "profile"
+                  ? "text-blue-500 font-semibold cursor-pointer"
+                  : "cursor-pointer"
+              }
             >
               내 정보 수정
             </div>
             <div
               onClick={() => setSelectedMenu("allergy")}
-              className=" cursor-pointer"
+              className={
+                selectedMenu === "allergy"
+                  ? "text-blue-500 font-semibold cursor-pointer"
+                  : "cursor-pointer"
+              }
             >
               알레르기 정보수정
             </div>
             <div
               onClick={() => setSelectedMenu("region")}
-              className=" cursor-pointer"
+              className={
+                selectedMenu === "region"
+                  ? "text-blue-500 font-semibold cursor-pointer"
+                  : "cursor-pointer"
+              }
             >
               지역및 학교수정
             </div>
