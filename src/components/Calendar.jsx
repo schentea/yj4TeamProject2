@@ -83,7 +83,7 @@ const MealCalendar = ({ closeModal }) => {
       const [dishName, ingredients] = item.split("(");
       const ingredientNumbers = ingredients ? ingredients.replace(")", "").split(".") : [];
       const containsAllergy = ingredientNumbers.some((ingredientNumber) => allergyNumber.includes(ingredientNumber)); // 알레르기 번호 포함 여부 확인
-      console.log("알러지번호", allergyNumber);
+      // console.log("알러지번호", allergyNumber);
       return <span style={{ color: containsAllergy ? "red" : "black" }}>{dishName.trim()}</span>;
     });
 
