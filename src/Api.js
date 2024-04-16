@@ -228,3 +228,13 @@ export async function apiUserLogout(data) {
         console.log(e);
     }
 }
+export async function apiKakaoLogin() {
+    try {
+        return await fetch(`${BASE_URL}/socials/kakao`, {
+            method: 'GET',
+            credentials: 'include',
+        }).then((res) => res.json());
+    } catch (e) {
+        console.log(e);
+    }
+}

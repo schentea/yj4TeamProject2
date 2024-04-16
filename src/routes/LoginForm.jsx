@@ -4,7 +4,7 @@ import Google from '../img/googleLogo.svg';
 import Push from '../img/push.jpg';
 import { useForm } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
-import { apiPostUserLogin } from '../Api';
+import { apiKakaoLogin, apiPostUserLogin } from '../Api';
 
 import { Link, useNavigate } from 'react-router-dom';
 import useUser from '../components/useUser';
@@ -34,6 +34,9 @@ export default function SignupForm() {
     };
     const data = useUser();
     console.log(data);
+    const kakaoLogin = () => {
+        apiKakaoLogin();
+    };
     return (
         <div id="form" className="w-full h-screen flex justify-center items-center p-4">
             {/* 중앙 정렬 한 박스 */}
@@ -94,7 +97,9 @@ export default function SignupForm() {
                     <div className="w-full h-[55px] flex justify-center items-center gap-2">
                         <div className="w-1/2 h-full bg-[#FEE500] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
                             <img className="w-[50px] h-[100%] cursor-pointer object-contain" src={Kakao} alt="kakao" />
-                            <p className="flex items-center pt-[11px]">카카오 로그인</p>
+                            <p className="flex items-center pt-[11px]" onClick={kakaoLogin}>
+                                카카오 로그인
+                            </p>
                             <span className="w-[10%]"></span>
                         </div>
                         <div className="w-1/2 h-full bg-[#F2F2F2] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
