@@ -37,7 +37,7 @@ const AllergyModalComponent = ({
                 className="hidden"
               />
               <label
-                className="border border-blue-500 font-semibold cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 transition duration-300"
+                className="border border-blue-500  cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 transition duration-300"
                 htmlFor={allergy}
                 style={{
                   backgroundColor: isChecked[allergy] ? "#3B82F6" : "",
