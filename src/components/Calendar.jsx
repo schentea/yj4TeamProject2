@@ -11,6 +11,7 @@ const MealCalendar = ({ closeModal }) => {
   const [mealCountry, setMealCountry] = useState("");
   const [allergy, setAllergy] = useState([]);
   const [activeTab, setActiveTab] = useState("menu");
+  // 세션에 저장된 데이터 가져오기
   let data;
   const Storage = sessionStorage.getItem("userData");
   if (Storage) {
@@ -36,14 +37,19 @@ const MealCalendar = ({ closeModal }) => {
   }, [date]);
 
   // 알러지 음식 번호로 변환
-  const getAllergyNumber = (allergyName) => {
-    for (const key in noFood) {
-      if (noFood[key] === allergyName) {
-        return key.toString();
+  const getAllergyNumber = (allergyList) => {
+    const allergyArray = allergyList.split(",");
+    const allergyNumber = allergyArray.map((allergy) => {
+      for (const key in noFood) {
+        if (noFood[key] === allergy.trim()) {
+          return key.toString();
+        }
       }
-    }
-    return null;
+      return null;
+    });
+    return allergyNumber.filter((number) => number !== null);
   };
+
   let noFood = {
     1: "달걀",
     2: "우유",
@@ -62,11 +68,12 @@ const MealCalendar = ({ closeModal }) => {
     15: "닭고기",
     16: "쇠고기",
     17: "오징어",
-    18: "조개류.굴.홍합.전복",
+    18: "조개류",
     19: "잣",
   };
   const allergyNumber = getAllergyNumber(userAllergy); //알러지 번호
 
+  //식단표
   const formatMealData = (data) => {
     if (!data) return "";
 
@@ -75,13 +82,15 @@ const MealCalendar = ({ closeModal }) => {
     const formattedMenu = menuItems.map((item) => {
       const [dishName, ingredients] = item.split("(");
       const ingredientNumbers = ingredients ? ingredients.replace(")", "").split(".") : [];
-      const containsAllergy = ingredientNumbers.includes(allergyNumber); // 알레르기 번호 포함 여부 확인
+      const containsAllergy = ingredientNumbers.some((ingredientNumber) => allergyNumber.includes(ingredientNumber)); // 알레르기 번호 포함 여부 확인
+      console.log("알러지번호", allergyNumber);
       return <span style={{ color: containsAllergy ? "red" : "black" }}>{dishName.trim()}</span>;
     });
 
     return <div>{formattedMenu.reduce((prev, curr) => [prev, ", ", curr])}</div>;
   };
 
+  // 원산지
   const formatCountryData = (data) => {
     if (!data) return "";
 
@@ -95,6 +104,7 @@ const MealCalendar = ({ closeModal }) => {
     return formattedCountry.join(", ");
   };
 
+  // 알러지표시
   const formatAllergyData = (data) => {
     if (!data || data.length === 0) return "";
 
