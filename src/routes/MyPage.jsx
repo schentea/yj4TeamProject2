@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "../img/logo.svg";
+import { Link } from "react-router-dom";
 
 export default function MyPage() {
   const [selectedMenu, setSelectedMenu] = useState("profile");
@@ -51,7 +52,7 @@ export default function MyPage() {
         <div>프로필 사진</div>
       </div>
       {/* 아래쪽 컨텐츠 */}
-      <div className="w-full h-[100vh] flex flex-col lg:flex-row justify-center pt-20 ">
+      <div className="w-full h-[100vh] flex flex-col lg:flex-row lg:justify-center pt-20 ">
         {/* 왼쪽 정보 */}
         <div className="lg:w-[15%] w-full h-full border">
           {/* 왼쪽 상단 */}
@@ -68,7 +69,9 @@ export default function MyPage() {
           </div>
           {/* 왼족 하단 */}
           <div className="p-4 flex flex-col justify-center items-start gap-4">
-            <div>홈</div>
+            <Link to="/" className="text-black no-underline">
+              <div>홈</div>
+            </Link>
             <div
               onClick={() => setSelectedMenu("profile")}
               className=" cursor-pointer"
