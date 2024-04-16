@@ -234,7 +234,7 @@ export default function MyPage() {
                     <div className="w-[60%] h-40 flex items-center">
                       <input
                         type="text"
-                        className=" bg-gray-100 h-10 w-[80%]"
+                        className=" bg-gray-100 h-10 w-[80%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
                       />
                       <button className="bg-blue-500 w-[20%] text-white py-2 rounded-r-sm hover:bg-blue-600 transition duration-300">
                         저장
