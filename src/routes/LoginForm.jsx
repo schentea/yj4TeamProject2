@@ -98,7 +98,7 @@ export default function SignupForm() {
                         <div className="w-1/2 h-full bg-[#FEE500] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
                             <img className="w-[50px] h-[100%] cursor-pointer object-contain" src={Kakao} alt="kakao" />
                             <p className="flex items-center pt-[11px]" onClick={kakaoLogin}>
-                                카카오 로그인
+                                카카오 로그인2
                             </p>
                             <span className="w-[10%]"></span>
                         </div>
