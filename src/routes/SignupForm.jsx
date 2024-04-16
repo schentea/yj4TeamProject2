@@ -9,7 +9,7 @@ import { apiPostUserRegister, getSchoolInfo } from "../Api";
 import AllergyModalComponent from "./SignupAllergy";
 import { Link } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import logo from "../img/logo.svg";
+import { IoArrowBackOutline } from "react-icons/io5";
 
 export default function SignupForm() {
   const [isRegionModalOpen, setIsRegionModalOpen] = useState(false);
@@ -174,7 +174,7 @@ export default function SignupForm() {
 
           <Link to="/">
             <span className=" text-white w-full text-left pl-4 text-3xl font-semibold absolute left-[50%] top-[2%] translate-x-[-50%] ">
-              <img className="w-[180px]" src={logo} alt="sss" />
+              <IoArrowBackOutline />
             </span>
           </Link>
         </div>
@@ -183,6 +183,11 @@ export default function SignupForm() {
           className="md:w-1/2 w-full h-full px-10  flex flex-col gap-6 items-center "
           onSubmit={handleSubmit(onValid)}
         >
+          <Link to="/">
+            <span className="  block md:hidden text-black w-full text-left pl-4 text-3xl font-semibold fixed left-[50%] top-[2%] translate-x-[-50%] ">
+              <IoArrowBackOutline />
+            </span>
+          </Link>
           <span className="text-2xl font-semibold py-4 h-4">회원가입</span>
           <div className="w-full h-[50px] relative">
             <input

@@ -8,7 +8,7 @@ import { apiPostUserLogin } from "../Api";
 
 import { Link, useNavigate } from "react-router-dom";
 import useUser from "../components/useUser";
-import logo from "../img/logo.svg";
+import { IoArrowBackOutline } from "react-icons/io5";
 export default function SignupForm() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -62,8 +62,8 @@ export default function SignupForm() {
           <div className="absolute inset-0 bg-black opacity-30"></div>
           {/* text  */}
           <Link to="/">
-            <span className=" text-white w-full text-left pl-4 text-3xl font-semibold absolute left-[50%] top-[2%] translate-x-[-50%] ">
-              <img className="w-[180px]" src={logo} alt="sss" />
+            <span className=" text-white w-full text-left pl-4 text-3xl font-semibold fixed left-[50%] top-[2%] translate-x-[-50%] ">
+              <IoArrowBackOutline />
             </span>
           </Link>
         </div>
@@ -72,6 +72,11 @@ export default function SignupForm() {
           className="md:w-1/2 w-full h-full px-10  flex flex-col gap-3 items-center "
           onSubmit={handleSubmit(onValid)}
         >
+          <Link to="/">
+            <span className="  block md:hidden text-black w-full text-left pl-4 text-3xl font-semibold fixed left-[50%] top-[2%] translate-x-[-50%] ">
+              <IoArrowBackOutline />
+            </span>
+          </Link>
           <span className="text-2xl font-semibold py-8">로그인</span>
           <input
             className="w-full h-[50px] text-[14px] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
