@@ -56,16 +56,6 @@ let noFood = {
     19: '잣',
 };
 
-// 알러지 음식 번호로 변환
-const getAllergyNumber = (allergyName) => {
-    for (const key in noFood) {
-        if (noFood[key] === allergyName) {
-            return key;
-        }
-    }
-    return null;
-};
-
 // 학교 정보를 가져오는 함수
 export async function getSchoolInfo(selectedRegion, schoolNM) {
     try {
