@@ -1,5 +1,5 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const API_KEY = "009dae03a2d04006bd984064746a9d85";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL_MEAL = "https://open.neis.go.kr/hub/mealServiceDietInfo";
 const BASE_URL_SCHOOL = "https://open.neis.go.kr/hub/schoolInfo";
 const pSize = 1000;
