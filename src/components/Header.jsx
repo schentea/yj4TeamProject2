@@ -5,6 +5,8 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../img/logo.png';
+import useUser from './useUser';
+import { apiUserLogout } from '../Api';
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const openButton = () => {
@@ -13,7 +15,13 @@ export default function Header() {
     const closeButton = () => {
         setMobileOpen(false);
     };
-
+    const userData = useUser();
+    const handleLogout = () => {
+        console.log('okay');
+        apiUserLogout();
+        sessionStorage.clear();
+        window.location.reload();
+    };
     return (
         <>
             {' '}
@@ -64,12 +72,23 @@ export default function Header() {
                             id="Hidden_div"
                             className=" space-x-4 h-full items-center text-black font-bold justify-center mt-[7px] text-[20px] hidden xl:flex "
                         >
-                            <Link to="/login" className="text-black no-underline">
-                                <p>로그인</p>
-                            </Link>
-                            <Link to="/register" className="text-black no-underline">
-                                <p>회원가입</p>
-                            </Link>
+                            {userData ? (
+                                <>
+                                    <p>{userData.user.userid}</p>{' '}
+                                    <p className="cursor-point" onClick={handleLogout}>
+                                        로그아웃
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    <Link to="/login" className="text-black no-underline">
+                                        <p>로그인</p>
+                                    </Link>
+                                    <Link to="/register" className="text-black no-underline">
+                                        <p>회원가입</p>
+                                    </Link>
+                                </>
+                            )}
                         </div>
                         <button
                             id="main_button"
