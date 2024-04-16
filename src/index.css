@@ -14,6 +14,7 @@ html {
 #section2 {
   background-image: url("./img/small-stationary-tools-surrounded-blank-center.jpg");
   background-size: cover;
+  background-position: center;
 }
 @layer base {
   h1 {
@@ -36,7 +37,10 @@ html {
   opacity: 1;
   font-size: 12px;
 }
-
+.allergy-meal {
+  color: red;
+  /* 또는 다른 스타일을 추가할 수 있습니다. */
+}
 /* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
   opacity: 0;
