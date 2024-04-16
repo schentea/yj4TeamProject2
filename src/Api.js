@@ -8,14 +8,14 @@ const currentDate = new Date();
 const year = currentDate.getFullYear();
 const month = String(currentDate.getMonth() + 1).padStart(2, "0");
 const date = `${year}${month}`;
-//  전날 날짜
-const nextDate = new Date(currentDate); // 현재 날짜를 복사하여 새로운 객체를 생성
-nextDate.setDate(currentDate.getDate() + 1); //
+
+//  내일 날짜
+const nextDate = new Date(currentDate);
+nextDate.setDate(currentDate.getDate() + 1);
 const nextYear = nextDate.getFullYear();
 const nextMonth = String(nextDate.getMonth() + 1).padStart(2, "0");
 const nextDay = String(nextDate.getDate()).padStart(2, "0");
 const nDate = `${nextYear}${nextMonth}${nextDay}`;
-console.log("어제", nDate);
 
 // 세션에 저장된 데이터 가져오기
 let data;
@@ -103,8 +103,9 @@ export async function getMealInfo() {
     console.log(mealServiceInfoResponse);
     //전체 식단
     const allmeal = mealServiceInfoResponse.mealServiceDietInfo[1].row;
-    const mealDataForNext = allmeal.find((item) => item.MLSV_YMD === nDate);
-    console.log("내일식단", mealDataForNext);
+    // 내일 식단
+    const mealDataForNext = allmeal.find((item) => item.MLSV_YMD === nDate).DDISH_NM;
+    console.log(mealDataForNext);
     const mealData = mealServiceInfoResponse.mealServiceDietInfo && mealServiceInfoResponse.mealServiceDietInfo[1]?.row && mealServiceInfoResponse.mealServiceDietInfo[1].row[0]?.DDISH_NM ? mealServiceInfoResponse.mealServiceDietInfo[1].row[0].DDISH_NM : "";
 
     const str = mealData.split("(");
