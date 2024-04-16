@@ -9,7 +9,7 @@ export default function Kakao() {
     const { data } = useQuery(['getUser', { code }], apiKakaoLogin);
     const navigate = useNavigate();
     if (data?.result === true) {
-        navigate('/users/profile');
+        navigate('/');
     }
     return (
         <div className="w-full flex flex-col items-center justify-center py-16">
