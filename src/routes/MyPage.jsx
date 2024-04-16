@@ -51,9 +51,9 @@ export default function MyPage() {
         <div>프로필 사진</div>
       </div>
       {/* 아래쪽 컨텐츠 */}
-      <div className="w-full h-[100vh] flex justify-center pt-20 ">
+      <div className="w-full h-[100vh] flex flex-col lg:flex-row justify-center pt-20 ">
         {/* 왼쪽 정보 */}
-        <div className="w-[15%] h-full border">
+        <div className="lg:w-[15%] w-full h-full border">
           {/* 왼쪽 상단 */}
           <div className="w-full h-60  border-b flex flex-col justify-center items-center gap-3">
             {/* 프로필 사진 */}
@@ -90,26 +90,27 @@ export default function MyPage() {
           </div>
         </div>
         {/* 오른쪽 바꿀수 있는 폼  */}
-        <div className="h-full w-[85%] bg-[#F8F9FA] p-8">
+        <div className="h-full lg:w-[85%] w-full bg-[#F8F9FA] p-8">
           <h2 className="text-2xl font-semibold mb-4 text-center">
             {selectedMenu === "profile" && "내 정보 수정"}
             {selectedMenu === "allergy" && "알레르기 정보 수정"}
             {selectedMenu === "region" && "지역 및 학교 정보수정"}
           </h2>
           <div className="w-full h-full flex justify-center">
+            {/* 내정보 수정 */}
             {selectedMenu === "profile" && (
               <form className="flex flex-col w-full h-full">
                 {/* 입력 폼들 추가 */}
                 <div className="w-full flex flex-col items-center">
                   {/* 이름 */}
-                  <div className="flex w-1/2 items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
+                  <div className="flex lg:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
                     <div className="w-[200px] bg-[#EFEFEF] h-20 flex items-center p-4">
                       이름
                     </div>
                     <div className="pl-2">이승민</div>
                   </div>
                   {/* 아이디 */}
-                  <div className="flex w-1/2 items-center   border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
+                  <div className="flex lg:w-1/2 w-full items-center   border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
                     <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
                       아이디
                     </div>
@@ -120,7 +121,7 @@ export default function MyPage() {
                     />
                   </div>
                   {/* 비밀번호 */}
-                  <div className="flex w-1/2 items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
+                  <div className="flex lg:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
                     <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
                       비밀번호
                     </div>
@@ -131,7 +132,7 @@ export default function MyPage() {
                     />{" "}
                   </div>
                   {/* 비밀번호 확인 */}
-                  <div className="flex w-1/2 items-center   border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
+                  <div className="flex lg:w-1/2 w-full items-center   border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
                     <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
                       비밀번호 확인
                     </div>
