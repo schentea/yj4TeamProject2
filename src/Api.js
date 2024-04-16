@@ -7,6 +7,11 @@ const currentDate = new Date();
 const year = currentDate.getFullYear();
 const month = String(currentDate.getMonth() + 1).padStart(2, "0");
 const date = `${year}${month}`;
+let data;
+const Storage = sessionStorage.getItem("userData");
+if (Storage) {
+  data = JSON.parse(Storage);
+}
 
 let location = {
   서울: "B10",
@@ -120,20 +125,16 @@ export async function getMealInfo() {
 
 //선택날짜 식단
 export async function getMealForDate(selectedDate) {
-  // console.log("선택 날짜", selectedDate);
-  // const userAllergy = data?.userAllergy;
   try {
     const apiData = await getMealInfo();
     const mealDataForDate = apiData.mealData.find((item) => item.MLSV_YMD === selectedDate);
     // 번호를 포함하는 전체 식단표
-    // const allergyNumber = getAllergyNumber(userAllergy);
     const mealData = mealDataForDate ? mealDataForDate.DDISH_NM : "";
     const str = mealData.split("(");
     const arr = str.map((item) => item.split(/[).<br/>]/));
     const arr2 = arr.flatMap((item) => item).filter((item) => !isNaN(item) && item !== "");
     const allergylist = arr2.map((item) => noFood[item]);
     const allergy = [...new Set(allergylist)];
-    // const containsAllergy = mealData.includes(allergyNumber);
 
     const mealCountry = mealDataForDate ? mealDataForDate.ORPLC_INFO : "";
     return {
