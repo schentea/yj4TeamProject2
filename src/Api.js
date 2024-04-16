@@ -228,13 +228,15 @@ export async function apiUserLogout(data) {
         console.log(e);
     }
 }
-export async function apiKakaoLogin() {
+export async function apiKakaoLogin(props) {
+    const { code } = props.queryKey[1];
+
     try {
-        return await fetch(`${BASE_URL}/socials/kakao`, {
+        return await fetch(`${BASE_URL}/users/socials/kakao?code=${code}`, {
             method: 'GET',
             credentials: 'include',
         }).then((res) => res.json());
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
     }
 }
