@@ -93,7 +93,7 @@ export default function Header() {
             <button
               id="main_button"
               onClick={openButton}
-              className="text-black text-[30px] cursor-pointer xl:hidden"
+              className="text-black text-[30px] flex items-center cursor-pointer xl:hidden "
             >
               <GiHamburgerMenu />
             </button>
