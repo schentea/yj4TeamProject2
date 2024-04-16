@@ -1,6 +1,9 @@
 import { useState } from "react";
 import logo from "../img/logo.svg";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import { IoSettingsOutline } from "react-icons/io5";
+import { FaCamera } from "react-icons/fa";
 
 export default function MyPage() {
   const [selectedMenu, setSelectedMenu] = useState("profile");
@@ -42,27 +45,118 @@ export default function MyPage() {
     // 선택된 지역을 활용하여 필요한 작업 수행
     console.log("선택된 지역:", selectedRegion);
   };
+  const [isHovered, setIsHovered] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [profileImage, setProfileImage] = useState(null);
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+  const handleProfileClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <div>
       {/* 마이페이지 나브 */}
       <div className="w-full absolute h-[80px] border flex justify-between p-4 items-center shadow-md bg-white  ">
         {/* 왼쪽 로고 */}
+
         <Link to="/">
           <img className="w-[180px]" src={logo} alt="sss" />
         </Link>
         {/* 오른쪽 프로필 사진 */}
-        <div>프로필 사진</div>
+        <div className="w-[50px] h-[50px] bg-gray-300 rounded-full flex items-end justify-center  ">
+          <FaUser className="w-32 h-10 text-white" />
+        </div>
       </div>
       {/* 아래쪽 컨텐츠 */}
       <div className="w-full h-[100vh] flex flex-col xl:flex-row xl:justify-center pt-20 ">
         {/* 왼쪽 정보 */}
         <div className="xl:w-[15%] w-full h-full border">
           {/* 왼쪽 상단 */}
-          <div className="w-full h-60  border-b flex flex-col justify-center items-center gap-3">
+          <div className="w-full h-70  border-b flex flex-col justify-center items-center gap-3">
             {/* 프로필 사진 */}
-            <div className="w-[100px] h-[100px] bg-gray-300 rounded-full flex items-center justify-center ">
-              프로필 사진
+            {/* 설정  */}
+            <div className="w-full flex justify-end">
+              <div
+                className="w-[35px] h-[35px] text-[25px] cursor-pointer text-gray-500 text-end mr-4 rounded-full border flex justify-center items-center"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleProfileClick}
+              >
+                <IoSettingsOutline
+                  className={isHovered ? "animate-spin" : ""}
+                  style={{ transition: "transform 0.5s ease-in-out" }}
+                />
+              </div>
+              {isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                  <div className="w-[400px] h-[500px] bg-white p-4 rounded-lg">
+                    <div className="w-full h-[80px] ">
+                      <h3 className="text-center flex items-center justify-center h-full">
+                        <p>프로필 변경하기</p>
+                      </h3>
+                    </div>
+                    {/* 이미지 업로드 */}
+                    <div className="w-full h-[200px] flex justify-center pt-0">
+                      <label className="relative w-[150px] h-[150px] bg-gray-300 rounded-full flex items-end justify-center">
+                        {profileImage ? (
+                          <img
+                            src={profileImage}
+                            alt="프로필 이미지"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <FaUser className="w-[120px] h-[120px] text-white" />
+                        )}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
+                          onChange={handleImageChange}
+                        />
+                        <div className="absolute bottom-3 -right-2 w-[40px] h-[40px] rounded-full text-white flex justify-center items-center text-[23px] bg-gray-600 ">
+                          <FaCamera />
+                        </div>
+                      </label>
+                    </div>
+                    <p className="text-center">
+                      나의 프로필을 멋지게 바꿔보세요 !!^^
+                    </p>
+                    <div className="w-full flex justify-center">
+                      <button
+                        className=" bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold py-2 px-20  rounded"
+                        onClick={handleCloseModal}
+                      >
+                        닫기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 아래 프로필사진 */}
+            <div className="w-[100px] h-[100px] bg-gray-300 rounded-full flex items-end justify-center  ">
+              <FaUser className="w-64 h-20 text-white" />
             </div>
             {/* 회원이름 */}
             <div>
