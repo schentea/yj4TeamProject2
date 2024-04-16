@@ -156,7 +156,7 @@ export default function MyPage() {
             )}
             {/* 알레르기 */}
             {selectedMenu === "allergy" && (
-              <div className="w-full h-[70%] mt-16 flex flex-col items-center bg-white border rounded-xl p-4">
+              <div className="w-full lg:h-[70%] h-[80%] mt-16 flex flex-col items-center bg-white border rounded-xl p-4">
                 <div className="flex flex-wrap">
                   {[
                     "달걀",
