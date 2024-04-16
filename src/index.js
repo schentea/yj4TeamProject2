@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import NotFound from "./routes/NotFound";
 import SignupForm from "./routes/SignupForm";
 import LoginForm from "./routes/LoginForm";
+import MyPage from "./routes/MyPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginForm />,
+      },
+      {
+        path: "/mypage",
+        element: <MyPage />,
       },
     ],
   },
