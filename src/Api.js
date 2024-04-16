@@ -228,11 +228,9 @@ export async function apiUserLogout(data) {
         console.log(e);
     }
 }
-export async function apiKakaoLogin(props) {
-    const { code } = props.queryKey[1];
-
+export async function apiKakaoLogin() {
     try {
-        return await fetch(`${BASE_URL}/users/socials/kakao?code=${code}`, {
+        return await fetch(`${BASE_URL}/users/socials/kakao`, {
             method: 'GET',
             credentials: 'include',
         }).then((res) => res.json());
