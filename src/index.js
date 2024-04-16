@@ -33,7 +33,7 @@ const router = createBrowserRouter([
                 element: <MyPage />,
             },
             {
-                path: '/socials/kakao',
+                path: '/users/socials/kakao',
                 element: <Kakao />,
             },
         ],

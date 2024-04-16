@@ -15,6 +15,8 @@ export default function SignupForm() {
         client_id: process.env.REACT_APP_KAKAO_CLIENT_ID,
         redirect_uri: process.env.REACT_APP_KAKAO_REDIRECT_URI,
     };
+    console.log(process.env.REACT_APP_KAKAO_CLIENT_ID);
+    console.log(process.env.REACT_APP_KAKAO_REDIRECT_URI);
     const params = new URLSearchParams(config).toString();
     const finalUrl = `${kakaoUrl}?${params}`;
     const queryClient = useQueryClient();
