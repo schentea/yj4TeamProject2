@@ -77,8 +77,10 @@ export default function Header() {
                     to="mypage"
                     className=" h-full flex items-center no-underline text-black pb-3"
                   >
-                    <div className=" w-[60px] h-[60px] rounded-full flex items-center justify-center bg-gray-300">
-                      <span>{`${userData.user.userid.substring(0, 2)}`}</span>
+                    <div className=" w-[60px] h-[60px] rounded-full flex items-center justify-center border border-white bg-gray-300 hover:bg-[#77BCFF] hover:text-white duration-500">
+                      <span>{`${userData.user.userid
+                        .substring(0, 2)
+                        .toUpperCase()}`}</span>
                     </div>
                   </Link>
                   <p className="cursor-pointer" onClick={handleLogout}>
