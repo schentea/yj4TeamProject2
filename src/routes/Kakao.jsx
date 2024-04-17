@@ -12,7 +12,7 @@ export default function Kakao() {
     const navigate = useNavigate();
     if (data?.result === true) {
         sessionStorage.setItem('userData', JSON.stringify(data));
-        navigate('https://kidcare.netlify.app/');
+        navigate('https://kidcare.netlify.app');
     }
 
     return (
