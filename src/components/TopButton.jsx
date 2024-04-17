@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../TopButton.scss";
 import MealCalendar from "./Calendar";
+import { useNavigate } from "react-router-dom";
+import useUser from "./useUser";
 
 function TopButton() {
   const [showButton, setShowButton] = useState(false);
+  const [calendarModalOpen, setCalendarModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const login = useUser();
 
   const scrollToTop = () => {
     window.scroll({
@@ -11,6 +16,7 @@ function TopButton() {
       behavior: "smooth",
     });
   };
+
   useEffect(() => {
     const handleShowButton = () => {
       window.scrollY > 100 ? setShowButton(true) : setShowButton(false);
@@ -22,7 +28,14 @@ function TopButton() {
       window.removeEventListener("scroll", handleShowButton);
     };
   }, []);
-  const [calendarModalOpen, setCalendarModalOpen] = useState(false);
+
+  const handleCalendarButtonClick = () => {
+    if (login == undefined) {
+      navigate("/login");
+    } else {
+      setCalendarModalOpen(true);
+    }
+  };
 
   return (
     showButton && (
@@ -31,7 +44,7 @@ function TopButton() {
           <button onClick={scrollToTop}>Top</button>
         </div>
         <div className="foodlist">
-          <button onClick={() => setCalendarModalOpen(true)}>식단표</button>
+          <button onClick={handleCalendarButtonClick}>식단표</button>
         </div>
         {calendarModalOpen && <MealCalendar closeModal={() => setCalendarModalOpen(false)} />}
       </>
