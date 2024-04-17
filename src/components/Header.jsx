@@ -79,7 +79,7 @@ export default function Header() {
                   >
                     <div className=" w-[60px] h-[60px] rounded-full flex items-center justify-center border border-white bg-gray-300 hover:bg-[#77BCFF] hover:text-white duration-500">
                       <span>{`${userData.user.userid
-                        .substring(0, 2)
+                        .substring(0, 1)
                         .toUpperCase()}`}</span>
                     </div>
                   </Link>
