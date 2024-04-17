@@ -260,3 +260,19 @@ export async function apiGoogleLogin(props) {
         console.log(error);
     }
 }
+export async function apiPostProfileEdit({ file }) {
+    try {
+        const data = new FormData();
+        data.append('file', file);
+        return await fetch(`${BASE_URL}/users/profileEdit`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+            },
+            credentials: 'include',
+            body: data,
+        }).then((res) => res.json());
+    } catch (error) {
+        console.log(error);
+    }
+}
