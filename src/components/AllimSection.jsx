@@ -62,7 +62,7 @@ export default function AllimSection() {
               급식 관리를 시작해 보세요!
             </h3>
           </div>
-          <p className="text-[#666] text-sm">
+          <p className="text-[#666] text-sm w-full">
             학부모 소통, 급식 관리까지 효율적으로 관리할 수 있어요.{" "}
           </p>
           <button class="w-1/2 btn btn-primary btn-jelly" onClick={onClick}>
