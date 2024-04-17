@@ -103,7 +103,7 @@ export default function MyPage() {
     setErrorMessages(errors);
 
     if (Object.keys(errors).length === 0) {
-      console.log({ password, tel });
+      console.log("사용자 정보 수정",{ tel,password });
     }
   };
 
@@ -133,6 +133,7 @@ export default function MyPage() {
     setSchoolName(e.target.value);
     setFormError(""); // 입력 시작 시 에러 메시지 초기화
   };
+  
   const handleRegionSubmit = async (e) => {
     e.preventDefault();
 
@@ -147,7 +148,8 @@ export default function MyPage() {
         setFormError("입력한 학교명을 찾을 수 없습니다.");
         return;
       }
-      console.log("학교 정보가 확인되었습니다:", schoolInfo);
+      const combinedSchoolName = `${schoolName}, ${schoolInfo}`;
+      console.log("학교 정보 수정", { region: selectedRegion, schoolNM: combinedSchoolName });
     } catch (error) {
       console.log(error);
     }
