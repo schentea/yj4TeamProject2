@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../img/logo.svg";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
@@ -8,14 +8,14 @@ import useUser from "../components/useUser";
 
 export default function MyPage() {
   const userData = useUser();
-  console.log("사용자 알러지", userData.user.allergies);
+  console.log("사용자 알러지", userData?.user?.allergies);
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [tel, setTel] = useState("");
   const [errorMessages, setErrorMessages] = useState({ password: "", tel: "" });
   const [selectedMenu, setSelectedMenu] = useState("profile");
   const [selectedRegion, setSelectedRegion] = useState("");
-  const [allergies, setAllergies] = useState({
+  const initialAllergiesState = {
     달걀: false,
     우유: false,
     메밀: false,
@@ -35,7 +35,9 @@ export default function MyPage() {
     오징어: false,
     조개류: false,
     잣: false,
-  });
+  };
+
+  const [allergies, setAllergies] = useState(initialAllergiesState);
 
   const toggleAllergy = (allergy) => {
     setAllergies((prevAllergies) => ({
@@ -102,6 +104,20 @@ export default function MyPage() {
       console.log({ password, tel });
     }
   };
+
+  useEffect(() => {
+    if (userData && userData.user && userData.user.allergies) {
+      const allergiesArray = userData.user.allergies.split(",");
+      const allergiesState = allergiesArray.reduce(
+        (acc, allergy) => ({
+          ...acc,
+          [allergy.trim()]: true,
+        }),
+        initialAllergiesState
+      );
+      setAllergies(allergiesState);
+    }
+  }, [userData]);
 
   const handleAllergySubmit = (e) => {
     e.preventDefault();
@@ -249,7 +265,7 @@ export default function MyPage() {
             {selectedMenu === "allergy" && (
               <form onSubmit={handleAllergySubmit} className="md:w-2/3 max-w-[1000px] w-full xl:h-[40%] h-[80%] mt-16 flex flex-col items-center justify-between bg-white border rounded-xl p-4">
                 <div className="flex flex-wrap">
-                  {["달걀", "우유", "메밀", "땅콩", "대두", "밀", "고등어", "게", "새우", "돼지고기", "복숭아", "토마토", "아황산", "호두", "닭고기", "쇠고기", "오징어", "조개류", "잣"].map((allergy) => (
+                  {Object.keys(allergies).map((allergy) => (
                     <div key={allergy} className={`border border-blue-500 cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 hover:bg-blue-500 hover:text-white transition duration-300 ${allergies[allergy] ? "bg-blue-500 text-white border-white" : ""}`} onClick={() => toggleAllergy(allergy)}>
                       {allergy}
                     </div>
@@ -260,7 +276,7 @@ export default function MyPage() {
             )}
             {/* 지역 및 학교 정보*/}
             {selectedMenu === "region" && (
-              <form onSunmit={handleRegionSubmit} className="w-full h-full flex flex-col items-center ">
+              <form onSubmit={handleRegionSubmit} className="w-full h-full flex flex-col items-center ">
                 <div className="w-full max-w-[1000px]">
                   {/* 지역 입력 받는 폼 */}
                   <div className="w-full xl:h-[55%] h-[70%] mb-14 mt-14 flex flex-col justify-between items-center bg-white border rounded-xl p-4">
