@@ -276,7 +276,7 @@ export default function MyPage() {
             )}
             {/* 알레르기 */}
             {selectedMenu === "allergy" && (
-              <div className="md:w-2/3 w-full xl:h-[30%] h-[80%] mt-16 flex flex-col items-center justify-between bg-white border rounded-xl p-4">
+              <div className="md:w-2/3 max-w-[1000px] w-full xl:h-[40%] h-[80%] mt-16 flex flex-col items-center justify-between bg-white border rounded-xl p-4">
                 <div className="flex flex-wrap">
                   {[
                     "달걀",
@@ -313,7 +313,7 @@ export default function MyPage() {
                   ))}
                 </div>
                 <button
-                  className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded"
+                  className="w-1/2 mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded"
                   onClick={handleSelect}
                 >
                   선택하기
@@ -323,9 +323,9 @@ export default function MyPage() {
             {/* 지역 및 학교 정보*/}
             {selectedMenu === "region" && (
               <form className="w-full h-full flex flex-col items-center ">
-                <div className="w-full max-w-[1200px]">
+                <div className="w-full max-w-[1000px]">
                   {/* 지역 입력 받는 폼 */}
-                  <div className="w-full xl:h-[50%] h-[70%] mb-16 flex flex-col justify-between items-center bg-white border rounded-xl p-4">
+                  <div className="w-full xl:h-[55%] h-[70%] mb-16 flex flex-col justify-between items-center bg-white border rounded-xl p-4">
                     <h4 className="mb-8">지역 정보 수정</h4>
                     <div className="flex flex-wrap">
                       {[
@@ -361,7 +361,7 @@ export default function MyPage() {
                       ))}
                     </div>
                     <button
-                      className="mt-16 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded"
+                      className="w-1/2 mt-16 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded"
                       onClick={handleSelect}
                     >
                       선택하기
