@@ -214,7 +214,7 @@ export default function MyPage() {
         </div>
         {/* 오른쪽 바꿀수 있는 폼  */}
         <div className="h-full xl:w-[85%] w-full bg-[#F8F9FA] p-8">
-          <h2 className="text-2xl font-semibold mb-4 text-center">
+          <h2 className="text-3xl font-semibold mb-4 text-center">
             {selectedMenu === "profile" && "내 정보 수정"}
             {selectedMenu === "allergy" && "알레르기 정보 수정"}
             {selectedMenu === "region" && "지역 및 학교 정보수정"}
@@ -226,7 +226,7 @@ export default function MyPage() {
                 {/* 입력 폼들 추가 */}
                 <div className="w-full flex flex-col items-center">
                   {/* 이름 */}
-                  <div className="flex xl:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
+                  <div className="flex xl:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px] mt-16">
                     <div className="w-[200px] bg-[#EFEFEF] h-20 flex items-center p-4">
                       이름
                     </div>
@@ -325,8 +325,8 @@ export default function MyPage() {
               <form className="w-full h-full flex flex-col items-center ">
                 <div className="w-full max-w-[1000px]">
                   {/* 지역 입력 받는 폼 */}
-                  <div className="w-full xl:h-[55%] h-[70%] mb-16 flex flex-col justify-between items-center bg-white border rounded-xl p-4">
-                    <h4 className="mb-8">지역 정보 수정</h4>
+                  <div className="w-full xl:h-[55%] h-[70%] mb-16 mt-16 flex flex-col justify-between items-center bg-white border rounded-xl p-4">
+                    <h4 className="">지역 정보 수정</h4>
                     <div className="flex flex-wrap">
                       {[
                         "서울",
