@@ -13,6 +13,15 @@ import { IoArrowBackOutline } from 'react-icons/io5';
 
 export default function SignupForm() {
     const navigate = useNavigate();
+    const kakaoUrl = 'https://kauth.kakao.com/oauth/authorize';
+    const config = {
+        response_type: 'code',
+        client_id: process.env.REACT_APP_KAKAO_CLIENT_ID,
+        redirect_uri: process.env.REACT_APP_KAKAO_REDIRECT_URI,
+    };
+
+    const params = new URLSearchParams(config).toString();
+    const finalUrl = `${kakaoUrl}?${params}`;
     const [isRegionModalOpen, setIsRegionModalOpen] = useState(false);
     const [isAllergyModalOpen, setIsAllergyModalOpen] = useState(false);
     const [selectedRegion, setSelectedRegion] = useState(null);
@@ -349,7 +358,9 @@ export default function SignupForm() {
                     <div className="w-full h-[55px] flex justify-center items-center gap-2">
                         <div className="w-1/2 h-full bg-[#FEE500] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
                             <img className="w-[50px] h-[100%] cursor-pointer object-contain" src={Kakao} alt="kakao" />
-                            <p className="flex items-center pt-[11px]">카카오 로그인</p>
+                            <Link to={finalUrl}>
+                                <p className="flex items-center pt-[11px]">카카오 로그인</p>
+                            </Link>
                             <span className="w-[10%]"></span>
                         </div>
                         <div className="w-1/2 h-full bg-[#F2F2F2] rounded-lg md:h-[55px] flex justify-around items-center cursor-pointer">
