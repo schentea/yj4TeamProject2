@@ -73,8 +73,13 @@ export default function Header() {
             >
               {userData ? (
                 <>
-                  <Link to="mypage" className="no-underline text-black">
-                    <p>{userData.user.userid}</p>{" "}
+                  <Link
+                    to="mypage"
+                    className=" h-full flex items-center no-underline text-black pb-3"
+                  >
+                    <div className=" w-[60px] h-[60px] rounded-full flex items-center justify-center bg-gray-300">
+                      <span>{`${userData.user.userid.substring(0, 2)}`}</span>
+                    </div>
                   </Link>
                   <p className="cursor-pointer" onClick={handleLogout}>
                     로그아웃
@@ -117,7 +122,7 @@ export default function Header() {
                     {userData ? (
                       <>
                         <Link to="mypage" className="no-underline text-black">
-                          <p>{userData.user.userid}</p>{" "}
+                          <p className="mr-4">{userData.user.userid}</p>{" "}
                         </Link>
                         <p className="cursor-pointer" onClick={handleLogout}>
                           로그아웃
