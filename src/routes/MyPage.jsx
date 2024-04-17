@@ -276,7 +276,7 @@ export default function MyPage() {
             )}
             {/* 알레르기 */}
             {selectedMenu === "allergy" && (
-              <div className="w-2/3 xl:h-[30%] h-[80%] mt-16 flex flex-col items-center justify-between bg-white border rounded-xl p-4">
+              <div className="md:w-2/3 w-full xl:h-[30%] h-[80%] mt-16 flex flex-col items-center justify-between bg-white border rounded-xl p-4">
                 <div className="flex flex-wrap">
                   {[
                     "달걀",
@@ -325,7 +325,7 @@ export default function MyPage() {
               <form className="w-full h-full flex flex-col items-center ">
                 <div className="w-full max-w-[1200px]">
                   {/* 지역 입력 받는 폼 */}
-                  <div className="w-full h-[60%] mb-16 flex flex-col items-center bg-white border rounded-xl p-4">
+                  <div className="w-full xl:h-[50%] h-[70%] mb-16 flex flex-col justify-between items-center bg-white border rounded-xl p-4">
                     <h4 className="mb-8">지역 정보 수정</h4>
                     <div className="flex flex-wrap">
                       {[
