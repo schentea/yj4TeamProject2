@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
+import useUser from "../components/useUser";
 
 export default function MyPage() {
+  const userData = useUser();
+  console.log(userData);
   const [selectedMenu, setSelectedMenu] = useState("profile");
   const [selectedRegion, setSelectedRegion] = useState("");
   const [allergies, setAllergies] = useState({
