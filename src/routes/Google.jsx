@@ -6,7 +6,6 @@ export default function Google() {
     const { search } = useLocation();
     const params = new URLSearchParams(search);
     const code = params.get('code');
-    console.log(code);
     const { data } = useQuery(['getUser', { code }], apiGoogleLogin);
     console.log('asd', data);
     const navigate = useNavigate();
