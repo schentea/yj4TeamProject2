@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import cen1 from "../img/cen1.jpg";
+import cen1 from "../img/test1.png";
 import cen2 from "../img/cen2.jpg";
 
 export default function MethodUse() {
