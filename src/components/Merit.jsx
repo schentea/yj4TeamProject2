@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import img1 from "../img/food.jpg";
+import img1 from "../img/food.png";
+import img2 from "../img/talk.png";
 
 export default function Merit() {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,7 +103,7 @@ export default function Merit() {
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
-                className="w-[100%] h-[100%] object-contain object-center"
+                className="w-[75%] h-[100%] object-cotain object-center"
                 src={img1}
                 alt="a"
               />
@@ -128,8 +129,8 @@ export default function Merit() {
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
-                className="w-[100%] h-[100%] object-contain object-center"
-                src={img1}
+                className="w-[70%] h-[100%] object-cover object-center"
+                src={img2}
                 alt="a"
               />
             </div>
