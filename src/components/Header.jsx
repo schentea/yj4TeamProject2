@@ -73,8 +73,10 @@ export default function Header() {
                         >
                             {userData ? (
                                 <>
-                                    <p>{userData.user.userid}</p>{' '}
-                                    <p className="cursor-point" onClick={handleLogout}>
+                                    <Link to="mypage" className="no-underline text-black">
+                                        <p>{userData.user.userid}</p>{' '}
+                                    </Link>
+                                    <p className="cursor-pointer" onClick={handleLogout}>
                                         로그아웃
                                     </p>
                                 </>
@@ -112,12 +114,25 @@ export default function Header() {
                                         <IoClose />
                                     </motion.div>
                                     <div className="flex mb-8 mt-8">
-                                        <Link to="/login" className="text-black no-underline">
-                                            <p className=" cursor-pointer mr-4">로그인</p>
-                                        </Link>
-                                        <Link to="/register" className="text-black no-underline">
-                                            <p className=" cursor-pointer"> 회원가입</p>
-                                        </Link>
+                                        {userData ? (
+                                            <>
+                                                <Link to="mypage" className="no-underline text-black">
+                                                    <p>{userData.user.userid}</p>{' '}
+                                                </Link>
+                                                <p className="cursor-pointer" onClick={handleLogout}>
+                                                    로그아웃
+                                                </p>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Link to="/login" className="text-black no-underline">
+                                                    <p>로그인</p>
+                                                </Link>
+                                                <Link to="/register" className="text-black no-underline">
+                                                    <p>회원가입</p>
+                                                </Link>
+                                            </>
+                                        )}
                                     </div>
                                     <a href="#section1" className="text-black no-underline">
                                         <p className=" cursor-pointer">커뮤니케이션</p>
