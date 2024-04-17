@@ -35,7 +35,7 @@ export default function SignupForm() {
             } else {
                 // 로그인 실패 시
                 sessionStorage.clear();
-                navigate('/users/login');
+                navigate('/login');
             }
         },
     });

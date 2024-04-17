@@ -5,10 +5,11 @@ import { FaUser } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
 import useUser from "../components/useUser";
-import { getSchoolInfo } from "../Api";
+import { apiPostAllergiesEdit, apiPostDefaultInfoEdit, apiPostRegionSchoolEdit, getSchoolInfo } from "../Api";
 
 export default function MyPage() {
   const userData = useUser();
+  const userid = userData?.user?.userid
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [tel, setTel] = useState("");
@@ -103,7 +104,10 @@ export default function MyPage() {
     setErrorMessages(errors);
 
     if (Object.keys(errors).length === 0) {
-      console.log("사용자 정보 수정",{ tel,password });
+      
+      const defaultData = { tel, password,userid}
+      apiPostDefaultInfoEdit(defaultData)
+      alert("정보가 수정되었습니다.")
     }
   };
 
@@ -126,7 +130,8 @@ export default function MyPage() {
     const selectedAllergies = Object.entries(allergies)
       .filter(([_, value]) => value)
       .map(([key, _]) => key);
-    console.log("알레르기 정보 수정:", selectedAllergies);
+      const allergiesEdit = {selectedAllergies , userid}
+      apiPostAllergiesEdit(allergiesEdit)
   };
 
   const handleSchoolNameChange = (e) => {
@@ -149,7 +154,9 @@ export default function MyPage() {
         return;
       }
       const combinedSchoolName = `${schoolName}, ${schoolInfo}`;
-      console.log("학교 정보 수정", { region: selectedRegion, schoolNM: combinedSchoolName });
+      
+      const regionSchoolEdit = { region: selectedRegion, schoolNM: combinedSchoolName, userid : userid }
+      apiPostRegionSchoolEdit(regionSchoolEdit)
     } catch (error) {
       console.log(error);
     }

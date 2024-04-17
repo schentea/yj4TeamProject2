@@ -276,3 +276,48 @@ export async function apiPostProfileEdit({ file }) {
         console.log(error);
     }
 }
+// 기본 정보 수정
+export async function apiPostDefaultInfoEdit(data) {
+    try {
+        return await fetch(`${BASE_URL}/users/defaultInfo`, {
+            method :"POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body :JSON.stringify(data)
+        }).then((res) => res.json()) 
+    } catch (error) {
+        console.log(error)
+    }
+}
+// 알러지 정보 수정
+export async function apiPostAllergiesEdit(data) {
+    try {
+        return await fetch(`${BASE_URL}/users/allergiesEdit`, {
+            method :"POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body :JSON.stringify(data)
+        }).then((res) => res.json()) 
+    } catch (error) {
+        console.log(error)
+    }
+}
+// 학교,지역 정보 수정
+export async function apiPostRegionSchoolEdit(data) {
+    try {
+        return await fetch(`${BASE_URL}/users/regionSchoolEdit`, {
+            method :"POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body :JSON.stringify(data)
+        }).then((res) => res.json()) 
+    } catch (error) {
+        console.log(error)
+    }
+}
