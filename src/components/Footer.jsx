@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex flex-col text-black font-bold text-[16px] gap-3">
             <img className="w-[180px]" src={logo} alt="sss" />
             <h6>대구광역시 동구 화랑로 525 </h6>
-            <h6>Copyright ⓒ CcooK.,Ltd All Rights Reserved.</h6>
+            <h6>Copyright ⓒ CareKids,Ltd All Rights Reserved.</h6>
           </div>
 
           <div className="flex space-x-4 h-full items-center text-black text-[24px] gap-3">
