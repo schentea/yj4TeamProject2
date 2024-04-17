@@ -5,16 +5,18 @@ import { FaUser } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
 import useUser from "../components/useUser";
+import { getSchoolInfo } from "../Api";
 
 export default function MyPage() {
   const userData = useUser();
-  console.log("사용자 알러지", userData?.user?.allergies);
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [tel, setTel] = useState("");
   const [errorMessages, setErrorMessages] = useState({ password: "", tel: "" });
   const [selectedMenu, setSelectedMenu] = useState("profile");
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [schoolName, setSchoolName] = useState("");
+  const [formError, setFormError] = useState("");
   const initialAllergiesState = {
     달걀: false,
     우유: false,
@@ -127,10 +129,28 @@ export default function MyPage() {
     console.log("알레르기 정보 수정:", selectedAllergies);
   };
 
-  const handleRegionSubmit = (e) => {
+  const handleSchoolNameChange = (e) => {
+    setSchoolName(e.target.value);
+    setFormError(""); // 입력 시작 시 에러 메시지 초기화
+  };
+  const handleRegionSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("지역 및 학교 정보 수정:", selectedRegion);
+    if (!selectedRegion) {
+      setFormError("지역을 선택해주세요.");
+      return;
+    }
+
+    try {
+      const schoolInfo = await getSchoolInfo(selectedRegion, schoolName);
+      if (!schoolInfo) {
+        setFormError("입력한 학교명을 찾을 수 없습니다.");
+        return;
+      }
+      console.log("학교 정보가 확인되었습니다:", schoolInfo);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -294,11 +314,12 @@ export default function MyPage() {
                     {/* 학교이름 */}
                     <h4>학교 정보 수정</h4>
                     <div className="w-[60%] h-40 flex items-center">
-                      <input type="text" className=" bg-gray-100 h-10 w-[80%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" />
+                      <input type="text" className=" bg-gray-100 h-10 w-[80%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" value={schoolName} onChange={handleSchoolNameChange} />
                       <button className="bg-blue-500 w-[20%] text-white py-2 rounded-r-sm hover:bg-blue-600 transition duration-300">저장</button>
                     </div>
                   </div>
                 </div>
+                {formError && <p className="text-red-500">{formError}</p>}
               </form>
             )}
           </div>
