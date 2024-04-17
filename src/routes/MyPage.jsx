@@ -321,23 +321,9 @@ export default function MyPage() {
             {selectedMenu === "region" && (
               <form className="w-full h-full flex flex-col items-center ">
                 <div className="w-full max-w-[1200px]">
-                  {/* 학교 입력 받는 폼 */}
-                  <div className="  w-full h-[30%] flex flex-col items-center bg-white border rounded-xl p-4">
-                    {/* 학교이름 */}
-                    <h4>학교 정보 수정</h4>
-                    <div className="w-[60%] h-40 flex items-center">
-                      <input
-                        type="text"
-                        className=" bg-gray-100 h-10 w-[80%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
-                      />
-                      <button className="bg-blue-500 w-[20%] text-white py-2 rounded-r-sm hover:bg-blue-600 transition duration-300">
-                        저장
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="w-full h-[70%] mt-16 flex flex-col items-center bg-white border rounded-xl p-4">
-                    <h4>지역 정보 수정</h4>
+                  {/* 지역 입력 받는 폼 */}
+                  <div className="w-full h-[60%] mb-16 flex flex-col items-center bg-white border rounded-xl p-4">
+                    <h4 className="mb-8">지역 정보 수정</h4>
                     <div className="flex flex-wrap">
                       {[
                         "서울",
@@ -372,11 +358,24 @@ export default function MyPage() {
                       ))}
                     </div>
                     <button
-                      className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded"
+                      className="mt-16 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded"
                       onClick={handleSelect}
                     >
                       선택하기
                     </button>
+                  </div>
+                  <div className="  w-full h-[30%] flex flex-col items-center bg-white border rounded-xl p-4">
+                    {/* 학교이름 */}
+                    <h4>학교 정보 수정</h4>
+                    <div className="w-[60%] h-40 flex items-center">
+                      <input
+                        type="text"
+                        className=" bg-gray-100 h-10 w-[80%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
+                      />
+                      <button className="bg-blue-500 w-[20%] text-white py-2 rounded-r-sm hover:bg-blue-600 transition duration-300">
+                        저장
+                      </button>
+                    </div>
                   </div>
                 </div>
               </form>
