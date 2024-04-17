@@ -201,7 +201,6 @@ export async function apiPostUserLogin(data) {
     }
 }
 export async function apiGetUser(data) {
-    console.log(data);
     try {
         return await fetch(`${BASE_URL}/users/login-success?token=${data?.queryKey[1].token}`, {
             method: 'GET',

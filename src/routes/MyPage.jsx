@@ -111,19 +111,22 @@ export default function MyPage() {
     }
   };
 
+ 
   useEffect(() => {
     if (userData && userData.user && userData.user.allergies) {
-      const allergiesArray = userData.user.allergies.split(",");
-      const allergiesState = allergiesArray.reduce(
-        (acc, allergy) => ({
-          ...acc,
-          [allergy.trim()]: true,
-        }),
-        initialAllergiesState
-      );
-      setAllergies(allergiesState);
+        const allergiesArray = userData.user.allergies.split(",");
+        const allergiesState = allergiesArray.reduce(
+            (acc, allergy) => ({
+                ...acc,
+                [allergy.trim()]: true,
+            }),
+            initialAllergiesState
+        );
+        setAllergies(allergiesState);
     }
-  }, [userData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [userData]);
+
 
   const handleAllergySubmit = (e) => {
     e.preventDefault();
