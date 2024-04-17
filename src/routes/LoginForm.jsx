@@ -18,6 +18,9 @@ export default function SignupForm() {
 
     const params = new URLSearchParams(config).toString();
     const finalUrl = `${kakaoUrl}?${params}`;
+
+    const googleUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.REACT_APP_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_GOOGLE_REDIRECT_URL}&response_type=code&scope=email profile`;
+
     const queryClient = useQueryClient();
     const navigate = useNavigate();
     const { mutate } = useMutation(apiPostUserLogin, {
@@ -114,7 +117,9 @@ export default function SignupForm() {
                                 src={Google}
                                 alt="google"
                             />
-                            <p className="flex items-center pt-[11px]">구글 로그인</p>
+                            <Link to={googleUrl}>
+                                <p className="flex items-center pt-[11px]">구글 로그인</p>
+                            </Link>
                             <span className="w-[10%]"></span>
                         </div>
                     </div>

@@ -9,6 +9,7 @@ import SignupForm from './routes/SignupForm';
 import LoginForm from './routes/LoginForm';
 import MyPage from './routes/MyPage';
 import Kakao from './routes/Kakao';
+import Google from './routes/Google';
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: 'socials/kakao',
                 element: <Kakao />,
+            },
+            {
+                path: 'socials/google',
+                element: <Google />,
             },
         ],
     },

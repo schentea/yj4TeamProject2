@@ -249,4 +249,14 @@ export async function apiKakaoLogin(props) {
         console.log(error);
     }
 }
-// asd
+export async function apiGoogleLogin(props) {
+    const { code } = props.queryKey[1];
+    try {
+        return await fetch(`${BASE_URL}/users/socials/google?code=${code}`, {
+            method: 'GET',
+            credentials: 'include',
+        }).then((res) => res.json());
+    } catch (error) {
+        console.log(error);
+    }
+}
