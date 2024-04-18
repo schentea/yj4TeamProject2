@@ -8,7 +8,11 @@ export default function AllimSection() {
   const [modalOpen, setModalOpen] = useState(false);
   const userData = useUser();
   const openModal = () => {
-    setModalOpen(true);
+    if (userData) {
+      setModalOpen(true);
+    } else {
+      alert("로그인 후 이용가능한 서비스입니다.");
+    }
   };
   console.log(userData);
   const closeModal = () => {
@@ -81,7 +85,7 @@ export default function AllimSection() {
           <button class="w-1/2 btn btn-primary btn-jelly" onClick={openModal}>
             신청하기
           </button>
-          {modalOpen ? (
+          {modalOpen && userData ? (
             <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-10">
               <div className="bg-white rounded-lg w-[400px] h-[400px] relative">
                 <div className="w-full h-12 flex justify-center items-center rounded-t-md bg-blue-400">
