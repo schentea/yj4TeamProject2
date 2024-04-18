@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import cen1 from "../img/test1.png";
-import cen2 from "../img/cen2.jpg";
+import cen2 from "../img/mypage2.png";
 
 export default function MethodUse() {
   const [isVisible, setIsVisible] = useState(false);

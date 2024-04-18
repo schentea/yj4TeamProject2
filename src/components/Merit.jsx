@@ -103,7 +103,7 @@ export default function Merit() {
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
-                className="w-[75%] h-[100%] object-cotain object-center"
+                className="w-[85%] h-[100%] object-cotain object-center"
                 src={img1}
                 alt="a"
               />
