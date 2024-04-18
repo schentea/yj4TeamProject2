@@ -96,14 +96,14 @@ export default function Merit() {
           {/* 위쪽 이미지 */}
           <div
             id="top_img"
-            className={`w-full xl:h-[60vh] h-[45vh]  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4 ${
+            className={`w-full xl:h-[60vh] h-[45vh]  rounded-2xl flex flex-col md:flex-row justify-center items-center gap-4 mb-32  ${
               istopVisible ? "fade-in" : ""
             }`}
           >
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
-                className="w-[100%] h-[100%] object-contain object-center"
+                className="md:w-[90%] w-[70%] h-[100%] object-contain object-center"
                 src={img1}
                 alt="a"
               />
@@ -129,7 +129,7 @@ export default function Merit() {
             {/* 왼쪽 사진 */}
             <div className="w-1/2 h-full  flex justify-center items-center">
               <img
-                className="w-[90%] h-[100%] object-contain object-center"
+                className="md:w-[90%] w-[80%]  h-[100%] object-contain object-center"
                 src={img2}
                 alt="a"
               />
