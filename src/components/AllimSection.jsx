@@ -83,7 +83,7 @@ export default function AllimSection() {
           </button>
           {modalOpen ? (
             <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-10">
-              <div className="bg-white rounded-lg w-[400px] h-[600px] relative">
+              <div className="bg-white rounded-lg w-[400px] h-[400px] relative">
                 <div className="w-full h-12 flex justify-center items-center rounded-t-md bg-blue-400">
                   <p className="text-white font-bold mt-3">
                     입력하신 정보가 맞나요?
@@ -109,29 +109,35 @@ export default function AllimSection() {
                     />
                   </svg>
                 </div>
-
-                <div className="p-4">
-                  <p className="text-lg">
-                    알레르기: {userData?.user.allergies}
-                  </p>
-                  <p className="text-lg">
-                    학교정보:{" "}
-                    {userData?.user.schoolNM &&
-                      userData?.user.schoolNM.split(",")[0]}
-                  </p>{" "}
-                  <p className="text-lg">전화번호: {userData?.user.tel}</p>
-                  <div className="w-full flex gap-2">
-                    <Link to="/mypage" className="w-1/2">
-                      <button class="w-full h-full rounded-md btn-primary btn-jelly bg-[#E0E3EB] text-black">
-                        수정하기
+                {/* 위에 글 */}
+                <div className="w-full h-full flex flex-col justify-around">
+                  <div className="p-4 flex flex-col">
+                    <p className="text-lg">
+                      알레르기: {userData?.user.allergies}
+                    </p>
+                    <p className="text-lg">
+                      학교정보:{" "}
+                      {userData?.user.schoolNM &&
+                        userData?.user.schoolNM.split(",")[0]}
+                    </p>{" "}
+                    <p className="text-lg">전화번호: {userData?.user.tel}</p>
+                  </div>
+                  {/* 아래 설명글과 버튼 */}
+                  <div className="text-gray-500 my-8 p-4 flex flex-col gap-3">
+                    <span> 입력하신 정보가 맞다면 지금바로 신청하세요!</span>
+                    <div className="w-full flex gap-2">
+                      <Link to="/mypage" className="w-1/2">
+                        <button class="w-full h-full rounded-md btn-primary btn-jelly bg-[#E0E3EB] text-black">
+                          수정하기
+                        </button>
+                      </Link>
+                      <button
+                        class="w-1/2 btn btn-primary btn-jelly"
+                        onClick={onClick}
+                      >
+                        신청하기
                       </button>
-                    </Link>
-                    <button
-                      class="w-1/2 btn btn-primary btn-jelly"
-                      onClick={onClick}
-                    >
-                      신청하기
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
