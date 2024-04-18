@@ -17,6 +17,8 @@ export default function AllimSection() {
 
   const onClick = async () => {
     // 비동기 함수로 변경합니다.
+    alert("신청이 완료되었습니다");
+
     try {
       if (!userData || !userData.user) {
         console.error("사용자 데이터가 없습니다.");
@@ -43,6 +45,7 @@ export default function AllimSection() {
         console.log("API 호출이 실패했습니다.");
         // 실패했을 때의 처리를 여기에 추가합니다.
       }
+      setModalOpen(false);
     } catch (error) {
       console.error("API 호출 중 오류가 발생했습니다.", error);
       // 오류가 발생했을 때의 처리를 여기에 추가합니다.
@@ -119,7 +122,7 @@ export default function AllimSection() {
                   <p className="text-lg">전화번호: {userData?.user.tel}</p>
                   <div className="w-full flex gap-2">
                     <Link to="/mypage" className="w-1/2">
-                      <button class="w-full btn btn-primary btn-jelly">
+                      <button class="w-full h-full rounded-md btn-primary btn-jelly bg-[#E0E3EB] text-black">
                         수정하기
                       </button>
                     </Link>
