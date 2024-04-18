@@ -156,13 +156,13 @@ export default function MyPage() {
                 setFormError('입력한 학교명을 찾을 수 없습니다.');
                 return;
             }
-            const combinedSchoolName = `${schoolName}, ${schoolInfo}`;
+            const combinedSchoolName = `${schoolName},${schoolInfo}`;
 
             const regionSchoolEdit = { region: selectedRegion, schoolNM: combinedSchoolName, userid: userid };
             const res = await apiPostRegionSchoolEdit(regionSchoolEdit);
             console.log({ res });
             sessionStorage.setItem('userData', JSON.stringify(res));
-            // window.location.reload();
+            window.location.reload();
         } catch (error) {
             console.log(error);
         }

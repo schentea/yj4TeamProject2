@@ -104,6 +104,7 @@ export async function getMealInfo() {
     try {
         const schoolcode = schoolNM;
         const officeCode = location[region];
+
         const mealServiceInfoResponse = await fetch(
             `${BASE_URL_MEAL}?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolcode}&MLSV_YMD=${date}`
         ).then((res) => res.json());
@@ -279,44 +280,44 @@ export async function apiPostProfileEdit({ file }) {
 export async function apiPostDefaultInfoEdit(data) {
     try {
         return await fetch(`${BASE_URL}/users/defaultInfo`, {
-            method :"POST",
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             credentials: 'include',
-            body :JSON.stringify(data)
-        }).then((res) => res.json()) 
+            body: JSON.stringify(data),
+        }).then((res) => res.json());
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 // 알러지 정보 수정
 export async function apiPostAllergiesEdit(data) {
     try {
         return await fetch(`${BASE_URL}/users/allergiesEdit`, {
-            method :"POST",
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             credentials: 'include',
-            body :JSON.stringify(data)
-        }).then((res) => res.json()) 
+            body: JSON.stringify(data),
+        }).then((res) => res.json());
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 // 학교,지역 정보 수정
 export async function apiPostRegionSchoolEdit(data) {
     try {
         return await fetch(`${BASE_URL}/users/regionSchoolEdit`, {
-            method :"POST",
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             credentials: 'include',
-            body :JSON.stringify(data)
-        }).then((res) => res.json()) 
+            body: JSON.stringify(data),
+        }).then((res) => res.json());
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
