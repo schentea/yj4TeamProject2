@@ -27,7 +27,7 @@ export default function Footer() {
               {/* 실제 링크로 교체 필요 */}
               <FaInstagram className="text-3xl" />
             </Link>
-            <Link to="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0" className="mr-4 text-gray-600 hover:text-gray-900">
+            <Link to="https://www.facebook.com/?locale=ko_KR" className="mr-4 text-gray-600 hover:text-gray-900">
               {" "}
               {/* 실제 링크로 교체 필요 */}
               <FaFacebookSquare className="text-3xl" />
@@ -37,7 +37,7 @@ export default function Footer() {
               {/* 실제 링크로 교체 필요 */}
               <FaBlogger className="text-3xl" />
             </Link>
-            <Link to="/kakaotalk" className="text-gray-600 hover:text-gray-900">
+            <Link to="https://www.kakaocorp.com/page/service/service/KakaoPage']" className="text-gray-600 hover:text-gray-900">
               {" "}
               {/* 실제 링크로 교체 필요 */}
               <SiKakaotalk className="text-3xl" />
