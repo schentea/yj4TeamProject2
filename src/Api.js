@@ -10,12 +10,12 @@ const month = String(currentDate.getMonth() + 1).padStart(2, '0');
 const date = `${year}${month}`;
 
 //  내일 날짜
-const nextDate = new Date(currentDate);
-nextDate.setDate(currentDate.getDate() + 1);
-const nextYear = nextDate.getFullYear();
-const nextMonth = String(nextDate.getMonth() + 1).padStart(2, '0');
-const nextDay = String(nextDate.getDate()).padStart(2, '0');
-const nDate = `${nextYear}${nextMonth}${nextDay}`;
+// const nextDate = new Date(currentDate);
+// nextDate.setDate(currentDate.getDate() + 1);
+// const nextYear = nextDate.getFullYear();
+// const nextMonth = String(nextDate.getMonth() + 1).padStart(2, '0');
+// const nextDay = String(nextDate.getDate()).padStart(2, '0');
+// const nDate = `${nextYear}${nextMonth}${nextDay}`;
 
 // 세션에 저장된 데이터 가져오기
 let data;
