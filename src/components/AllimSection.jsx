@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 export default function AllimSection() {
   const [modalOpen, setModalOpen] = useState(false);
   const userData = useUser();
+  const userSub = JSON.parse(sessionStorage.getItem("userData"))
+  
   const openModal = () => {
     if (userData) {
       setModalOpen(true);
@@ -128,19 +130,27 @@ export default function AllimSection() {
                   </div>
                   {/* 아래 설명글과 버튼 */}
                   <div className="text-gray-500 my-8 p-4 flex flex-col gap-3">
-                    <span> 입력하신 정보가 맞다면 지금바로 신청하세요!</span>
+                    {userSub.subscribe===true ? (<span> 이미 구독중이신 상태입니다!</span>) : <span> 입력하신 정보가 맞다면 지금바로 신청하세요!</span>}
+                    
                     <div className="w-full flex gap-2">
                       <Link to="/mypage" className="w-1/2">
+                        
                         <button class="w-full h-full rounded-md btn-primary btn-jelly bg-[#E0E3EB] text-black">
                           수정하기
                         </button>
                       </Link>
-                      <button
+                      {userSub.subscribe===true ? ( <button
+                        class="w-1/2 btn btn-primary btn-jelly"
+                        onClick={closeModal}
+                      >
+                        닫기
+                      </button>) : ( <button
                         class="w-1/2 btn btn-primary btn-jelly"
                         onClick={onClick}
                       >
                         신청하기
-                      </button>
+                      </button>)}
+                     
                     </div>
                   </div>
                 </div>
