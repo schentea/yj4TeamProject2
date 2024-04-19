@@ -182,6 +182,7 @@ export default function MyPage() {
             const combinedSchoolName = `${schoolName},${schoolInfo}`;
 
             const regionSchoolEdit = { region: selectedRegion, schoolNM: combinedSchoolName, userid: userid };
+            console.log('Asd', regionSchoolEdit);
             const res = await apiPostRegionSchoolEdit(regionSchoolEdit);
             console.log({ res });
             sessionStorage.setItem('userData', JSON.stringify(res));
