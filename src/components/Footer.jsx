@@ -21,6 +21,7 @@ export default function Footer() {
           </div>
 
           {/* 소셜 미디어 아이콘 */}
+
           <div className="flex items-center mt-4 md:mt-0">
             <Link to="https://www.instagram.com/" className="mr-4 text-gray-600 hover:text-gray-900">
               {" "}
