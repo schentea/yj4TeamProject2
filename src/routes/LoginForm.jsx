@@ -8,6 +8,7 @@ import { apiPostUserLogin } from "../Api";
 import { Link, useNavigate } from "react-router-dom";
 import useUser from "../components/useUser";
 import { IoArrowBackOutline } from "react-icons/io5";
+
 export default function SignupForm() {
   const kakaoUrl = "https://kauth.kakao.com/oauth/authorize";
   const config = {
@@ -26,23 +27,24 @@ export default function SignupForm() {
   const { mutate } = useMutation(apiPostUserLogin, {
     onSuccess: (data) => {
       if (data.result === true) {
-        // 서버에서 성공 여부를 확인
         // 로그인 성공 시 세션 스토리지에 데이터 저장
         sessionStorage.setItem("userData", JSON.stringify(data));
         queryClient.invalidateQueries("getUser");
         navigate("/");
         window.location.reload();
       } else {
-        // 로그인 실패 시
-        sessionStorage.clear();
-        navigate("/login");
+        // 로그인 실패 시 알림창 표시
+        alert("입력한 정보를 다시 확인해주세요.");
       }
     },
   });
+
   const { register, handleSubmit } = useForm();
+
   const onValid = (data) => {
     mutate(data);
   };
+
   const data = useUser();
   console.log(data);
 
