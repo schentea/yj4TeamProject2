@@ -1,43 +1,47 @@
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { CiYoutube } from "react-icons/ci";
+import { FaInstagram, FaFacebookSquare, FaBlogger } from "react-icons/fa";
+import { SiKakaotalk } from "react-icons/si";
 import { Link } from "react-router-dom";
-import logo from "../img/logo.svg";
+import logo from "../img/logo.svg"; // 로고 이미지 경로는 실제 경로에 맞게 조정해야 합니다.
 
 export default function Footer() {
   return (
-    <footer className="w-full h-[170px] bg-[#F9FAFB] flex justify-center">
-      {/* Logo */}
-      <div className="w-full max-w-[1200px] h-full p-5">
-        <div className="h-full w-full flex justify-between items-center">
-          <div className="flex flex-col text-black font-bold text-[16px] gap-3">
-            <img className="w-[180px]" src={logo} alt="sss" />
-            <h6>대구광역시 동구 화랑로 525 </h6>
-            <h6>Copyright ⓒ CareKids,Ltd All Rights Reserved.</h6>
+    <footer className="w-full bg-gray-100">
+      <div className="container mx-auto py-8 px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          {/* 로고와 주소 */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <img className="w-48 mb-4" src={logo} alt="Kidsnote" />
+            <address className="text-sm">(주)케어키즈 | 대구광역시 동구 108, 5층 케어키즈</address>
+            <p className="text-sm">이용약관 | 개인정보처리방침 | 위치기반서비스이용약관 | 원격지원</p>
+            <p className="text-sm">사업자번호: 108-86-00000 | 대표이사: 최현기</p>
+            <p className="text-sm">고객센터: 1644-1122 (평일 09:00 ~ 18:00)</p>
+            <p className="text-sm">이메일: dltmdals7295@carekids.com</p>
+            <p className="text-sm">케어키즈 사용자 가이드</p>
           </div>
 
-          <div className="flex space-x-4 h-full items-center text-black text-[24px] gap-3">
-            <p>
-              <Link to="https://www.instagram.com/" className="text-black">
-                <FaInstagram />
-              </Link>
-            </p>
-            <p>
+          {/* 소셜 미디어 아이콘 */}
+          <div className="flex items-center mt-4 md:mt-0">
+            <Link to="https://www.instagram.com/" className="mr-4 text-gray-600 hover:text-gray-900">
               {" "}
-              <Link
-                to="https://www.facebook.com/?locale=ko_KR"
-                className="text-black"
-              >
-                <FaSquareFacebook />
-              </Link>
-            </p>
-            <p>
+              {/* 실제 링크로 교체 필요 */}
+              <FaInstagram className="text-3xl" />
+            </Link>
+            <Link to="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0" className="mr-4 text-gray-600 hover:text-gray-900">
               {" "}
-              <Link to="https://www.youtube.com/" className="text-black">
-                <CiYoutube />
-              </Link>
-            </p>
+              {/* 실제 링크로 교체 필요 */}
+              <FaFacebookSquare className="text-3xl" />
+            </Link>
+            <Link to="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0" className="mr-4 text-gray-600 hover:text-gray-900">
+              {" "}
+              {/* 실제 링크로 교체 필요 */}
+              <FaBlogger className="text-3xl" />
+            </Link>
+            <Link to="/kakaotalk" className="text-gray-600 hover:text-gray-900">
+              {" "}
+              {/* 실제 링크로 교체 필요 */}
+              <SiKakaotalk className="text-3xl" />
+            </Link>
           </div>
         </div>
       </div>
