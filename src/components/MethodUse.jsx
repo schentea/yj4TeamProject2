@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
-import cen1 from "../img/test1.png";
-import cen2 from "../img/mypage2.png";
+import bg1 from "../img/testbg-1.png";
+import bg2 from "../img/testbg-2.png";
+import bg3 from "../img/testbg-3.png";
+import bg4 from "../img/testbg-4.png";
+import bg5 from "../img/testbg-5.png";
+import bg6 from "../img/testbg-6.png";
 
 export default function MethodUse() {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,15 +88,17 @@ export default function MethodUse() {
               </div>
             </div>
             {/* 아래쪽 그림 */}
-            <div className="w-full h-[550px]  flex justify-center items-center">
-              <div className="w-[100%] h-[100%] flex justify-center rounded-xl overflow-hidden">
-                <img
-                  src={cen1}
-                  alt=""
-                  className={`w-full h-full object-cover object-center ${
-                    isVisible ? "imgGood" : ""
-                  }`}
-                />
+            <div className="w-full h-[400px]  flex justify-center items-center">
+              <div className="w-[100%] h-[100%] flex justify-center rounded-xl overflow-hidden gap-3">
+               <div className="w-[33%] h-full border-1">
+                <img className="w-full h-full" src={bg1} alt=" " />
+               </div>
+               <div className="w-[33%] h-full bg-red-300 border-1">
+               <img className="w-full h-full" src={bg2} alt=" " />
+               </div>
+               <div className="w-[33%] h-full bg-red-300 border-1">
+               <img className="w-full h-full" src={bg3} alt=" " />
+               </div>
               </div>
             </div>
           </div>
@@ -118,17 +124,20 @@ export default function MethodUse() {
               </div>
             </div>
             {/* 아래쪽 그림 */}
-            <div className="w-full h-[550px]  flex justify-center items-center">
-              <div className="w-[100%] h-[100%] flex justify-center rounded-xl overflow-hidden">
-                <img
-                  src={cen2}
-                  alt=""
-                  className={`w-full h-full object-cover object-center ${
-                    isbottomVisible ? "imgGood" : ""
-                  }`}
-                />
+            <div className="w-full h-[400px]  flex justify-center items-center">
+              <div className="w-[100%] h-[100%] flex justify-center rounded-xl overflow-hidden gap-3">
+               <div className="w-[33%] h-full border-1 ">
+                <img className="w-full h-full" src={bg4} alt="1 " />
+               </div>
+               <div className="w-[33%] h-full bg-red-300 border-1">
+               <img className="w-full h-full" src={bg5} alt=" 2" />
+               </div>
+               <div className="w-[33%] h-full bg-red-300 border-1">
+               <img className="w-full h-full" src={bg6} alt=" 3" />
+               </div>
               </div>
             </div>
+          
           </div>
         </div>
       </div>
