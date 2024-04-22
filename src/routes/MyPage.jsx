@@ -11,10 +11,13 @@ import {
     apiPostDefaultInfoEdit,
     apiPostRegionSchoolEdit,
     getSchoolInfo,
+    apiPostUserSub,
 } from '../Api';
 
 export default function MyPage() {
     const userData = useUser();
+    //CHOI
+    const userSub = JSON.parse(sessionStorage.getItem("userData"))
     const userid = userData?.user?.userid;
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
@@ -24,6 +27,8 @@ export default function MyPage() {
     const [selectedRegion, setSelectedRegion] = useState('');
     const [schoolName, setSchoolName] = useState('');
     const [formError, setFormError] = useState('');
+    //CHOI
+    const [trueFalse, setTrueFalse] = useState()
     const initialAllergiesState = {
         달걀: false,
         우유: false,
@@ -45,7 +50,7 @@ export default function MyPage() {
         조개류: false,
         잣: false,
     };
-    console.log(userData);
+    
     const [allergies, setAllergies] = useState(initialAllergiesState);
     useEffect(() => {
         // userData나 user가 없는 경우에는 아무 작업도 수행하지 않음
@@ -87,7 +92,13 @@ export default function MyPage() {
     const handleProfileClick = () => {
         setIsModalOpen(true);
     };
-
+    //CHOI
+    const userSubFalse = async () => {
+        setTrueFalse(false)
+        const res = await apiPostUserSub(trueFalse, userid)
+        console.log(res)
+    }
+    
     const handleCloseModal = async () => {
         setIsModalOpen(false); // 모달 닫기
         if (profileFile) {
@@ -290,6 +301,18 @@ export default function MyPage() {
                         <div>
                             <h4>{userData?.user?.userid}</h4>
                             {/* <p>19.05.08</p> */}
+                        </div>
+                        {/* CHOI */}
+                        <div>
+                            {userSub.subscribe===true ? 
+                            <button 
+                            onClick={userSubFalse}
+                            className="bg-blue-500 w-[100px] mb-10 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">구독해제
+                            </button>
+                            :
+                            <button className="bg-blue-500 w-[100px] mb-10 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">구독하기</button>
+                            }
+                            
                         </div>
                     </div>
                     {/* 왼족 하단 */}

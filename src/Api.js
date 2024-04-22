@@ -326,3 +326,20 @@ export async function apiPostRegionSchoolEdit(data) {
         console.log(error);
     }
 }
+//구독 해제 및 신청 (추가 예정)
+export async function apiPostUserSub(data, user) {
+    const subData = {data, user}
+    
+    try {
+        return await fetch(`${BASE_URL}/users/userSubSetting`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify(subData),
+        }).then((res) => res.json());
+    } catch (error) {
+        console.log(error)
+    }
+}
