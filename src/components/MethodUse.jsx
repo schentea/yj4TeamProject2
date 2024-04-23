@@ -88,17 +88,21 @@ export default function MethodUse() {
               </div>
             </div>
             {/* 아래쪽 그림 */}
-            <div className="w-full h-[400px]  flex justify-center items-center">
-              <div className="w-[100%] h-[100%] flex justify-center rounded-xl overflow-hidden gap-3">
-               <div className="w-[33%] h-full border-1">
-                <img className="w-full h-full" src={bg1} alt=" " />
-               </div>
-               <div className="w-[33%] h-full bg-red-300 border-1">
-               <img className="w-full h-full" src={bg2} alt=" " />
-               </div>
-               <div className="w-[33%] h-full bg-red-300 border-1">
-               <img className="w-full h-full" src={bg3} alt=" " />
-               </div>
+            <div className="w-full h-auto lg:h-[400px]  flex justify-center items-center md:h-[600px]">
+              <div
+                className={`w-[100%] lg:h-[400px] lg:flex lg:flex-nowrap justify-center rounded-xl overflow-hidden gap-3 md:h-auto md:flex md:flex-wrap  ${
+                  isVisible ? "fade-in" : ""
+                }`}
+              >
+                <div className="w-full md:w-[45%] lg:w-[33%] h-full border-1">
+                  <img className="w-full h-full" src={bg1} alt=" " />
+                </div>
+                <div className="w-full md:w-[45%] lg:w-[33%] h-full bg-red-300 border-1">
+                  <img className="w-full h-full" src={bg2} alt=" " />
+                </div>
+                <div className="w-full md:w-[45%] lg:w-[33%] h-full bg-red-300 border-1">
+                  <img className="w-full h-full" src={bg3} alt=" " />
+                </div>
               </div>
             </div>
           </div>
@@ -124,20 +128,23 @@ export default function MethodUse() {
               </div>
             </div>
             {/* 아래쪽 그림 */}
-            <div className="w-full h-[400px]  flex justify-center items-center">
-              <div className="w-[100%] h-[100%] flex justify-center rounded-xl overflow-hidden gap-3">
-               <div className="w-[33%] h-full border-1 ">
-                <img className="w-full h-full" src={bg4} alt="1 " />
-               </div>
-               <div className="w-[33%] h-full bg-red-300 border-1">
-               <img className="w-full h-full" src={bg5} alt=" 2" />
-               </div>
-               <div className="w-[33%] h-full bg-red-300 border-1">
-               <img className="w-full h-full" src={bg6} alt=" 3" />
-               </div>
+            <div className="w-full h-auto lg:h-[400px]  flex justify-center items-center md:h-[600px]">
+              <div
+                className={`w-[100%] lg:h-[400px] lg:flex lg:flex-nowrap justify-center rounded-xl overflow-hidden gap-3 md:h-auto md:flex md:flex-wrap   ${
+                  isVisible ? "fade-in" : ""
+                }`}
+              >
+                <div className="w-full md:w-[45%] lg:w-[33%] h-full border-1 ">
+                  <img className="w-full h-full" src={bg4} alt="1 " />
+                </div>
+                <div className="w-full md:w-[45%] lg:w-[33%] h-full bg-red-300  border-1  ">
+                  <img className="w-full h-full" src={bg5} alt=" 2" />
+                </div>
+                <div className="w-full md:w-[45%] lg:w-[33%] h-full bg-red-300 border-1  ">
+                  <img className="w-full h-full" src={bg6} alt=" 3" />
+                </div>
               </div>
             </div>
-          
           </div>
         </div>
       </div>
