@@ -5,7 +5,13 @@ import { FaUser } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
 import useUser from "../components/useUser";
-import { apiPostProfileEdit, apiPostAllergiesEdit, apiPostDefaultInfoEdit, apiPostRegionSchoolEdit, getSchoolInfo } from "../Api";
+import {
+  apiPostProfileEdit,
+  apiPostAllergiesEdit,
+  apiPostDefaultInfoEdit,
+  apiPostRegionSchoolEdit,
+  getSchoolInfo,
+} from "../Api";
 
 export default function MyPage() {
   const userData = useUser();
@@ -185,7 +191,11 @@ export default function MyPage() {
       }
       const combinedSchoolName = `${schoolName},${schoolInfo}`;
 
-      const regionSchoolEdit = { region: selectedRegion, schoolNM: combinedSchoolName, userid: userid };
+      const regionSchoolEdit = {
+        region: selectedRegion,
+        schoolNM: combinedSchoolName,
+        userid: userid,
+      };
       console.log("Asd", regionSchoolEdit);
       const res = await apiPostRegionSchoolEdit(regionSchoolEdit);
       console.log({ res });
@@ -212,7 +222,7 @@ export default function MyPage() {
         </div>
       </div>
       {/* 아래쪽 컨텐츠 */}
-      <div className="w-full xl:h-[98vh] h-full flex flex-col xl:flex-row xl:justify-center pt-20 ">
+      <div className="w-full xl:h-[100vh] overflow-y-hidden h-full flex flex-col xl:flex-row xl:justify-center pt-20 ">
         {/* 왼쪽 정보 */}
         <div className="xl:w-[15%] w-full h-full border">
           {/* 왼쪽 상단 */}
@@ -220,8 +230,16 @@ export default function MyPage() {
             {/* 프로필 사진 */}
             {/* 설정  */}
             <div className="w-full flex justify-end">
-              <div className="w-[35px] h-[35px] text-[25px] cursor-pointer text-gray-500 text-end mr-4 rounded-full border flex justify-center items-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleProfileClick}>
-                <IoSettingsOutline className={isHovered ? "animate-spin" : ""} style={{ transition: "transform 0.5s ease-in-out" }} />
+              <div
+                className="w-[35px] h-[35px] text-[25px] cursor-pointer text-gray-500 text-end mr-4 rounded-full border flex justify-center items-center"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleProfileClick}
+              >
+                <IoSettingsOutline
+                  className={isHovered ? "animate-spin" : ""}
+                  style={{ transition: "transform 0.5s ease-in-out" }}
+                />
               </div>
               {isModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
@@ -234,16 +252,34 @@ export default function MyPage() {
                     {/* 이미지 업로드 */}
                     <div className="w-full h-[200px] flex justify-center pt-0">
                       <label className="relative w-[150px] h-[150px] bg-gray-300 rounded-full flex items-end justify-center">
-                        {profileImage ? <img src={profileImage} alt="프로필 이미지" className="w-full h-full object-cover" /> : <FaUser className="w-[120px] h-[120px] text-white" />}
-                        <input type="file" accept="image/*" className="absolute inset-0 opacity-0 w-full h-full cursor-pointer" onChange={handleImageChange} />
+                        {profileImage ? (
+                          <img
+                            src={profileImage}
+                            alt="프로필 이미지"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <FaUser className="w-[120px] h-[120px] text-white" />
+                        )}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
+                          onChange={handleImageChange}
+                        />
                         <div className="absolute bottom-3 -right-2 w-[40px] h-[40px] rounded-full text-white flex justify-center items-center text-[23px] bg-gray-600 ">
                           <FaCamera />
                         </div>
                       </label>
                     </div>
-                    <p className="text-center">나의 프로필을 멋지게 바꿔보세요 !!^^</p>
+                    <p className="text-center">
+                      나의 프로필을 멋지게 바꿔보세요 !!^^
+                    </p>
                     <div className="w-full flex justify-center">
-                      <button className=" bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold py-2 px-20  rounded" onClick={handleCloseModal}>
+                      <button
+                        className=" bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold py-2 px-20  rounded"
+                        onClick={handleCloseModal}
+                      >
                         닫기
                       </button>
                     </div>
@@ -265,15 +301,44 @@ export default function MyPage() {
           {/* 왼족 하단 */}
           <div className="p-4 flex flex-col justify-center items-start gap-4">
             <Link to="/" className="text-black no-underline">
-              <div className={selectedMenu === "home" ? "text-blue-500 font-semibold cursor-pointer" : "cursor-pointer"}>홈</div>
+              <div
+                className={
+                  selectedMenu === "home"
+                    ? "text-blue-500 font-semibold cursor-pointer"
+                    : "cursor-pointer"
+                }
+              >
+                홈
+              </div>
             </Link>
-            <div onClick={() => setSelectedMenu("profile")} className={selectedMenu === "profile" ? "text-blue-500 font-semibold cursor-pointer" : "cursor-pointer"}>
+            <div
+              onClick={() => setSelectedMenu("profile")}
+              className={
+                selectedMenu === "profile"
+                  ? "text-blue-500 font-semibold cursor-pointer"
+                  : "cursor-pointer"
+              }
+            >
               내 정보 수정
             </div>
-            <div onClick={() => setSelectedMenu("allergy")} className={selectedMenu === "allergy" ? "text-blue-500 font-semibold cursor-pointer" : "cursor-pointer"}>
+            <div
+              onClick={() => setSelectedMenu("allergy")}
+              className={
+                selectedMenu === "allergy"
+                  ? "text-blue-500 font-semibold cursor-pointer"
+                  : "cursor-pointer"
+              }
+            >
               알레르기 정보수정
             </div>
-            <div onClick={() => setSelectedMenu("region")} className={selectedMenu === "region" ? "text-blue-500 font-semibold cursor-pointer" : "cursor-pointer"}>
+            <div
+              onClick={() => setSelectedMenu("region")}
+              className={
+                selectedMenu === "region"
+                  ? "text-blue-500 font-semibold cursor-pointer"
+                  : "cursor-pointer"
+              }
+            >
               지역및 학교수정
             </div>
           </div>
@@ -288,66 +353,145 @@ export default function MyPage() {
           <div className="w-full h-full flex justify-center">
             {/* 내정보 수정 */}
             {selectedMenu === "profile" && (
-              <form onSubmit={handleProfileSubmit} className="flex flex-col w-full h-full">
+              <form
+                onSubmit={handleProfileSubmit}
+                className="flex flex-col w-full h-full"
+              >
                 {/* 입력 폼들 추가 */}
                 <div className="w-full flex flex-col items-center">
                   {/* 이름 */}
                   <div className="flex xl:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px] mt-16">
-                    <div className="w-[200px] bg-[#EFEFEF] h-20 flex items-center p-4">이름</div>
+                    <div className="w-[200px] bg-[#EFEFEF] h-20 flex items-center p-4">
+                      이름
+                    </div>
                     <div className="pl-2">{userData?.user?.username}</div>
                   </div>
                   {/* 아이디 */}
                   <div className="flex xl:w-1/2 w-full items-center   border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
-                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">아이디</div>
+                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
+                      아이디
+                    </div>
                     <div className="pl-2">{userData?.user?.userid}</div>
                   </div>
                   {/* 전화번호 */}
                   <div className="flex xl:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
-                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">전화번호</div>
-                    <input type="text" placeholder={userData?.user?.tel} className="pl-8 h-[90%] w-[40%] border rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" value={tel} onChange={(e) => setTel(e.target.value)} />
+                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
+                      전화번호
+                    </div>
+                    <input
+                      type="text"
+                      placeholder={userData?.user?.tel}
+                      className="pl-8 h-[90%] w-[40%] border rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
+                      value={tel}
+                      onChange={(e) => setTel(e.target.value)}
+                    />
                   </div>
                   {/* 비밀번호 */}
                   <div className="flex xl:w-1/2 w-full items-center  border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
-                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">비밀번호</div>
-                    <input type="password" placeholder="비밀번호" className="pl-8 h-[90%] w-[40%] border  placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
+                      비밀번호
+                    </div>
+                    <input
+                      type="password"
+                      placeholder="비밀번호"
+                      className="pl-8 h-[90%] w-[40%] border  placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
                   </div>
                   {/* 비밀번호 확인 */}
                   <div className="flex xl:w-1/2 w-full items-center   border-l-[0px] border-t-[1px] border-r-[1px] border-b-[1px]">
-                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">비밀번호 확인</div>
-                    <input type="password" placeholder="비밀번호 확인" className="pl-8 h-[90%] w-[40%] border  placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" value={password2} onChange={(e) => setPassword2(e.target.value)} />{" "}
+                    <div className="w-[200px] bg-[#EFEFEF] h-10 flex items-center p-4">
+                      비밀번호 확인
+                    </div>
+                    <input
+                      type="password"
+                      placeholder="비밀번호 확인"
+                      className="pl-8 h-[90%] w-[40%] border  placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
+                      value={password2}
+                      onChange={(e) => setPassword2(e.target.value)}
+                    />{" "}
                   </div>
-                  {errorMessages.tel && <div className="text-red-500">{errorMessages.tel}</div>}
-                  {errorMessages.password && <div className="text-red-500">{errorMessages.password}</div>}
+                  {errorMessages.tel && (
+                    <div className="text-red-500">{errorMessages.tel}</div>
+                  )}
+                  {errorMessages.password && (
+                    <div className="text-red-500">{errorMessages.password}</div>
+                  )}
                   {/* 저장 버튼 */}
                   <div className="w-full flex justify-center m-4">
-                    <button className="bg-blue-500 w-[50%] text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">저장</button>
+                    <button className="bg-blue-500 w-[50%] text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">
+                      저장
+                    </button>
                   </div>
                 </div>
               </form>
             )}
             {/* 알레르기 */}
             {selectedMenu === "allergy" && (
-              <form onSubmit={handleAllergySubmit} className="md:w-2/3 max-w-[1000px] w-full xl:h-[50%] h-auto mt-1 mb-4 flex flex-col items-center justify-between bg-white border rounded-xl p-4">
+              <form
+                onSubmit={handleAllergySubmit}
+                className="md:w-2/3 max-w-[1000px] w-full xl:h-[50%] h-auto mt-1 mb-4 flex flex-col items-center justify-between bg-white border rounded-xl p-4"
+              >
                 <div className="flex flex-wrap">
                   {Object.keys(allergies).map((allergy) => (
-                    <div key={allergy} className={`border border-blue-500 cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 hover:bg-blue-500 hover:text-white transition duration-300 ${allergies[allergy] ? "bg-blue-500 text-white border-white" : ""}`} onClick={() => toggleAllergy(allergy)}>
+                    <div
+                      key={allergy}
+                      className={`border border-blue-500 cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 hover:bg-blue-500 hover:text-white transition duration-300 ${
+                        allergies[allergy]
+                          ? "bg-blue-500 text-white border-white"
+                          : ""
+                      }`}
+                      onClick={() => toggleAllergy(allergy)}
+                    >
                       {allergy}
                     </div>
                   ))}
                 </div>
-                <button className="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded">선택하기</button>
+                <button className="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded">
+                  선택하기
+                </button>
               </form>
             )}
             {/* 지역 및 학교 정보*/}
             {selectedMenu === "region" && (
-              <form onSubmit={handleRegionSubmit} className="w-full h-full flex flex-col items-center relative ">
+              <form
+                onSubmit={handleRegionSubmit}
+                className="w-full h-full flex flex-col items-center relative "
+              >
                 <div className="w-full max-w-[1000px]">
                   {/* 지역 입력 받는 폼 */}
                   <div className="w-full xl:h-[55%] mb-10 mt-1 flex flex-col xl:justify-between items-center bg-white border rounded-xl p-4">
                     <h4 className="">지역 정보 수정</h4>
                     <div className="flex flex-wrap">
-                      {["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종시", "경기도", "강원도", "충청북도", "충청남도", "전라북도", "전라남도", "경상북도", "경상남도", "제주도"].map((region) => (
-                        <div key={region} className={`border border-blue-500 cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 hover:bg-blue-500 hover:text-white transition duration-300 ${region === selectedRegion ? "bg-blue-500 text-white border-white" : ""}`} onClick={() => toggleRegion(region)}>
+                      {[
+                        "서울",
+                        "부산",
+                        "대구",
+                        "인천",
+                        "광주",
+                        "대전",
+                        "울산",
+                        "세종시",
+                        "경기도",
+                        "강원도",
+                        "충청북도",
+                        "충청남도",
+                        "전라북도",
+                        "전라남도",
+                        "경상북도",
+                        "경상남도",
+                        "제주도",
+                      ].map((region) => (
+                        <div
+                          key={region}
+                          className={`border border-blue-500 cursor-pointer text-blue-500 py-2 px-4 rounded-full m-2 hover:bg-blue-500 hover:text-white transition duration-300 ${
+                            region === selectedRegion
+                              ? "bg-blue-500 text-white border-white"
+                              : ""
+                          }`}
+                          onClick={() => toggleRegion(region)}
+                        >
                           {region}
                         </div>
                       ))}
@@ -360,12 +504,23 @@ export default function MyPage() {
                     {/* 학교이름 */}
                     <h4>학교 정보 수정</h4>
                     <div className="w-[60%] h-40 flex items-center justify-center">
-                      <input type="text" className=" bg-gray-100 h-10 w-[100%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500" value={schoolName} onChange={handleSchoolNameChange} />
+                      <input
+                        type="text"
+                        className=" bg-gray-100 h-10 w-[100%] placeholder-up rounded-md px-2 py-2 outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent duration-500"
+                        value={schoolName}
+                        onChange={handleSchoolNameChange}
+                      />
                     </div>
-                    {formError && <p className="text-red-500 absolute bottom-0">{formError}</p>}
+                    {formError && (
+                      <p className="text-red-500 absolute bottom-0">
+                        {formError}
+                      </p>
+                    )}
                   </div>
                 </div>
-                <button className="bg-blue-500 w-1/2 mt-8 text-white py-2 px-6 rounded-r-sm hover:bg-blue-600 transition duration-300">저장</button>
+                <button className="bg-blue-500 w-1/2 mt-8 text-white py-2 px-6 rounded-r-sm hover:bg-blue-600 transition duration-300">
+                  저장
+                </button>
               </form>
             )}
           </div>
