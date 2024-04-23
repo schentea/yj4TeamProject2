@@ -198,7 +198,7 @@ export default function MyPage() {
                 schoolNM: combinedSchoolName,
                 userid: userid,
             };
-            console.log('Asd', regionSchoolEdit);
+
             const res = await apiPostRegionSchoolEdit(regionSchoolEdit);
             console.log({ res });
             sessionStorage.setItem('userData', JSON.stringify(res));
@@ -309,14 +309,14 @@ export default function MyPage() {
                         {userSub.subscribe === true ? (
                             <div
                                 onClick={handleSubStateFalse}
-                                className="w-[140px] h-10 bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold rounded mb-4 flex items-center justify-center"
+                                className="w-[140px] h-10 bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold rounded mb-4 flex items-center justify-center cursor-pointer"
                             >
                                 구독해제
                             </div>
                         ) : (
                             <div
                                 onClick={handleSubStateTrue}
-                                className="w-[140px] h-10 bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold rounded mb-4 flex items-center justify-center"
+                                className="w-[140px] h-10 bg-blue-500 hover:bg-blue-600 duration-500 text-white font-semibold rounded mb-4 flex items-center justify-center cursor-pointer"
                             >
                                 구독신청
                             </div>
