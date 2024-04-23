@@ -446,7 +446,7 @@ export default function MyPage() {
                         {selectedMenu === 'allergy' && (
                             <form
                                 onSubmit={handleAllergySubmit}
-                                className="md:w-2/3 max-w-[1000px] w-full xl:h-[50%] h-auto mt-1 mb-4 flex flex-col items-center justify-between bg-white border rounded-xl p-4"
+                                className="md:w-2/3 max-w-[1000px] w-full xl:h-[50%] mt-1 mb-4 flex flex-col items-center justify-between bg-white border rounded-xl p-4"
                             >
                                 <div className="flex flex-wrap">
                                     {Object.keys(allergies).map((allergy) => (
