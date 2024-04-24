@@ -32,6 +32,7 @@ export default function SignupForm() {
                 sessionStorage.setItem('userData', JSON.stringify(data));
                 queryClient.invalidateQueries('getUser');
                 navigate('/');
+                window.location.reload();
             } else {
                 // 로그인 실패 시 알림창 표시
                 alert('입력한 정보를 다시 확인해주세요.');
