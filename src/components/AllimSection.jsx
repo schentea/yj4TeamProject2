@@ -16,7 +16,7 @@ export default function AllimSection() {
       alert("로그인 후 이용가능한 서비스입니다.");
     }
   };
-  console.log(userData);
+  
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -36,7 +36,7 @@ export default function AllimSection() {
       const subscribe = true;
 
       // 데이터를 API로 보냅니다.
-      const response = await apiAlimtalk({
+      const res = await apiAlimtalk({
         uid: uid,
         username: name,
         tel: tel,
@@ -44,8 +44,9 @@ export default function AllimSection() {
       }); // username을 데이터로 전달합니다.
 
       // 응답을 확인하고 필요한 작업을 수행합니다.
-      if (response.ok) {
+      if (res.result === true) {
         console.log("API 호출이 성공했습니다.");
+        sessionStorage.setItem("userData",JSON.stringify(res))
         // 성공했을 때의 처리를 여기에 추가합니다.
       } else {
         console.log("API 호출이 실패했습니다.");

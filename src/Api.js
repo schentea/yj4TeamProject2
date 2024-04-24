@@ -221,7 +221,7 @@ export async function apiAlimtalk(data) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-        });
+        }).then((res) => res.json());
     } catch (error) {
         console.log(error);
     }
