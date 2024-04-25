@@ -8,7 +8,7 @@ export default function Kakao() {
     const code = params.get('code');
 
     const { data } = useQuery(['getUser', { code }], apiKakaoLogin);
-    console.log('asd', data);
+
     const navigate = useNavigate();
     if (data?.result === true) {
         sessionStorage.setItem('userData', JSON.stringify(data));

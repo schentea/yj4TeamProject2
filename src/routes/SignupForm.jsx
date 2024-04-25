@@ -72,7 +72,7 @@ export default function SignupForm() {
     });
     const handleRadioChange = (city) => {
         setSelectedRegion(city);
-        console.log('지역', city);
+
         setIsSelected(false);
         const updatedState = {};
         Object.keys(isChecked).forEach((key) => {
@@ -81,7 +81,6 @@ export default function SignupForm() {
         setIsChecked(updatedState);
     };
     const handleCheckChange = (allergy) => {
-        console.log(allergy);
         setAllergy(false);
         setIsAllergyChecked({
             ...isAllergyChecked,
@@ -104,7 +103,6 @@ export default function SignupForm() {
             }
         },
         onSettled: (data) => {
-            console.log(data);
             if (data?.result === false)
                 setError('userid', {
                     message: data.message,

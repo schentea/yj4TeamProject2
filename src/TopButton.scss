@@ -1,49 +1,49 @@
 .scroll {
-  position: fixed;
-  right: 2%;
-  bottom: 10%;
-  z-index: 1;
+    position: fixed;
+    right: 2%;
+    bottom: 10%;
+    z-index: 1;
 }
 
 .scroll button {
-  font-weight: bold;
-  font-size: 14px; /* 폰트 크기를 키웠습니다 */
-  padding: 20px 19px; /* 패딩을 조금 더 줄였습니다 */
-  background-color: #007bff; /* 배경색을 파란색으로 변경했습니다 */
-  color: white;
-  border: none; /* 테두리를 제거했습니다 */
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 효과를 추가했습니다 */
-  transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 효과를 추가했습니다 */
+    font-weight: bold;
+    font-size: 14px; /* 폰트 크기를 키웠습니다 */
+    padding: 20px 19px; /* 패딩을 조금 더 줄였습니다 */
+    background-color: #007bff; /* 배경색을 파란색으로 변경했습니다 */
+    color: white;
+    border: none; /* 테두리를 제거했습니다 */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 효과를 추가했습니다 */
+    transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 효과를 추가했습니다 */
 }
 
 .scroll button:hover {
-  background-color: #0056b3; /* 마우스를 올렸을 때 배경색을 진한 파란색으로 변경했습니다 */
+    background-color: #0056b3; /* 마우스를 올렸을 때 배경색을 진한 파란색으로 변경했습니다 */
 }
 
 .foodlist {
-  position: fixed;
-  right: 2%;
-  bottom: 3%;
-  z-index: 1;
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+    z-index: 1;
 }
 
 .foodlist button:hover {
-  background-color: #0056b3; /* 마우스를 올렸을 때 배경색을 진한 파란색으로 변경했습니다 */
+    background-color: #0056b3; /* 마우스를 올렸을 때 배경색을 진한 파란색으로 변경했습니다 */
 }
 
 .foodlist button {
-  font-weight: bold;
-  font-size: 12px; /* 폰트 크기를 키웠습니다 */
-  padding: 20px 14px; /* 패딩을 조금 더 줄였습니다 */
-  background-color: #007bff; /* 배경색을 파란색으로 변경했습니다 */
-  color: white;
-  border: none; /* 테두리를 제거했습니다 */
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 효과를 추가했습니다 */
-  transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 효과를 추가했습니다 */
+    font-weight: bold;
+    font-size: 12px; /* 폰트 크기를 키웠습니다 */
+    padding: 20px 14px; /* 패딩을 조금 더 줄였습니다 */
+    background-color: #007bff; /* 배경색을 파란색으로 변경했습니다 */
+    color: white;
+    border: none; /* 테두리를 제거했습니다 */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 효과를 추가했습니다 */
+    transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 효과를 추가했습니다 */
 }

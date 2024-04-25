@@ -47,7 +47,7 @@ export default function MyPage() {
         조개류: false,
         잣: false,
     };
-    console.log(userData);
+
     const [allergies, setAllergies] = useState(initialAllergiesState);
     useEffect(() => {
         // userData나 user가 없는 경우에는 아무 작업도 수행하지 않음
@@ -200,7 +200,7 @@ export default function MyPage() {
             };
 
             const res = await apiPostRegionSchoolEdit(regionSchoolEdit);
-            console.log({ res });
+
             sessionStorage.setItem('userData', JSON.stringify(res));
             alert('정보가 수정되었습니다.');
             // window.location.reload();

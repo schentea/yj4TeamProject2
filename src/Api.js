@@ -173,7 +173,7 @@ export async function apiPostUserRegister(data, selectedRegion, selectedAllergie
     const schoolNM = postData.data.schoolNM;
     const schoolCode = await getSchoolInfo(region, schoolNM);
     data.data.schoolNM += ',' + schoolCode;
-    console.log('학교정보', postData);
+
     try {
         return await fetch(`${BASE_URL}/users/register`, {
             method: 'POST',
@@ -188,7 +188,6 @@ export async function apiPostUserRegister(data, selectedRegion, selectedAllergie
 }
 
 export async function apiPostUserLogin(data) {
-    console.log(data);
     try {
         return await fetch(`${BASE_URL}/users/login`, {
             method: 'POST',
@@ -213,7 +212,6 @@ export async function apiGetUser(data) {
     }
 }
 export async function apiAlimtalk(data) {
-    console.log('api', data);
     try {
         return await fetch(`${BASE_URL}/users/allergyAlim`, {
             method: 'POST',

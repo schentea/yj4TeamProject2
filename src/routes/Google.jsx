@@ -7,7 +7,7 @@ export default function Google() {
     const params = new URLSearchParams(search);
     const code = params.get('code');
     const { data } = useQuery(['getUser', { code }], apiGoogleLogin);
-    console.log('asd', data);
+
     const navigate = useNavigate();
     if (data?.result === true) {
         sessionStorage.setItem('userData', JSON.stringify(data));

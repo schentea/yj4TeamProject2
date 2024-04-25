@@ -2,291 +2,283 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 html {
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  scroll-behavior: smooth;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    scroll-behavior: smooth;
 }
 
 #section2 {
-  background-image: url("./img/small-stationary-tools-surrounded-blank-center.jpg");
-  background-size: cover;
-  background-position: center;
+    background-image: url('./img/small-stationary-tools-surrounded-blank-center.jpg');
+    background-size: cover;
+    background-position: center;
 }
 @layer base {
-  h1 {
-    @apply text-4xl;
-  }
-  h2 {
-    @apply text-3xl;
-  }
+    h1 {
+        @apply text-4xl;
+    }
+    h2 {
+        @apply text-3xl;
+    }
 }
 /* 플레이스 홀더 */
 
 .placeholder-up::placeholder {
-  transform: translateY(-0%);
-  transition: transform 0.3s ease;
-  opacity: 1;
+    transform: translateY(-0%);
+    transition: transform 0.3s ease;
+    opacity: 1;
 }
 
 .placeholder-up:focus::placeholder {
-  transform: translateY(-90%);
-  opacity: 1;
-  font-size: 12px;
+    transform: translateY(-90%);
+    opacity: 1;
+    font-size: 12px;
 }
 .allergy-meal {
-  color: red;
-  /* 또는 다른 스타일을 추가할 수 있습니다. */
+    color: red;
+    /* 또는 다른 스타일을 추가할 수 있습니다. */
 }
 /* 초기에 숨겨진 상태로 설정합니다. */
 .fade-in {
-  opacity: 0;
-  transform: translateY(
-    -100px
-  ); /* 위에서 아래로 천천히 내려오는 효과를 줍니다. */
+    opacity: 0;
+    transform: translateY(-100px); /* 위에서 아래로 천천히 내려오는 효과를 줍니다. */
 }
 
 /* 페이드 인 효과를 주는 애니메이션을 정의합니다. */
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px); /* 초기 위치를 설정합니다. */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* 최종 위치를 설정합니다. */
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /* 초기 위치를 설정합니다. */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* 최종 위치를 설정합니다. */
+    }
 }
 @keyframes imgWidth {
-  0% {
-    width: 0; /* 초기 위치를 설정합니다. */
-  }
-  100% {
-    width: 100%; /* 최종 위치를 설정합니다. */
-    opacity: 1;
-  }
+    0% {
+        width: 0; /* 초기 위치를 설정합니다. */
+    }
+    100% {
+        width: 100%; /* 최종 위치를 설정합니다. */
+        opacity: 1;
+    }
 }
 .imgGood {
-  animation: imgWidth 2s ease forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
+    animation: imgWidth 2s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
 }
 
 /* 페이드 인 애니메이션을 적용합니다. */
 /* 커뮤니티 섹션 및 헤더 큰 타이틀 */
 .fade-inheader {
-  animation: fadeIn 3s ease forwards;
-  opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    opacity: 0;
 }
 .fade-in {
-  animation: fadeIn 1s ease forwards;
+    animation: fadeIn 1s ease forwards;
 }
 .fade-intwo {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
 }
 .fade-inthree {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
 }
 .fade-infour {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
 }
 
 /* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
 .fade-inheader:nth-child(1) {
-  animation-delay: 0s;
+    animation-delay: 0s;
 }
 .fade-inheader:nth-child(2) {
-  animation-delay: 1.5s;
+    animation-delay: 1.5s;
 }
 .fade-in {
-  animation-delay: 0s; /* 첫 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+    animation-delay: 0s; /* 첫 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 .fade-intwo {
-  animation-delay: 0.8s; /* 두 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+    animation-delay: 0.8s; /* 두 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 .fade-inthree {
-  animation-delay: 1s; /* 세 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+    animation-delay: 1s; /* 세 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 .fade-infour {
-  animation-delay: 1.5s; /* 네 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
+    animation-delay: 1.5s; /* 네 번째 그리드의 애니메이션 지연 시간을 설정합니다. */
 }
 
 /* 각 텍스트 요소의 애니메이션을 지연시킵니다. */
 .fade-in:nth-child(1) {
-  animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 .fade-in:nth-child(2) {
-  animation-delay: 0.8s;
+    animation-delay: 0.8s;
 }
 .fade-inthree {
-  animation-delay: 1.2s;
+    animation-delay: 1.2s;
 }
 .fade-infour {
-  animation-delay: 1.5s;
+    animation-delay: 1.5s;
 }
 #h31 {
-  text-align: center;
+    text-align: center;
 }
 @media screen and (min-width: 768px) {
-  #h31 {
-    text-align: left;
-  }
+    #h31 {
+        text-align: left;
+    }
 }
 /* 이점 섹션 효과*/
 @keyframes fadeTitle {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px); /* 초기 위치를 설정합니다. */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* 최종 위치를 설정합니다. */
-  }
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* 초기 위치를 설정합니다. */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* 최종 위치를 설정합니다. */
+    }
 }
 @keyframes fadeTitle2 {
-  0% {
-    opacity: 0;
-    transform: translateX(100px); /* 초기 위치를 설정합니다. */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* 최종 위치를 설정합니다. */
-  }
+    0% {
+        opacity: 0;
+        transform: translateX(100px); /* 초기 위치를 설정합니다. */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* 최종 위치를 설정합니다. */
+    }
 }
 
 .fade-Title {
-  animation: fadeTitle 1.5s ease forwards;
-  opacity: 0;
+    animation: fadeTitle 1.5s ease forwards;
+    opacity: 0;
 }
 .fade-Title2 {
-  animation: fadeTitle2 1.5s ease forwards;
-  opacity: 0;
+    animation: fadeTitle2 1.5s ease forwards;
+    opacity: 0;
 }
 .fade-Title2 {
-  animation-delay: 0.5s;
-  opacity: 0;
+    animation-delay: 0.5s;
+    opacity: 0;
 }
 /* GNB 언더라인 */
 .underline-hover::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 4px; /* 언더라인의 높이를 조정할 수 있습니다. */
-  bottom: -2px; /* 텍스트 아래에 위치하도록 설정합니다. */
-  left: 0;
-  background-color: transparent; /* 호버 시에 채워질 색상입니다. */
-  transition: background-color 0.3s ease; /* 호버 시에 부드럽게 전환되도록 설정합니다. */
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px; /* 언더라인의 높이를 조정할 수 있습니다. */
+    bottom: -2px; /* 텍스트 아래에 위치하도록 설정합니다. */
+    left: 0;
+    background-color: transparent; /* 호버 시에 채워질 색상입니다. */
+    transition: background-color 0.3s ease; /* 호버 시에 부드럽게 전환되도록 설정합니다. */
 }
 
 /* 호버 시에 언더라인이 색상이 채워지도록 하는 스타일 */
 .underline-hover:hover::before {
-  background-color: #2480ef; /* 호버 시에 언더라인의 색상을 변경합니다. */
-  width: 100%;
+    background-color: #2480ef; /* 호버 시에 언더라인의 색상을 변경합니다. */
+    width: 100%;
 }
 #merit {
-  position: relative;
-  background-image: url("./img/test.png");
-  background-size: cover;
-  background-position: center;
+    position: relative;
+    background-image: url('./img/test.png');
+    background-size: cover;
+    background-position: center;
 }
 #dansurs {
-  background-image: linear-gradient(to bottom, #fff 0%, #84cdf3 100%);
+    background-image: linear-gradient(to bottom, #fff 0%, #84cdf3 100%);
 }
 #span {
-  text-shadow: -1px 0px 1px;
+    text-shadow: -1px 0px 1px;
 }
 #header {
-  background-image: url("./img/mainBg.png");
-  background-size: cover;
-  background-position: center;
+    background-image: url('./img/mainBg.png');
+    background-size: cover;
+    background-position: center;
 }
 
 #news1 {
-  background-image: url("./img/New1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+    background-image: url('./img/New1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #news1Div {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 #news2Div {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 #news3Div {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 #news2 {
-  background-image: url("./img/New2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+    background-image: url('./img/New2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #news3 {
-  background-image: url("./img/New3.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+    background-image: url('./img/New3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #methode {
-  background-image: linear-gradient(
-    to bottom,
-    #84cdf3 0%,
-    #fff 5%,
-    #fff 80%,
-    #fff 100%
-  );
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #84cdf3 0%, #fff 5%, #fff 80%, #fff 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 ::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
 }
 
 /* 수직 스크롤 바 */
 ::-webkit-scrollbar-thumb {
-  background-color: #83c0ff; /* #83C0FF 색상으로 변경 */
-  border-radius: 10px;
+    background-color: #83c0ff; /* #83C0FF 색상으로 변경 */
+    border-radius: 10px;
 }
 
 /* 수평 스크롤 바 */
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 /* 마우스 호버시 */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(131, 192, 255, 0.5); /* 호버 시 색상 */
+    background-color: rgba(131, 192, 255, 0.5); /* 호버 시 색상 */
 }
 
 /* 캘린더 */
 .react-calendar {
-  width: 90% !important;
-  margin: 0 auto;
-  border-radius: 0 !important;
-  height: 500px;
+    width: 90% !important;
+    margin: 0 auto;
+    border-radius: 0 !important;
+    height: 500px;
 }
 .react-calendar button {
-  width: 20px;
+    width: 20px;
 }
 .react-calendar__navigation {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 .react-calendar__month-view {
-  width: 90%;
-  margin: 0 auto;
-  height: 70%;
+    width: 90%;
+    margin: 0 auto;
+    height: 70%;
 }
 .react-calendar__month-view button {
-  height: 70px;
+    height: 70px;
 }

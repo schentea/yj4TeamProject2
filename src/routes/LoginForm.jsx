@@ -47,7 +47,6 @@ export default function SignupForm() {
     };
 
     const data = useUser();
-    console.log(data);
 
     return (
         <div id="form" className="w-full h-screen flex justify-center items-center p-4">
