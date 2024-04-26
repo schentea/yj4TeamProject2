@@ -19,6 +19,7 @@ const date = `${year}${month}`;
 
 // 세션에 저장된 데이터 가져오기
 let data;
+
 const Storage = sessionStorage.getItem('userData');
 if (Storage) {
     data = JSON.parse(Storage);
